@@ -96,7 +96,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
 
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <span className="text-sm tracking-[0.3em] text-primary">MCBB</span>
+          <span className="text-sm tracking-[0.3em] text-primary">TAM</span>
           <div className="hidden gap-8 text-xs uppercase tracking-widest text-muted-foreground md:flex">
             {sections.slice(0, 5).map((s) => (
               <a key={s.id} href={`#${s.id}`} className="hover:text-primary transition-colors">
@@ -110,7 +110,7 @@ function Index() {
           <div>
             <p className="mb-4 text-xs uppercase tracking-[0.4em] text-primary/80">Portfólio Profissional</p>
             <h1 className="font-serif text-5xl leading-tight text-primary md:text-7xl">
-              Marcelo Couto <br /> Bicalho Braga
+              Tiago de Avila <br /> Miranda
             </h1>
             <div className="mt-6 h-px w-24 bg-primary" />
             <p className="mt-6 max-w-xl text-lg text-foreground/90">
@@ -146,10 +146,10 @@ function Index() {
             />
             <img
               src={profile}
-              alt="Marcelo Couto Bicalho Braga"
+              alt="Tiago de Avila Miranda"
               width={800}
               height={800}
-              className="relative h-64 w-64 rounded-full border-2 border-primary/60 object-cover shadow-[var(--shadow-gold)] md:h-80 md:w-80"
+              className="relative h-64 w-64 rounded-full border-2 border-primary/60 object-cover object-top shadow-[var(--shadow-gold)] md:h-80 md:w-80"
             />
           </div>
         </div>
@@ -293,15 +293,15 @@ function Index() {
             estratégicas.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <ContactItem Icon={Mail} label="E-mail" value="marcelo.braga@email.com" />
-            <ContactItem Icon={Linkedin} label="LinkedIn" value="/in/marcelobicalho" />
-            <ContactItem Icon={MapPin} label="Localização" value="Belo Horizonte, MG" />
+            <ContactItem Icon={Mail} label="E-mail" value="tiago@email.com" />
+            <ContactItem Icon={Linkedin} label="LinkedIn" value="/in/tiago-de-avila-miranda-53674293" />
+            <ContactItem Icon={MapPin} label="Localização" value="Brasil" />
           </div>
         </div>
       </Section>
 
       <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Marcelo Couto Bicalho Braga — Todos os direitos reservados.
+        © {new Date().getFullYear()} Tiago de Avila Miranda — Todos os direitos reservados.
       </footer>
     </div>
   );
