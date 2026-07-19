@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as ProfissionalRouteImport } from './routes/profissional'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as OfflineRouteImport } from './routes/offline'
+import { Route as HabilidadesRouteImport } from './routes/habilidades'
+import { Route as GraduacaoRouteImport } from './routes/graduacao'
+import { Route as FerramentasRouteImport } from './routes/ferramentas'
+import { Route as DedicatoriaRouteImport } from './routes/dedicatoria'
+import { Route as CertificacoesRouteImport } from './routes/certificacoes'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfissionalRoute = ProfissionalRouteImport.update({
+  id: '/profissional',
+  path: '/profissional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfflineRoute = OfflineRouteImport.update({
+  id: '/offline',
+  path: '/offline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HabilidadesRoute = HabilidadesRouteImport.update({
+  id: '/habilidades',
+  path: '/habilidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GraduacaoRoute = GraduacaoRouteImport.update({
+  id: '/graduacao',
+  path: '/graduacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FerramentasRoute = FerramentasRouteImport.update({
+  id: '/ferramentas',
+  path: '/ferramentas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DedicatoriaRoute = DedicatoriaRouteImport.update({
+  id: '/dedicatoria',
+  path: '/dedicatoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificacoesRoute = CertificacoesRouteImport.update({
+  id: '/certificacoes',
+  path: '/certificacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/certificacoes': typeof CertificacoesRoute
+  '/dedicatoria': typeof DedicatoriaRoute
+  '/ferramentas': typeof FerramentasRoute
+  '/graduacao': typeof GraduacaoRoute
+  '/habilidades': typeof HabilidadesRoute
+  '/offline': typeof OfflineRoute
+  '/portfolio': typeof PortfolioRoute
+  '/profissional': typeof ProfissionalRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/certificacoes': typeof CertificacoesRoute
+  '/dedicatoria': typeof DedicatoriaRoute
+  '/ferramentas': typeof FerramentasRoute
+  '/graduacao': typeof GraduacaoRoute
+  '/habilidades': typeof HabilidadesRoute
+  '/offline': typeof OfflineRoute
+  '/portfolio': typeof PortfolioRoute
+  '/profissional': typeof ProfissionalRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/certificacoes': typeof CertificacoesRoute
+  '/dedicatoria': typeof DedicatoriaRoute
+  '/ferramentas': typeof FerramentasRoute
+  '/graduacao': typeof GraduacaoRoute
+  '/habilidades': typeof HabilidadesRoute
+  '/offline': typeof OfflineRoute
+  '/portfolio': typeof PortfolioRoute
+  '/profissional': typeof ProfissionalRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/certificacoes'
+    | '/dedicatoria'
+    | '/ferramentas'
+    | '/graduacao'
+    | '/habilidades'
+    | '/offline'
+    | '/portfolio'
+    | '/profissional'
+    | '/sobre'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/certificacoes'
+    | '/dedicatoria'
+    | '/ferramentas'
+    | '/graduacao'
+    | '/habilidades'
+    | '/offline'
+    | '/portfolio'
+    | '/profissional'
+    | '/sobre'
+  id:
+    | '__root__'
+    | '/'
+    | '/certificacoes'
+    | '/dedicatoria'
+    | '/ferramentas'
+    | '/graduacao'
+    | '/habilidades'
+    | '/offline'
+    | '/portfolio'
+    | '/profissional'
+    | '/sobre'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CertificacoesRoute: typeof CertificacoesRoute
+  DedicatoriaRoute: typeof DedicatoriaRoute
+  FerramentasRoute: typeof FerramentasRoute
+  GraduacaoRoute: typeof GraduacaoRoute
+  HabilidadesRoute: typeof HabilidadesRoute
+  OfflineRoute: typeof OfflineRoute
+  PortfolioRoute: typeof PortfolioRoute
+  ProfissionalRoute: typeof ProfissionalRoute
+  SobreRoute: typeof SobreRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profissional': {
+      id: '/profissional'
+      path: '/profissional'
+      fullPath: '/profissional'
+      preLoaderRoute: typeof ProfissionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offline': {
+      id: '/offline'
+      path: '/offline'
+      fullPath: '/offline'
+      preLoaderRoute: typeof OfflineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/habilidades': {
+      id: '/habilidades'
+      path: '/habilidades'
+      fullPath: '/habilidades'
+      preLoaderRoute: typeof HabilidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/graduacao': {
+      id: '/graduacao'
+      path: '/graduacao'
+      fullPath: '/graduacao'
+      preLoaderRoute: typeof GraduacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ferramentas': {
+      id: '/ferramentas'
+      path: '/ferramentas'
+      fullPath: '/ferramentas'
+      preLoaderRoute: typeof FerramentasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dedicatoria': {
+      id: '/dedicatoria'
+      path: '/dedicatoria'
+      fullPath: '/dedicatoria'
+      preLoaderRoute: typeof DedicatoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certificacoes': {
+      id: '/certificacoes'
+      path: '/certificacoes'
+      fullPath: '/certificacoes'
+      preLoaderRoute: typeof CertificacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +237,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CertificacoesRoute: CertificacoesRoute,
+  DedicatoriaRoute: DedicatoriaRoute,
+  FerramentasRoute: FerramentasRoute,
+  GraduacaoRoute: GraduacaoRoute,
+  HabilidadesRoute: HabilidadesRoute,
+  OfflineRoute: OfflineRoute,
+  PortfolioRoute: PortfolioRoute,
+  ProfissionalRoute: ProfissionalRoute,
+  SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
