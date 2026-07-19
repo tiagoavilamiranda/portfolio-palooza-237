@@ -15,6 +15,7 @@ import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as HabilidadesRouteImport } from './routes/habilidades'
 import { Route as GraduacaoRouteImport } from './routes/graduacao'
 import { Route as FerramentasRouteImport } from './routes/ferramentas'
+import { Route as DedicatoriaRouteImport } from './routes/dedicatoria'
 import { Route as CertificacoesRouteImport } from './routes/certificacoes'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -48,6 +49,11 @@ const FerramentasRoute = FerramentasRouteImport.update({
   path: '/ferramentas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DedicatoriaRoute = DedicatoriaRouteImport.update({
+  id: '/dedicatoria',
+  path: '/dedicatoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CertificacoesRoute = CertificacoesRouteImport.update({
   id: '/certificacoes',
   path: '/certificacoes',
@@ -62,6 +68,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/certificacoes': typeof CertificacoesRoute
+  '/dedicatoria': typeof DedicatoriaRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/certificacoes': typeof CertificacoesRoute
+  '/dedicatoria': typeof DedicatoriaRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/certificacoes': typeof CertificacoesRoute
+  '/dedicatoria': typeof DedicatoriaRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/certificacoes'
+    | '/dedicatoria'
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/certificacoes'
+    | '/dedicatoria'
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/certificacoes'
+    | '/dedicatoria'
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CertificacoesRoute: typeof CertificacoesRoute
+  DedicatoriaRoute: typeof DedicatoriaRoute
   FerramentasRoute: typeof FerramentasRoute
   GraduacaoRoute: typeof GraduacaoRoute
   HabilidadesRoute: typeof HabilidadesRoute
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FerramentasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dedicatoria': {
+      id: '/dedicatoria'
+      path: '/dedicatoria'
+      fullPath: '/dedicatoria'
+      preLoaderRoute: typeof DedicatoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/certificacoes': {
       id: '/certificacoes'
       path: '/certificacoes'
@@ -198,6 +218,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CertificacoesRoute: CertificacoesRoute,
+  DedicatoriaRoute: DedicatoriaRoute,
   FerramentasRoute: FerramentasRoute,
   GraduacaoRoute: GraduacaoRoute,
   HabilidadesRoute: HabilidadesRoute,
