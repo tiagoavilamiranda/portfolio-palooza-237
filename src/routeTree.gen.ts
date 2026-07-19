@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProfissionalRouteImport } from './routes/profissional'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as HabilidadesRouteImport } from './routes/habilidades'
 import { Route as GraduacaoRouteImport } from './routes/graduacao'
 import { Route as FerramentasRouteImport } from './routes/ferramentas'
@@ -25,6 +26,11 @@ const SobreRoute = SobreRouteImport.update({
 const ProfissionalRoute = ProfissionalRouteImport.update({
   id: '/profissional',
   path: '/profissional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HabilidadesRoute = HabilidadesRouteImport.update({
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
+  '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
   '/sobre': typeof SobreRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
+  '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
   '/sobre': typeof SobreRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
+  '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
   '/sobre': typeof SobreRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
+    | '/portfolio'
     | '/profissional'
     | '/sobre'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
+    | '/portfolio'
     | '/profissional'
     | '/sobre'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
+    | '/portfolio'
     | '/profissional'
     | '/sobre'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   FerramentasRoute: typeof FerramentasRoute
   GraduacaoRoute: typeof GraduacaoRoute
   HabilidadesRoute: typeof HabilidadesRoute
+  PortfolioRoute: typeof PortfolioRoute
   ProfissionalRoute: typeof ProfissionalRoute
   SobreRoute: typeof SobreRoute
 }
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/profissional'
       fullPath: '/profissional'
       preLoaderRoute: typeof ProfissionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/habilidades': {
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   FerramentasRoute: FerramentasRoute,
   GraduacaoRoute: GraduacaoRoute,
   HabilidadesRoute: HabilidadesRoute,
+  PortfolioRoute: PortfolioRoute,
   ProfissionalRoute: ProfissionalRoute,
   SobreRoute: SobreRoute,
 }
