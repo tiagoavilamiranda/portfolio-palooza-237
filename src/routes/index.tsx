@@ -27,12 +27,27 @@ import {
   portfolio,
   volunteering,
   dedications,
+  hobbies,
   type Experience,
 } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
+
+function triggerShake() {
+  if (typeof document === "undefined") return;
+  const el = document.body;
+  el.classList.remove("page-shake");
+  // force reflow so the animation can restart
+  void el.offsetWidth;
+  el.classList.add("page-shake");
+}
+
+function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>) {
+  const href = e.currentTarget.getAttribute("href") || "";
+  if (href.startsWith("#")) triggerShake();
+}
 
 const sections = [
   { id: "apresentacao", label: "Apresentação", Icon: IdCard },
@@ -67,13 +82,14 @@ function Index() {
           <span className="text-sm tracking-[0.3em] text-primary">{profileData.initials}</span>
           <div className="hidden gap-8 text-xs uppercase tracking-widest text-muted-foreground md:flex">
             {sections.slice(0, 5).map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="hover:text-primary transition-colors">
+              <a key={s.id} href={`#${s.id}`} onClick={handleNavClick} className="hover:text-primary transition-colors">
                 {s.label}
               </a>
             ))}
           </div>
           <a
             href="#dedicatoria"
+            onClick={handleNavClick}
             className="hidden md:inline-flex items-center gap-2 rounded-full border border-primary/50 px-4 py-2 text-xs font-medium uppercase tracking-widest text-primary transition-all hover:bg-primary/10 hover:shadow-[var(--shadow-gold)]"
           >
             <Heart className="h-3.5 w-3.5" />
@@ -102,6 +118,7 @@ function Index() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#profissional"
+                onClick={handleNavClick}
                 className="rounded-full px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-105"
                 style={{ background: "var(--gradient-gold)" }}
               >
@@ -109,6 +126,7 @@ function Index() {
               </a>
               <a
                 href="#dedicatoria"
+                onClick={handleNavClick}
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-105"
                 style={{ background: "var(--gradient-gold)" }}
               >
@@ -117,6 +135,7 @@ function Index() {
               </a>
               <a
                 href="#offline"
+                onClick={handleNavClick}
                 className="rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
               >
                 Entrar em contato
@@ -146,6 +165,7 @@ function Index() {
               <a
                 key={id}
                 href={`#${id}`}
+                onClick={handleNavClick}
                 className="group flex flex-col items-center gap-2 text-center"
               >
                 <span className="flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-card/60 backdrop-blur transition-all group-hover:border-primary group-hover:shadow-[var(--shadow-gold)]">
@@ -327,6 +347,22 @@ function Index() {
             <ContactItem Icon={Mail} label="E-mail" value={profileData.email} />
             <ContactItem Icon={Linkedin} label="LinkedIn" value={profileData.linkedinLabel} href={profileData.linkedin} />
             <ContactItem Icon={MapPin} label="Localização" value={profileData.location} />
+          </div>
+
+          <div className="mt-12">
+            <p className="text-xs uppercase tracking-[0.4em] text-primary/80">Fora do trabalho</p>
+            <h3 className="mt-2 font-serif text-2xl text-foreground">Do que eu gosto</h3>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {hobbies.map((h) => (
+                <span
+                  key={h.label}
+                  className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/50 px-5 py-2 text-sm text-foreground/90 transition-all hover:border-primary hover:text-primary"
+                >
+                  <span className="text-lg leading-none">{h.emoji}</span>
+                  {h.label}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
