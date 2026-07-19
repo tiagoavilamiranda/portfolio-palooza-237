@@ -12,7 +12,7 @@ export const profile = {
     "Administrador | Gestão de TI | Processos Administrativos",
     "Cadastro PF/PJ | Faturamento | Financeiro | IA Aplicada",
   ],
-  email: "tiago@email.com",
+  email: "tiagooavila@yahoo.com.br",
   linkedin: "https://www.linkedin.com/in/tiago-de-avila-miranda-53674293/",
   linkedinLabel: "/in/tiago-de-avila-miranda-53674293",
   location: "Leopoldina, Minas Gerais, Brasil",
