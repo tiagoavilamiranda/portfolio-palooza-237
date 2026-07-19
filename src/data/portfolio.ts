@@ -12,7 +12,7 @@ export const profile = {
     "Administrador | Gestão de TI | Processos Administrativos",
     "Cadastro PF/PJ | Faturamento | Financeiro | IA Aplicada",
   ],
-  email: "tiago@email.com",
+  email: "tiagooavila@yahoo.com.br",
   linkedin: "https://www.linkedin.com/in/tiago-de-avila-miranda-53674293/",
   linkedinLabel: "/in/tiago-de-avila-miranda-53674293",
   location: "Leopoldina, Minas Gerais, Brasil",
@@ -190,6 +190,15 @@ export const volunteering = [
     period: "jun 2017 — dez 2017 · 7 meses",
     desc: "Auxílio em matrículas para cursos técnicos, reprodução de materiais didáticos, atendimento telefônico e presencial, participação em sábados letivos e apoio às atividades educacionais.",
   },
+];
+
+// Hobbies / interesses fora do trabalho — edite à vontade (adicione, remova ou troque emojis)
+export const hobbies = [
+  { emoji: "⚽", label: "Futebol" },
+  { emoji: "🏎️", label: "Fórmula 1" },
+  { emoji: "🚴", label: "Ciclismo" },
+  { emoji: "🎬", label: "Filmes" },
+  { emoji: "📺", label: "Séries" },
 ];
 
 // Dedicatória — homenagem a cada empresa da trajetória
