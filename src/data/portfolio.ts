@@ -184,25 +184,21 @@ export const portfolio = [
 ];
 
 export const volunteering = [
-  // placeholder — hobbies added below
-];
-
-// Hobbies / interesses fora do trabalho — edite à vontade
-export const hobbies = [
-  { emoji: "⚽", label: "Futebol" },
-  { emoji: "🏎️", label: "Fórmula 1" },
-  { emoji: "🚴", label: "Ciclismo" },
-  { emoji: "🎬", label: "Filmes" },
-  { emoji: "📺", label: "Séries" },
-];
-
-const _volunteering_original = [
   {
     title: "Estudante voluntário",
     org: "Escola Estadual Sebastião Silva Coutinho",
     period: "jun 2017 — dez 2017 · 7 meses",
     desc: "Auxílio em matrículas para cursos técnicos, reprodução de materiais didáticos, atendimento telefônico e presencial, participação em sábados letivos e apoio às atividades educacionais.",
   },
+];
+
+// Hobbies / interesses fora do trabalho — edite à vontade (adicione, remova ou troque emojis)
+export const hobbies = [
+  { emoji: "⚽", label: "Futebol" },
+  { emoji: "🏎️", label: "Fórmula 1" },
+  { emoji: "🚴", label: "Ciclismo" },
+  { emoji: "🎬", label: "Filmes" },
+  { emoji: "📺", label: "Séries" },
 ];
 
 // Dedicatória — homenagem a cada empresa da trajetória
