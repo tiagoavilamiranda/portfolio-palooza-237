@@ -184,6 +184,19 @@ export const portfolio = [
 ];
 
 export const volunteering = [
+  // placeholder — hobbies added below
+];
+
+// Hobbies / interesses fora do trabalho — edite à vontade
+export const hobbies = [
+  { emoji: "⚽", label: "Futebol" },
+  { emoji: "🏎️", label: "Fórmula 1" },
+  { emoji: "🚴", label: "Ciclismo" },
+  { emoji: "🎬", label: "Filmes" },
+  { emoji: "📺", label: "Séries" },
+];
+
+const _volunteering_original = [
   {
     title: "Estudante voluntário",
     org: "Escola Estadual Sebastião Silva Coutinho",
