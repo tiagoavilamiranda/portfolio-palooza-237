@@ -411,7 +411,24 @@ export function OfflinePage() {
             value={profileData.linkedinLabel}
             href={profileData.linkedin}
           />
-          <ContactItem Icon={MapPin} label="Localização" value={profileData.location} />
+          <ContactItem
+            Icon={MapPin}
+            label="Localização"
+            value={profileData.location}
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profileData.location)}`}
+          />
+        </div>
+
+        <div className="mt-8 overflow-hidden rounded-2xl border border-border">
+          <iframe
+            title="Leopoldina, Minas Gerais"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(profileData.location)}&output=embed`}
+            width="100%"
+            height="320"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="block w-full border-0"
+          />
         </div>
 
         <div className="mt-12">
