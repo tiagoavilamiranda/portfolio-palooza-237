@@ -152,10 +152,12 @@ export const education = [
 
 export const certifications = [
   { title: "Análise de dados como aliada da tomada de decisão", org: "Escola Conquer", date: "jun 2026" },
+  { title: "Customer Success", org: "Sebrae", date: "jul 2026" },
   { title: "Power BI Expert na Prática", org: "Viscari Inc.", date: "jan 2026" },
   { title: "Simplifica Inteligência Artificial Express", org: "SIMPLIFICA TREINAMENTOS", date: "jan 2026" },
   { title: "Power Apps Expert na Prática", org: "Viscari Inc.", date: "jan 2026" },
-  { title: "Inteligência Artificial Express", org: "SIMPLIFICA TREINAMENTOS", date: "jan 2026" },
+  { title: "Proteção contra Phishing e Engenharia Social", org: "Dimensa Tecnologia", date: "out 2025" },
+  { title: "LGPD — Lei Geral de Proteção de Dados", org: "Energisa", date: "mai 2021" },
 ];
 
 export const skills = [
@@ -164,6 +166,7 @@ export const skills = [
   "Faturamento & NF-e",
   "Processos Financeiros",
   "Gestão de TI",
+  "RH",
   "IA Aplicada",
   "Análise de Dados",
   "Atendimento & Suporte",
@@ -187,7 +190,6 @@ export const systems = [
   "Unico",
   "RH Health",
   "RH NET Social",
-  "SCI",
   "eSocial",
   "Kenoby",
   "Acelerato",
@@ -199,7 +201,7 @@ export const systems = [
   "Etalent DISC",
   "SPC / Serasa",
   "Sicoob",
-  "Consulta CNPJ / CPF",
+  "Cardio",
 ];
 
 export const portfolio = [
