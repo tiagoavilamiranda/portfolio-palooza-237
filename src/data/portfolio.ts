@@ -80,20 +80,11 @@ export const experiences: Experience[] = [
   {
     role: "Auxiliar de atendimento",
     company: "Unimed Leopoldina",
-    period: "jul 2019 — mar 2021 · 1 ano 9 meses",
+    period: "jun 2018 — mar 2021 · 2 anos 10 meses",
     location: "Leopoldina, Minas Gerais, Brasil",
     logo: logoUnimed.url,
     logoBg: "#059669",
-    desc: "Atendimento presencial, telefônico e digital a clientes, beneficiários e cooperados. Suporte aos processos administrativos e operacionais da área de atendimento.",
-  },
-  {
-    role: "Estagiário Nível Superior",
-    company: "Unimed Leopoldina",
-    period: "jun 2018 — jul 2019 · 1 ano 2 meses",
-    location: "Leopoldina, Minas Gerais, Brasil",
-    logo: logoUnimed.url,
-    logoBg: "#059669",
-    desc: "Apoio às rotinas administrativas dos setores de Cadastro, Cobrança e Faturamento. Cadastro e atualização de clientes PF e PJ. Emissão de boletos bancários. Controle de comissões de vendedores em Excel. Emissão de segunda via de cartões. Inclusão e acompanhamento de débitos nos sistemas SPC e Serasa. Organização, conferência e arquivamento de contratos e documentos. Reconhecimento: Estagiário Destaque em 2019 pela Unimed, com menção em revista do CIEE.",
+    desc: "Trajetória de quase 3 anos na Unimed, do estágio ao atendimento efetivo, atuando nas áreas de Cadastro, Cobrança, Faturamento e Atendimento ao beneficiário. Reconhecido como Estagiário Destaque em 2019, com menção em revista do CIEE.\n\n• Auxiliar de atendimento (jul 2019 — mar 2021): atendimento presencial, telefônico e digital a clientes, beneficiários e cooperados. Suporte aos processos administrativos e operacionais da área de atendimento.\n\n• Estagiário Nível Superior (jun 2018 — jul 2019): apoio às rotinas administrativas dos setores de Cadastro, Cobrança e Faturamento. Cadastro e atualização de clientes PF e PJ. Emissão de boletos bancários. Controle de comissões de vendedores em Excel. Emissão de segunda via de cartões. Inclusão e acompanhamento de débitos nos sistemas SPC e Serasa. Organização, conferência e arquivamento de contratos e documentos.",
   },
   {
     role: "Auxiliar administrativo",
@@ -107,20 +98,11 @@ export const experiences: Experience[] = [
   {
     role: "Auxiliar de Escritório",
     company: "Quero Mais Tintas Ltda",
-    period: "ago 2015 — abr 2016 · 9 meses",
+    period: "jun 2011 — abr 2016 · 4 anos 11 meses",
     location: "Leopoldina, Minas Gerais, Brasil",
     logo: null,
     logoBg: "#0284c7",
-    desc: "Cadastro e atualização de produtos, clientes e fornecedores. Emissão e acompanhamento de pedidos de compras. Negociação e relacionamento com fornecedores. Emissão de boletos pelo Sicoob. Controle de recebimentos, cobranças e inadimplência. Lançamento de NF-e de entrada e saída. Pagamento de fornecedores e conciliação financeira.",
-  },
-  {
-    role: "Vendedor",
-    company: "Quero Mais Tintas Ltda",
-    period: "jun 2011 — ago 2015 · 4 anos 3 meses",
-    location: "Leopoldina, Minas Gerais, Brasil",
-    logo: null,
-    logoBg: "#0284c7",
-    desc: "Atendimento e vendas de produtos, prestando suporte aos clientes durante todo o processo comercial. Elaboração de pedidos de compra e venda. Emissão de boletos e NF-e. Controle de caixa, recebimentos e pagamentos a fornecedores. Gestão de cobranças e acompanhamento da inadimplência.",
+    desc: "Quase 5 anos de trajetória na Quero Mais Tintas, começando no balcão como vendedor e evoluindo para funções administrativas e financeiras, com atuação completa no ciclo comercial, fiscal e de contas a pagar/receber.\n\n• Auxiliar de Escritório (ago 2015 — abr 2016): cadastro e atualização de produtos, clientes e fornecedores. Emissão e acompanhamento de pedidos de compras. Negociação e relacionamento com fornecedores. Emissão de boletos pelo Sicoob. Controle de recebimentos, cobranças e inadimplência. Lançamento de NF-e de entrada e saída. Pagamento de fornecedores e conciliação financeira.\n\n• Vendedor (jun 2011 — ago 2015): atendimento e vendas de produtos, prestando suporte aos clientes durante todo o processo comercial. Elaboração de pedidos de compra e venda. Emissão de boletos e NF-e. Controle de caixa, recebimentos e pagamentos a fornecedores. Gestão de cobranças e acompanhamento da inadimplência.",
   },
 ];
 
