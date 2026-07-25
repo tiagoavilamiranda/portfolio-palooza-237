@@ -47,6 +47,16 @@ export type Experience = {
   desc: string;
   logo?: string | null;
   logoBg?: string; // cor de fundo do badge quando não há logo
+  // Quando o cargo teve múltiplas posições na mesma empresa (ex.: estágio → efetivo),
+  // preencha `roles` para renderizar uma linha do tempo estilo LinkedIn.
+  // Nesse caso, `role` vira o resumo do cargo principal (ou "Trajetória na empresa")
+  // e `desc` vira o resumo geral. Cada item de `roles` tem sua própria data e descrição.
+  roles?: {
+    title: string;
+    period: string;
+    location?: string;
+    desc: string;
+  }[];
 };
 
 export const experiences: Experience[] = [
@@ -78,13 +88,25 @@ export const experiences: Experience[] = [
     desc: "Apoio aos processos de Recrutamento e Seleção para diferentes unidades do Grupo Energisa. Divulgação de vagas, triagem de currículos e acompanhamento de processos seletivos. Agendamento de entrevistas, feedback aos candidatos e envio de cartas-proposta. Gestão de processos seletivos por meio da plataforma Kenoby. Abertura e acompanhamento de chamados no sistema Ellevo. Cadastro e atualização de colaboradores nos sistemas RHHealth e Unico. Conferência de documentação admissional e qualificação cadastral no eSocial. Aplicação e acompanhamento de avaliações comportamentais (Etalent DISC). Suporte aos processos de admissão, integração e desligamento de colaboradores. Elaboração e atualização de planilhas de controle e apoio às rotinas administrativas de RH.",
   },
   {
-    role: "Auxiliar de atendimento",
+    role: "Trajetória na Unimed Leopoldina",
     company: "Unimed Leopoldina",
     period: "jun 2018 — mar 2021 · 2 anos 10 meses",
     location: "Leopoldina, Minas Gerais, Brasil",
     logo: logoUnimed.url,
     logoBg: "#059669",
-    desc: "Trajetória de quase 3 anos na Unimed, do estágio ao atendimento efetivo, atuando nas áreas de Cadastro, Cobrança, Faturamento e Atendimento ao beneficiário. Reconhecido como Estagiário Destaque em 2019, com menção em revista do CIEE.\n\n• Auxiliar de atendimento (jul 2019 — mar 2021): atendimento presencial, telefônico e digital a clientes, beneficiários e cooperados. Suporte aos processos administrativos e operacionais da área de atendimento.\n\n• Estagiário Nível Superior (jun 2018 — jul 2019): apoio às rotinas administrativas dos setores de Cadastro, Cobrança e Faturamento. Cadastro e atualização de clientes PF e PJ. Emissão de boletos bancários. Controle de comissões de vendedores em Excel. Emissão de segunda via de cartões. Inclusão e acompanhamento de débitos nos sistemas SPC e Serasa. Organização, conferência e arquivamento de contratos e documentos.",
+    desc: "Trajetória de quase 3 anos na Unimed, do estágio ao atendimento efetivo, atuando nas áreas de Cadastro, Cobrança, Faturamento e Atendimento ao beneficiário. Reconhecido como Estagiário Destaque em 2019, com menção em revista do CIEE.",
+    roles: [
+      {
+        title: "Auxiliar de atendimento",
+        period: "jul 2019 — mar 2021 · 1 ano 9 meses",
+        desc: "Atendimento presencial, telefônico e digital a clientes, beneficiários e cooperados. Suporte aos processos administrativos e operacionais da área de atendimento.",
+      },
+      {
+        title: "Estagiário Nível Superior",
+        period: "jun 2018 — jul 2019 · 1 ano 2 meses",
+        desc: "Apoio às rotinas administrativas dos setores de Cadastro, Cobrança e Faturamento. Cadastro e atualização de clientes PF e PJ. Emissão de boletos bancários. Controle de comissões de vendedores em Excel. Emissão de segunda via de cartões. Inclusão e acompanhamento de débitos nos sistemas SPC e Serasa. Organização, conferência e arquivamento de contratos e documentos.",
+      },
+    ],
   },
   {
     role: "Auxiliar administrativo",
@@ -96,13 +118,25 @@ export const experiences: Experience[] = [
     desc: "Cadastro e atualização de clientes e materiais em sistemas corporativos. Aplicação de regras de carência e atualização cadastral conforme normas da operadora. Comercialização de planos e serviços. Abertura, alteração e cancelamento de planos. Controle e fechamento de caixa. Atendimento telefônico e suporte aos clientes.",
   },
   {
-    role: "Auxiliar de Escritório",
+    role: "Trajetória na Quero Mais Tintas",
     company: "Quero Mais Tintas Ltda",
     period: "jun 2011 — abr 2016 · 4 anos 11 meses",
     location: "Leopoldina, Minas Gerais, Brasil",
     logo: null,
     logoBg: "#0284c7",
-    desc: "Quase 5 anos de trajetória na Quero Mais Tintas, começando no balcão como vendedor e evoluindo para funções administrativas e financeiras, com atuação completa no ciclo comercial, fiscal e de contas a pagar/receber.\n\n• Auxiliar de Escritório (ago 2015 — abr 2016): cadastro e atualização de produtos, clientes e fornecedores. Emissão e acompanhamento de pedidos de compras. Negociação e relacionamento com fornecedores. Emissão de boletos pelo Sicoob. Controle de recebimentos, cobranças e inadimplência. Lançamento de NF-e de entrada e saída. Pagamento de fornecedores e conciliação financeira.\n\n• Vendedor (jun 2011 — ago 2015): atendimento e vendas de produtos, prestando suporte aos clientes durante todo o processo comercial. Elaboração de pedidos de compra e venda. Emissão de boletos e NF-e. Controle de caixa, recebimentos e pagamentos a fornecedores. Gestão de cobranças e acompanhamento da inadimplência.",
+    desc: "Quase 5 anos de trajetória na Quero Mais Tintas, começando no balcão como vendedor e evoluindo para funções administrativas e financeiras, com atuação completa no ciclo comercial, fiscal e de contas a pagar/receber.",
+    roles: [
+      {
+        title: "Auxiliar de Escritório",
+        period: "ago 2015 — abr 2016 · 9 meses",
+        desc: "Cadastro e atualização de produtos, clientes e fornecedores. Emissão e acompanhamento de pedidos de compras. Negociação e relacionamento com fornecedores. Emissão de boletos pelo Sicoob. Controle de recebimentos, cobranças e inadimplência. Lançamento de NF-e de entrada e saída. Pagamento de fornecedores e conciliação financeira.",
+      },
+      {
+        title: "Vendedor",
+        period: "jun 2011 — ago 2015 · 4 anos 3 meses",
+        desc: "Atendimento e vendas de produtos, prestando suporte aos clientes durante todo o processo comercial. Elaboração de pedidos de compra e venda. Emissão de boletos e NF-e. Controle de caixa, recebimentos e pagamentos a fornecedores. Gestão de cobranças e acompanhamento da inadimplência.",
+      },
+    ],
   },
 ];
 
