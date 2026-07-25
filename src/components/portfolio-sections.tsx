@@ -119,22 +119,57 @@ function CompanyBadge({ exp }: { exp: Experience }) {
 }
 
 function ExperienceCard({ exp }: { exp: Experience }) {
+  const hasRoles = exp.roles && exp.roles.length > 0;
   return (
     <div className="group relative rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/60 hover:shadow-[var(--shadow-gold)]">
       <div className="flex items-start gap-4">
         <CompanyBadge exp={exp} />
         <div className="min-w-0 flex-1">
-          <h3 className="font-serif text-xl text-foreground">{exp.role}</h3>
-          <p className="mt-0.5 text-sm text-primary">{exp.company}</p>
-          <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-            {exp.period}
-          </p>
+          {hasRoles ? (
+            <>
+              <h3 className="font-serif text-xl font-bold text-primary">{exp.company}</h3>
+              <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                {exp.period}
+              </p>
+            </>
+          ) : (
+            <>
+              <h3 className="font-serif text-xl text-foreground">{exp.role}</h3>
+              <p className="mt-0.5 text-sm text-primary">{exp.company}</p>
+              <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                {exp.period}
+              </p>
+            </>
+          )}
           {exp.location && (
             <p className="mt-1 text-xs text-muted-foreground">{exp.location}</p>
           )}
         </div>
       </div>
-      <p className="mt-5 whitespace-pre-line text-sm leading-relaxed text-foreground/80">{exp.desc}</p>
+      {exp.desc && (
+        <p className="mt-5 whitespace-pre-line text-sm leading-relaxed text-foreground/80">
+          {exp.desc}
+        </p>
+      )}
+      {hasRoles && (
+        <ol className="relative mt-6 space-y-6 border-l border-primary/40 pl-6">
+          {exp.roles!.map((r, i) => (
+            <li key={i} className="relative">
+              <span className="absolute -left-[29px] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background" />
+              <h4 className="font-serif text-base font-bold text-foreground">{r.title}</h4>
+              <p className="mt-0.5 text-xs uppercase tracking-widest text-muted-foreground">
+                {r.period}
+              </p>
+              {r.location && (
+                <p className="mt-0.5 text-xs text-muted-foreground">{r.location}</p>
+              )}
+              <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-foreground/80">
+                {r.desc}
+              </p>
+            </li>
+          ))}
+        </ol>
+      )}
     </div>
   );
 }
