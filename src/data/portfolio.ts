@@ -47,6 +47,16 @@ export type Experience = {
   desc: string;
   logo?: string | null;
   logoBg?: string; // cor de fundo do badge quando não há logo
+  // Quando o cargo teve múltiplas posições na mesma empresa (ex.: estágio → efetivo),
+  // preencha `roles` para renderizar uma linha do tempo estilo LinkedIn.
+  // Nesse caso, `role` vira o resumo do cargo principal (ou "Trajetória na empresa")
+  // e `desc` vira o resumo geral. Cada item de `roles` tem sua própria data e descrição.
+  roles?: {
+    title: string;
+    period: string;
+    location?: string;
+    desc: string;
+  }[];
 };
 
 export const experiences: Experience[] = [
