@@ -494,7 +494,7 @@ export function PerfilDesenvolvimentoPage() {
     <SubPage eyebrow="10" title="Perfil Profissional & Desenvolvimento" Icon={Brain}>
       <div className="rounded-3xl border border-border bg-card p-10">
         <p className="max-w-2xl font-serif text-2xl text-foreground">
-          Documentos sobre o meu perfil comportamental e a minha evolução profissional.
+          Materiais que refletem meu perfil, autoconhecimento e desenvolvimento profissional.
         </p>
         <div className="mt-8 grid gap-5 sm:grid-cols-2">
           {developmentDocs.map((doc) => (
