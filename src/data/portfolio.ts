@@ -8,6 +8,8 @@ import logoSolNeve from "@/assets/logo-11.png.asset.json";
 import logoEnergisa from "@/assets/logo-12.png.asset.json";
 import logoUnimed from "@/assets/logo-13.png.asset.json";
 import logoPlanMinas from "@/assets/logo-14.png.asset.json";
+import docPerfilComportamental from "@/assets/perfil-comportamental.pdf.asset.json";
+import docDesenvolvimentoProfissional from "@/assets/desenvolvimento-profissional.pdf.asset.json";
 
 export const profile = {
   name: "Tiago de Avila Miranda",
