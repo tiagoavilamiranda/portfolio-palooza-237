@@ -284,20 +284,19 @@ export const dedications = [
       "Meu ponto de partida. Aqui aprendi que vender é servir, que o balcão ensina mais que qualquer manual e que respeito ao cliente vale mais que qualquer meta.",
   },
 ];
-// Perfil comportamental e desenvolvimento — coloque os PDFs em public/docs/
-// e ajuste o caminho em `file`. Para substituir, basta subir um novo arquivo
-// com o mesmo nome (ou trocar o nome aqui).
+// Perfil comportamental e desenvolvimento — PDFs hospedados na CDN da Lovable.
+// Para substituir um documento no futuro, basta criar um novo asset e trocar a importação abaixo.
 export const developmentDocs = [
   {
     title: "Perfil Comportamental",
     desc: "Relatório do meu perfil comportamental mais recente.",
-    file: "/docs/perfil-comportamental.pdf",
+    file: docPerfilComportamental.url,
     date: "2026",
   },
   {
     title: "Desenvolvimento Profissional",
     desc: "Documento com meu plano e evolução de desenvolvimento profissional.",
-    file: "/docs/desenvolvimento-profissional.pdf",
+    file: docDesenvolvimentoProfissional.url,
     date: "2026",
   },
 ];
