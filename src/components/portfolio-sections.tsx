@@ -15,6 +15,9 @@ import {
   Heart,
   HandHeart,
   Server,
+  Brain,
+  FileText,
+  Download,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import {
@@ -30,6 +33,7 @@ import {
   volunteering,
   dedications,
   hobbies,
+  developmentDocs,
   type Experience,
 } from "@/data/portfolio";
 
@@ -480,6 +484,40 @@ export function OfflinePage() {
               </span>
             ))}
           </div>
+        </div>
+      </div>
+    </SubPage>
+  );
+}
+export function PerfilDesenvolvimentoPage() {
+  return (
+    <SubPage eyebrow="10" title="Perfil Profissional & Desenvolvimento" Icon={Brain}>
+      <div className="rounded-3xl border border-border bg-card p-10">
+        <p className="max-w-2xl font-serif text-2xl text-foreground">
+          Documentos sobre o meu perfil comportamental e a minha evolução profissional.
+        </p>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {developmentDocs.map((doc) => (
+            <a
+              key={doc.title}
+              href={doc.file}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-col gap-3 rounded-2xl border border-border bg-background/50 p-6 transition-all hover:border-primary hover:shadow-[var(--shadow-gold)]"
+            >
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/40 text-primary">
+                <FileText className="h-6 w-6" />
+              </span>
+              <h3 className="font-serif text-xl text-foreground group-hover:text-primary">
+                {doc.title}
+              </h3>
+              <p className="text-sm text-muted-foreground">{doc.desc}</p>
+              <span className="mt-auto inline-flex items-center gap-2 pt-2 text-xs uppercase tracking-widest text-primary">
+                <Download className="h-3.5 w-3.5" />
+                Abrir PDF {doc.date ? `· ${doc.date}` : ""}
+              </span>
+            </a>
+          ))}
         </div>
       </div>
     </SubPage>
