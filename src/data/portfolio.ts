@@ -63,7 +63,7 @@ export const experiences: Experience[] = [
   {
     role: "Técnico de suporte ao negócio",
     company: "Dimensa Tecnologia",
-    period: "mar 2024 — o momento · 2 anos 5 meses",
+    period: "mar 2024 — o momento",
     location: "Leopoldina, Minas Gerais, Brasil · Híbrido",
     logo: logoDimensa.url,
     logoBg: "#0f172a",
@@ -169,6 +169,7 @@ export const education = [
 export const certifications = [
   { title: "Análise de dados como aliada da tomada de decisão", org: "Escola Conquer", date: "jun 2026" },
   { title: "Customer Success", org: "Sebrae", date: "jul 2026" },
+  { title: "Gestão Financeira", org: "Sebrae", date: "jun 2024 · expirou em jun 2024" },
   { title: "Power BI Expert na Prática", org: "Viscari Inc.", date: "jan 2026" },
   { title: "Simplifica Inteligência Artificial Express", org: "SIMPLIFICA TREINAMENTOS", date: "jan 2026" },
   { title: "Power Apps Expert na Prática", org: "Viscari Inc.", date: "jan 2026" },
@@ -218,6 +219,7 @@ export const systems = [
   "SPC / Serasa",
   "Sicoob",
   "Cardio",
+  "Slack",
 ];
 
 export const portfolio = [
@@ -243,6 +245,8 @@ export const hobbies = [
   { emoji: "🚴", label: "Ciclismo" },
   { emoji: "🎬", label: "Filmes" },
   { emoji: "📺", label: "Séries" },
+  { emoji: "✈️", label: "Viagem" },
+  { emoji: "👨‍👩‍👧", label: "Família" },
 ];
 
 // Dedicatória — homenagem a cada empresa da trajetória
@@ -276,5 +280,22 @@ export const dedications = [
     company: "Quero Mais Tintas",
     message:
       "Meu ponto de partida. Aqui aprendi que vender é servir, que o balcão ensina mais que qualquer manual e que respeito ao cliente vale mais que qualquer meta.",
+  },
+];
+// Perfil comportamental e desenvolvimento — coloque os PDFs em public/docs/
+// e ajuste o caminho em `file`. Para substituir, basta subir um novo arquivo
+// com o mesmo nome (ou trocar o nome aqui).
+export const developmentDocs = [
+  {
+    title: "Perfil Comportamental",
+    desc: "Relatório do meu perfil comportamental mais recente.",
+    file: "/docs/perfil-comportamental.pdf",
+    date: "2026",
+  },
+  {
+    title: "Desenvolvimento Profissional",
+    desc: "Documento com meu plano e evolução de desenvolvimento profissional.",
+    file: "/docs/desenvolvimento-profissional.pdf",
+    date: "2026",
   },
 ];

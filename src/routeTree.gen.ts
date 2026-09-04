@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProfissionalRouteImport } from './routes/profissional'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PerfilDesenvolvimentoRouteImport } from './routes/perfil-desenvolvimento'
 import { Route as OfflineRouteImport } from './routes/offline'
 import { Route as HabilidadesRouteImport } from './routes/habilidades'
 import { Route as GraduacaoRouteImport } from './routes/graduacao'
@@ -33,6 +34,11 @@ const ProfissionalRoute = ProfissionalRouteImport.update({
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilDesenvolvimentoRoute = PerfilDesenvolvimentoRouteImport.update({
+  id: '/perfil-desenvolvimento',
+  path: '/perfil-desenvolvimento',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OfflineRoute = OfflineRouteImport.update({
@@ -79,6 +85,7 @@ export interface FileRoutesByFullPath {
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
   '/offline': typeof OfflineRoute
+  '/perfil-desenvolvimento': typeof PerfilDesenvolvimentoRoute
   '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
   '/sobre': typeof SobreRoute
@@ -91,6 +98,7 @@ export interface FileRoutesByTo {
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
   '/offline': typeof OfflineRoute
+  '/perfil-desenvolvimento': typeof PerfilDesenvolvimentoRoute
   '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
   '/sobre': typeof SobreRoute
@@ -104,6 +112,7 @@ export interface FileRoutesById {
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
   '/offline': typeof OfflineRoute
+  '/perfil-desenvolvimento': typeof PerfilDesenvolvimentoRoute
   '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
   '/sobre': typeof SobreRoute
@@ -118,6 +127,7 @@ export interface FileRouteTypes {
     | '/graduacao'
     | '/habilidades'
     | '/offline'
+    | '/perfil-desenvolvimento'
     | '/portfolio'
     | '/profissional'
     | '/sobre'
@@ -130,6 +140,7 @@ export interface FileRouteTypes {
     | '/graduacao'
     | '/habilidades'
     | '/offline'
+    | '/perfil-desenvolvimento'
     | '/portfolio'
     | '/profissional'
     | '/sobre'
@@ -142,6 +153,7 @@ export interface FileRouteTypes {
     | '/graduacao'
     | '/habilidades'
     | '/offline'
+    | '/perfil-desenvolvimento'
     | '/portfolio'
     | '/profissional'
     | '/sobre'
@@ -155,6 +167,7 @@ export interface RootRouteChildren {
   GraduacaoRoute: typeof GraduacaoRoute
   HabilidadesRoute: typeof HabilidadesRoute
   OfflineRoute: typeof OfflineRoute
+  PerfilDesenvolvimentoRoute: typeof PerfilDesenvolvimentoRoute
   PortfolioRoute: typeof PortfolioRoute
   ProfissionalRoute: typeof ProfissionalRoute
   SobreRoute: typeof SobreRoute
@@ -181,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/portfolio'
       fullPath: '/portfolio'
       preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil-desenvolvimento': {
+      id: '/perfil-desenvolvimento'
+      path: '/perfil-desenvolvimento'
+      fullPath: '/perfil-desenvolvimento'
+      preLoaderRoute: typeof PerfilDesenvolvimentoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/offline': {
@@ -243,6 +263,7 @@ const rootRouteChildren: RootRouteChildren = {
   GraduacaoRoute: GraduacaoRoute,
   HabilidadesRoute: HabilidadesRoute,
   OfflineRoute: OfflineRoute,
+  PerfilDesenvolvimentoRoute: PerfilDesenvolvimentoRoute,
   PortfolioRoute: PortfolioRoute,
   ProfissionalRoute: ProfissionalRoute,
   SobreRoute: SobreRoute,
@@ -250,3 +271,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
