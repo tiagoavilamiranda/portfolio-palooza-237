@@ -154,7 +154,7 @@ function Index() {
           <p className="mb-6 text-center text-xs uppercase tracking-[0.4em] text-primary/70">
             Navegue pelas seções
           </p>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {cards.map(({ to, label, Icon }) => (
               <Link
                 key={to}
