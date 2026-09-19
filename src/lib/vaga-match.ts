@@ -218,7 +218,7 @@ export function analyzeVaga(text: string): MatchResult | null {
   const penalty = Math.min(35, foundGaps.length * 14);
 
   const base = matchedAreas.length > 0 ? areaScore * 0.7 + termCoverage * 0.3 : termCoverage * 0.7;
-  let score = Math.round(base * 100) - penalty;
+  let score = Math.round(Math.min(1, base * 1.05) * 100) - penalty;
   score = Math.max(0, Math.min(100, score));
 
   const missingAreas = foundGaps.map((g) => g.label);
