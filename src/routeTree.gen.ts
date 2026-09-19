@@ -18,6 +18,7 @@ import { Route as HabilidadesRouteImport } from './routes/habilidades'
 import { Route as GraduacaoRouteImport } from './routes/graduacao'
 import { Route as FerramentasRouteImport } from './routes/ferramentas'
 import { Route as DedicatoriaRouteImport } from './routes/dedicatoria'
+import { Route as CompatibilidadeVagaRouteImport } from './routes/compatibilidade-vaga'
 import { Route as CertificacoesRouteImport } from './routes/certificacoes'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -66,6 +67,11 @@ const DedicatoriaRoute = DedicatoriaRouteImport.update({
   path: '/dedicatoria',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CompatibilidadeVagaRoute = CompatibilidadeVagaRouteImport.update({
+  id: '/compatibilidade-vaga',
+  path: '/compatibilidade-vaga',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CertificacoesRoute = CertificacoesRouteImport.update({
   id: '/certificacoes',
   path: '/certificacoes',
@@ -80,6 +86,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/certificacoes': typeof CertificacoesRoute
+  '/compatibilidade-vaga': typeof CompatibilidadeVagaRoute
   '/dedicatoria': typeof DedicatoriaRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/certificacoes': typeof CertificacoesRoute
+  '/compatibilidade-vaga': typeof CompatibilidadeVagaRoute
   '/dedicatoria': typeof DedicatoriaRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/certificacoes': typeof CertificacoesRoute
+  '/compatibilidade-vaga': typeof CompatibilidadeVagaRoute
   '/dedicatoria': typeof DedicatoriaRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/certificacoes'
+    | '/compatibilidade-vaga'
     | '/dedicatoria'
     | '/ferramentas'
     | '/graduacao'
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/certificacoes'
+    | '/compatibilidade-vaga'
     | '/dedicatoria'
     | '/ferramentas'
     | '/graduacao'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/certificacoes'
+    | '/compatibilidade-vaga'
     | '/dedicatoria'
     | '/ferramentas'
     | '/graduacao'
@@ -162,6 +174,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CertificacoesRoute: typeof CertificacoesRoute
+  CompatibilidadeVagaRoute: typeof CompatibilidadeVagaRoute
   DedicatoriaRoute: typeof DedicatoriaRoute
   FerramentasRoute: typeof FerramentasRoute
   GraduacaoRoute: typeof GraduacaoRoute
@@ -238,6 +251,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DedicatoriaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compatibilidade-vaga': {
+      id: '/compatibilidade-vaga'
+      path: '/compatibilidade-vaga'
+      fullPath: '/compatibilidade-vaga'
+      preLoaderRoute: typeof CompatibilidadeVagaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/certificacoes': {
       id: '/certificacoes'
       path: '/certificacoes'
@@ -258,6 +278,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CertificacoesRoute: CertificacoesRoute,
+  CompatibilidadeVagaRoute: CompatibilidadeVagaRoute,
   DedicatoriaRoute: DedicatoriaRoute,
   FerramentasRoute: FerramentasRoute,
   GraduacaoRoute: GraduacaoRoute,

@@ -13,6 +13,7 @@ import {
   Heart,
   HandHeart,
   Brain,
+  Target,
 } from "lucide-react";
 import { profile as profileData } from "@/data/portfolio";
 
@@ -39,6 +40,7 @@ const cards = [
   { to: "/dedicatoria", label: "Dedicatória", Icon: HandHeart },
   { to: "/offline", label: "OffLine", Icon: WifiOff },
   { to: "/perfil-desenvolvimento", label: "Perfil & Desenvolvimento", Icon: Brain },
+  { to: "/compatibilidade-vaga", label: "Compatibilidade Vaga", Icon: Target },
 ] as const;
 
 function Index() {
@@ -120,6 +122,15 @@ function Index() {
                 <Brain className="h-4 w-4" />
                 Perfil Profissional & Desenvolvimento
               </Link>
+              <Link
+                to="/compatibilidade-vaga"
+                onClick={triggerShake}
+                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-105"
+                style={{ background: "var(--gradient-gold)" }}
+              >
+                <Target className="h-4 w-4" />
+                Compatibilidade Vaga
+              </Link>
             </div>
           </div>
 
@@ -143,7 +154,7 @@ function Index() {
           <p className="mb-6 text-center text-xs uppercase tracking-[0.4em] text-primary/70">
             Navegue pelas seções
           </p>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {cards.map(({ to, label, Icon }) => (
               <Link
                 key={to}
