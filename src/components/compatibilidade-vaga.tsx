@@ -41,15 +41,17 @@ function VerdictBadge({ result }: { result: MatchResult }) {
   }[result.verdict];
   const { Icon } = map;
   return (
-    <div className={`flex items-center gap-4 rounded-2xl border p-6 ${map.ring}`}>
+    <div className={`flex items-center gap-5 rounded-2xl border p-6 ${map.ring}`}>
       <Icon className={`h-12 w-12 shrink-0 ${map.color}`} />
       <div>
-        <p className={`font-serif text-4xl ${map.color}`}>{result.score}%</p>
-        <p className="text-sm text-foreground/80">{map.label}</p>
+        <p className={`font-serif text-4xl ${map.color}`}>Nota {result.score}%</p>
+        <p className="text-sm font-medium text-foreground/90">{map.label}</p>
+        <p className="mt-1 text-sm text-foreground/75">{result.headline}</p>
       </div>
     </div>
   );
 }
+
 
 export function CompatibilidadeVagaPage() {
   const [text, setText] = useState("");
