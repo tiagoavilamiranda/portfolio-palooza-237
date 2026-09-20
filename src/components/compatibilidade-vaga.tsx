@@ -95,8 +95,8 @@ export function CompatibilidadeVagaPage() {
     <SubPage eyebrow="11" title="Compatibilidade da Vaga" Icon={Target}>
       <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
         <p className="max-w-3xl font-serif text-2xl text-foreground">
-          Cole a descrição da vaga, envie o PDF ou digite uma palavra-chave (ex.: financeiro) e
-          veja de 0 a 100% o quanto ela combina com a minha trajetória.
+          Cole a descrição da vaga, envie o PDF ou digite uma palavra-chave e veja de 0 a 100% o
+          quanto ela combina com a minha trajetória.
         </p>
         <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
           A análise acontece no seu próprio navegador — nenhum dado da vaga é enviado ou armazenado.
@@ -106,9 +106,10 @@ export function CompatibilidadeVagaPage() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={10}
-          placeholder="Ex.: Analista Administrativo Financeiro — emissão de boletos, conciliação bancária, cadastro de clientes PF e PJ, Excel avançado..."
+          placeholder="Cole aqui a descrição completa da vaga (atividades, requisitos, sistemas...)"
           className="mt-8 w-full resize-y rounded-2xl border border-border bg-background/60 p-5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary/70"
         />
+
 
         <div className="mt-5 flex flex-wrap items-center gap-4">
           <button
