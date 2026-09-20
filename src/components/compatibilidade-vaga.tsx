@@ -144,7 +144,32 @@ export function CompatibilidadeVagaPage() {
 
         {error && <p className="mt-5 text-sm text-red-400">{error}</p>}
 
-        {result && (
+        {result?.companyOnly && (
+          <div className="mt-10 rounded-2xl border border-primary/40 bg-primary/5 p-6">
+            <h3 className="font-serif text-xl text-foreground">Minha passagem por essa empresa</h3>
+            <ul className="mt-4 space-y-5">
+              {result.companies.map((c) => (
+                <li key={c.company} className="border-l-2 border-primary/50 pl-4">
+                  <p className="font-medium text-primary">{c.company}</p>
+                  <p className="text-sm text-foreground/85">{c.role}</p>
+                  <p className="text-sm text-muted-foreground">{c.period}</p>
+                  {c.location && <p className="text-xs text-muted-foreground">{c.location}</p>}
+                  {c.roles && c.roles.length > 0 && (
+                    <ul className="mt-2 space-y-1 text-sm text-foreground/75">
+                      {c.roles.map((r) => (
+                        <li key={r.title}>
+                          <span className="font-medium">{r.title}</span> — {r.period}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {result && !result.companyOnly && (
           <div className="mt-10 space-y-6">
             <VerdictBadge result={result} />
 
@@ -153,16 +178,35 @@ export function CompatibilidadeVagaPage() {
               <p className="mt-3 text-sm leading-relaxed text-foreground/85">{result.summary}</p>
             </div>
 
+            {result.companies.length > 0 && (
+              <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
+                <h3 className="font-serif text-xl text-foreground">Empresas citadas onde já atuei</h3>
+                <ul className="mt-3 space-y-2 text-sm text-foreground/85">
+                  {result.companies.map((c) => (
+                    <li key={c.company}>
+                      <span className="font-medium text-primary">{c.company}</span> — {c.role} ·{" "}
+                      {c.period}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {result.matchedAreas.length > 0 && (
               <div className="rounded-2xl border border-border bg-background/50 p-6">
                 <h3 className="font-serif text-xl text-foreground">
                   Onde minha experiência atende
                 </h3>
-                <ul className="mt-4 space-y-4">
+                <ul className="mt-4 space-y-5">
                   {result.matchedAreas.map((m) => (
                     <li key={m.label} className="border-l-2 border-primary/50 pl-4">
                       <p className="font-medium text-primary">{m.label}</p>
                       <p className="mt-1 text-sm text-foreground/80">{m.evidence}</p>
+                      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/70">
+                        {m.examples.map((ex) => (
+                          <li key={ex}>{ex}</li>
+                        ))}
+                      </ul>
                     </li>
                   ))}
                 </ul>
@@ -179,26 +223,9 @@ export function CompatibilidadeVagaPage() {
                 </ul>
               </div>
             )}
-
-            {result.unknownTerms.length > 0 && (
-              <div className="rounded-2xl border border-border bg-background/50 p-6">
-                <h3 className="font-serif text-lg text-foreground">
-                  Termos da vaga que não encontrei no meu histórico
-                </h3>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {result.unknownTerms.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         )}
+
       </div>
     </SubPage>
   );
