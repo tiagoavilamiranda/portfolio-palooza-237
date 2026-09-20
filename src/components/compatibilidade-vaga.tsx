@@ -41,15 +41,17 @@ function VerdictBadge({ result }: { result: MatchResult }) {
   }[result.verdict];
   const { Icon } = map;
   return (
-    <div className={`flex items-center gap-4 rounded-2xl border p-6 ${map.ring}`}>
+    <div className={`flex items-center gap-5 rounded-2xl border p-6 ${map.ring}`}>
       <Icon className={`h-12 w-12 shrink-0 ${map.color}`} />
       <div>
-        <p className={`font-serif text-4xl ${map.color}`}>{result.score}%</p>
-        <p className="text-sm text-foreground/80">{map.label}</p>
+        <p className={`font-serif text-4xl ${map.color}`}>Nota {result.score}%</p>
+        <p className="text-sm font-medium text-foreground/90">{map.label}</p>
+        <p className="mt-1 text-sm text-foreground/75">{result.headline}</p>
       </div>
     </div>
   );
 }
+
 
 export function CompatibilidadeVagaPage() {
   const [text, setText] = useState("");
@@ -93,8 +95,8 @@ export function CompatibilidadeVagaPage() {
     <SubPage eyebrow="11" title="Compatibilidade da Vaga" Icon={Target}>
       <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
         <p className="max-w-3xl font-serif text-2xl text-foreground">
-          Cole a descrição da vaga, envie o PDF ou digite uma palavra-chave (ex.: financeiro) e
-          veja de 0 a 100% o quanto ela combina com a minha trajetória.
+          Cole a descrição da vaga, envie o PDF ou digite uma palavra-chave e veja de 0 a 100% o
+          quanto ela combina com a minha trajetória.
         </p>
         <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
           A análise acontece no seu próprio navegador — nenhum dado da vaga é enviado ou armazenado.
@@ -104,9 +106,10 @@ export function CompatibilidadeVagaPage() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={10}
-          placeholder="Ex.: Analista Administrativo Financeiro — emissão de boletos, conciliação bancária, cadastro de clientes PF e PJ, Excel avançado..."
+          placeholder="Cole aqui a descrição completa da vaga (atividades, requisitos, sistemas...)"
           className="mt-8 w-full resize-y rounded-2xl border border-border bg-background/60 p-5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary/70"
         />
+
 
         <div className="mt-5 flex flex-wrap items-center gap-4">
           <button
@@ -142,7 +145,32 @@ export function CompatibilidadeVagaPage() {
 
         {error && <p className="mt-5 text-sm text-red-400">{error}</p>}
 
-        {result && (
+        {result?.companyOnly && (
+          <div className="mt-10 rounded-2xl border border-primary/40 bg-primary/5 p-6">
+            <h3 className="font-serif text-xl text-foreground">Minha passagem por essa empresa</h3>
+            <ul className="mt-4 space-y-5">
+              {result.companies.map((c) => (
+                <li key={c.company} className="border-l-2 border-primary/50 pl-4">
+                  <p className="font-medium text-primary">{c.company}</p>
+                  <p className="text-sm text-foreground/85">{c.role}</p>
+                  <p className="text-sm text-muted-foreground">{c.period}</p>
+                  {c.location && <p className="text-xs text-muted-foreground">{c.location}</p>}
+                  {c.roles && c.roles.length > 0 && (
+                    <ul className="mt-2 space-y-1 text-sm text-foreground/75">
+                      {c.roles.map((r) => (
+                        <li key={r.title}>
+                          <span className="font-medium">{r.title}</span> — {r.period}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {result && !result.companyOnly && (
           <div className="mt-10 space-y-6">
             <VerdictBadge result={result} />
 
@@ -151,16 +179,35 @@ export function CompatibilidadeVagaPage() {
               <p className="mt-3 text-sm leading-relaxed text-foreground/85">{result.summary}</p>
             </div>
 
+            {result.companies.length > 0 && (
+              <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
+                <h3 className="font-serif text-xl text-foreground">Empresas citadas onde já atuei</h3>
+                <ul className="mt-3 space-y-2 text-sm text-foreground/85">
+                  {result.companies.map((c) => (
+                    <li key={c.company}>
+                      <span className="font-medium text-primary">{c.company}</span> — {c.role} ·{" "}
+                      {c.period}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {result.matchedAreas.length > 0 && (
               <div className="rounded-2xl border border-border bg-background/50 p-6">
                 <h3 className="font-serif text-xl text-foreground">
                   Onde minha experiência atende
                 </h3>
-                <ul className="mt-4 space-y-4">
+                <ul className="mt-4 space-y-5">
                   {result.matchedAreas.map((m) => (
                     <li key={m.label} className="border-l-2 border-primary/50 pl-4">
                       <p className="font-medium text-primary">{m.label}</p>
                       <p className="mt-1 text-sm text-foreground/80">{m.evidence}</p>
+                      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/70">
+                        {m.examples.map((ex) => (
+                          <li key={ex}>{ex}</li>
+                        ))}
+                      </ul>
                     </li>
                   ))}
                 </ul>
@@ -177,26 +224,9 @@ export function CompatibilidadeVagaPage() {
                 </ul>
               </div>
             )}
-
-            {result.unknownTerms.length > 0 && (
-              <div className="rounded-2xl border border-border bg-background/50 p-6">
-                <h3 className="font-serif text-lg text-foreground">
-                  Termos da vaga que não encontrei no meu histórico
-                </h3>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {result.unknownTerms.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         )}
+
       </div>
     </SubPage>
   );
