@@ -19,19 +19,23 @@ export type Area = {
 export const areas: Area[] = [
   {
     id: "financeiro",
-    label: "Financeiro (contas a pagar e receber)",
-    strength: 0.95,
+    label: "Financeiro completo (contas a pagar e receber, faturamento, boletos e notas fiscais)",
+    strength: 0.97,
     evidence:
-      "rotina financeira completa: contas a pagar e a receber, boletos, cobrança, inadimplência, conciliação bancária e controle de caixa",
+      "rotina financeira de ponta a ponta — contas a pagar e a receber, faturamento, emissão de boletos e de notas fiscais (NF-e/MDF-e), cobrança, inadimplência, conciliação bancária e controle de caixa são partes do mesmo processo que eu executo há mais de 10 anos",
     examples: [
-      "Na Unimed Leopoldina, emissão de boletos, controle de contas a pagar e a receber, conciliação bancária e relatórios financeiros de apoio à cobrança, além de inclusão de débitos no SPC/Serasa.",
-      "Na Quero Mais Tintas, gestão financeira completa: boletos pelo Sicoob, controle de caixa, pagamento a fornecedores e acompanhamento da inadimplência.",
+      "Na Unimed Leopoldina, ciclo completo de faturamento e recebimento: geração de boletos, contas a pagar e a receber, conciliação bancária, régua de cobrança, negativação no SPC/Serasa e relatórios financeiros para a diretoria.",
+      "Na Sol & Neve, faturamento fiscal integrado ao financeiro: emissão de NF-e de entrada e saída e MDF-e, conferência dos títulos gerados e acompanhamento dos recebimentos.",
+      "Na Quero Mais Tintas, gestão financeira completa: boletos pelo Sicoob, lançamento de notas fiscais, controle de caixa, pagamento a fornecedores e acompanhamento da inadimplência.",
     ],
     keywords: [
       "financeir", "financa", "financas", "contas a pagar", "contas a receber", "cobranc", "boleto",
       "inadimplen", "conciliac", "tesourar", "fluxo de caixa", "caixa", "pagamento", "recebimento",
       "titulo", "remessa bancaria", "banco", "bancari", "sicoob", "baixa de titulo", "cnab",
       "contas", "pagar", "receber", "credito", "debito", "spc", "serasa", "juros", "repasse",
+      "faturament", "nota fiscal", "notas fiscais", "nf-e", "nfe", "nfs", "mdf-e", "mdfe", "fiscal",
+      "emissao de notas", "tributa", "escritura", "imposto", "danfe", "xml", "fatura", "duplicata",
+      "orcamentari", "custos", "despesas", "reembolso", "prestacao de contas",
     ],
   },
   {
