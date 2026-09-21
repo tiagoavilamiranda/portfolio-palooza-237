@@ -237,8 +237,73 @@ export function CompatibilidadeVagaPage() {
                 </ul>
               </div>
             )}
+
+            {result.metRequirements.length > 0 && (
+              <div className="rounded-2xl border border-emerald-400/40 bg-emerald-400/5 p-6">
+                <h3 className="font-serif text-xl text-foreground">
+                  Requisitos complementares que eu atendo
+                </h3>
+                <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-foreground/85">
+                  {result.metRequirements.map((m) => (
+                    <li key={m}>{m}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {Object.keys(glossary).length > 0 && (
+              <div className="rounded-2xl border border-border bg-background/50 p-6">
+                <h3 className="font-serif text-xl text-foreground">Termos que você me explicou</h3>
+                <ul className="mt-3 space-y-1 text-sm text-foreground/80">
+                  {Object.entries(glossary).map(([term, meaning]) => (
+                    <li key={term}>
+                      <span className="font-medium text-primary">{term}</span> — {meaning}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {result.unknownTerms.length > 0 && (
+              <div className="rounded-2xl border border-border bg-background/50 p-6">
+                <h3 className="font-serif text-xl text-foreground">
+                  Posso te perguntar uma coisa?
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Não reconheci os termos abaixo — eles <strong>não descontaram nota nenhuma</strong>.
+                  Se você me explicar o que significam, eu recalculo a compatibilidade com mais
+                  precisão.
+                </p>
+                <ul className="mt-4 space-y-3">
+                  {result.unknownTerms.map((term) => (
+                    <li key={term} className="flex flex-wrap items-center gap-3">
+                      <span className="rounded-full border border-primary/40 px-3 py-1 text-sm text-primary">
+                        {term}
+                      </span>
+                      <input
+                        value={drafts[term] ?? ""}
+                        onChange={(e) => setDrafts((d) => ({ ...d, [term]: e.target.value }))}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") explainTerm(term);
+                        }}
+                        placeholder={`O que significa "${term}" nessa vaga?`}
+                        className="min-w-[240px] flex-1 rounded-full border border-border bg-background/60 px-4 py-2 text-sm text-foreground outline-none focus:border-primary/70"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => explainTerm(term)}
+                        className="rounded-full border border-primary/40 px-4 py-2 text-xs font-medium text-primary transition-colors hover:bg-primary/10"
+                      >
+                        Recalcular
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         )}
+
 
       </div>
     </SubPage>
