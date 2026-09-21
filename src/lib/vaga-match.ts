@@ -385,10 +385,15 @@ const verdictLabel = {
   baixa: "Pouco compatível",
 } as const;
 
-export function analyzeVaga(text: string): MatchResult | null {
+export function analyzeVaga(
+  text: string,
+  glossary: Record<string, string> = {},
+): MatchResult | null {
   const raw = text.trim();
   if (raw.length < 2) return null;
-  let job = norm(raw);
+  // Significados informados pelo visitante entram na análise como texto extra.
+  const glossaryText = Object.values(glossary).join(" ");
+  let job = norm(`${raw} ${glossaryText}`);
 
   // expande sinônimos e corrige variações antes de comparar
   const tokens = job.split(" ").filter(Boolean);
@@ -400,7 +405,7 @@ export function analyzeVaga(text: string): MatchResult | null {
   if (extra.length) job = `${job}${extra.join(" ")} `;
 
   const companies = findCompanies(job);
-  const wordCount = tokens.length;
+  const wordCount = norm(raw).split(" ").filter(Boolean).length;
 
   // Busca curta pelo nome da empresa → mostra o cargo e o período, sem nota.
   if (companies.length > 0 && wordCount <= 8) {
@@ -411,6 +416,8 @@ export function analyzeVaga(text: string): MatchResult | null {
       summary: "",
       matchedAreas: [],
       missingAreas: [],
+      metRequirements: [],
+      unknownTerms: [],
       companies,
       companyOnly: true,
     };
@@ -418,12 +425,23 @@ export function analyzeVaga(text: string): MatchResult | null {
 
   // 1) Áreas identificadas na vaga (com tolerância a erros de digitação)
   const matchedAreas: MatchResult["matchedAreas"] = [];
+  const usedTokens = new Set<string>();
   for (const area of areas) {
     const hits = area.keywords.filter((k) => {
       const key = k.trim();
-      if (job.includes(key.length <= 3 ? ` ${key} ` : key)) return true;
+      if (job.includes(key.length <= 3 ? ` ${key} ` : key)) {
+        tokens.forEach((t) => {
+          if (key.includes(t) || t.includes(key)) usedTokens.add(t);
+        });
+        return true;
+      }
       if (key.includes(" ")) return false;
-      return tokens.some((t) => close(t, key));
+      const fuzzy = tokens.find((t) => close(t, key));
+      if (fuzzy) {
+        usedTokens.add(fuzzy);
+        return true;
+      }
+      return false;
     });
     if (hits.length > 0) {
       matchedAreas.push({
@@ -435,6 +453,7 @@ export function analyzeVaga(text: string): MatchResult | null {
     }
   }
 
+  // Nota base = quanto eu domino, em média, as frentes que a vaga pede.
   const areaScore =
     matchedAreas.length > 0
       ? matchedAreas.reduce((acc, m) => {
@@ -445,22 +464,53 @@ export function analyzeVaga(text: string): MatchResult | null {
         matchedAreas.reduce((acc, m) => acc + Math.min(1, 0.6 + m.hits.length * 0.2), 0)
       : 0;
 
-  // 2) Abrangência: quantas frentes distintas da vaga eu cubro
-  const breadth = Math.min(1, matchedAreas.length / 4);
+  // 2) Requisitos que eu atendo (CNH B, modalidade de trabalho, formação...) — só somam.
+  const metRequirements = metRequirementRules
+    .filter((r) =>
+      r.keywords.some((k) => {
+        const key = norm(k).trim();
+        if (job.includes(key.length <= 3 ? ` ${key} ` : key)) {
+          tokens.forEach((t) => {
+            if (key.includes(t)) usedTokens.add(t);
+          });
+          return true;
+        }
+        return false;
+      }),
+    )
+    .map((r) => r.label);
 
-  // 3) Requisitos fora do perfil (única penalidade — palavras comuns nunca descontam nota)
+  // 3) Requisitos realmente fora do meu histórico — única coisa que desconta nota.
   const foundGaps = gaps.filter((g) => g.keywords.some((k) => job.includes(k)));
-  const penalty = Math.min(35, foundGaps.length * 14);
+  const penalty = Math.min(45, foundGaps.length * 15);
 
-  let score = Math.round((areaScore * 0.78 + breadth * 0.22) * 100) - penalty;
-  score = Math.max(0, Math.min(100, score));
+  // 4) Termos que não reconheci — NÃO descontam nota, viram pergunta ao visitante.
+  const unknownTerms = Array.from(
+    new Set(
+      tokens.filter(
+        (t) =>
+          t.length >= 5 &&
+          !/^\d+$/.test(t) &&
+          !stopwords.has(t) &&
+          !usedTokens.has(t) &&
+          !glossary[t] &&
+          !areas.some((a) => a.keywords.some((k) => k.trim().includes(t) || t.includes(k.trim()))) &&
+          !companyAliases.some((c) => c.match.some((m) => m.includes(t))),
+      ),
+    ),
+  ).slice(0, 8);
+
+  // Escala 0–100: tudo coberto = 100; cada requisito faltando desconta.
+  let score = Math.round(areaScore * 100);
+  if (matchedAreas.length === 1) score -= 6; // vaga pouco descrita: menos evidência
+  if (metRequirements.length > 0) score += Math.min(4, metRequirements.length * 2);
+  score -= penalty;
+  score = Math.max(0, Math.min(100, matchedAreas.length === 0 ? 0 : score));
 
   const missingAreas = foundGaps.map((g) => g.label);
   const verdict: MatchResult["verdict"] = score >= 60 ? "alta" : score >= 51 ? "media" : "baixa";
 
-  const ranked = matchedAreas
-    .slice()
-    .sort((a, b) => b.hits.length - a.hits.length);
+  const ranked = matchedAreas.slice().sort((a, b) => b.hits.length - a.hits.length);
   const top = ranked.slice(0, 3).map((m) => m.label);
 
   const headline =
@@ -471,29 +521,39 @@ export function analyzeVaga(text: string): MatchResult | null {
   const parts: string[] = [];
   if (matchedAreas.length === 0) {
     parts.push(
-      "A descrição analisada não traz requisitos ligados às áreas em que atuo (administrativa, financeira, cadastro, faturamento, atendimento, RH ou sistemas). Por isso a nota ficou em 0%.",
+      "A descrição analisada não traz requisitos ligados às áreas em que atuo (administrativa, financeira, faturamento, cadastro, atendimento, RH ou sistemas). Por isso a nota ficou em 0%.",
     );
   } else {
     parts.push(
       `Esta vaga tem nota ${score}% de compatibilidade com o meu perfil. Os requisitos se concentram em ${top.join(", ")} — exatamente o que faço no dia a dia há mais de 10 anos de trajetória administrativa e financeira.`,
     );
     const lead = ranked[0]!;
-    parts.push(`Em ${lead.label.toLowerCase()}, minha experiência é direta: ${lead.evidence}. ${lead.examples[0] ?? ""}`.trim());
+    parts.push(
+      `Em ${lead.label.toLowerCase()}, minha experiência é direta: ${lead.evidence}. ${lead.examples[0] ?? ""}`.trim(),
+    );
     const second = ranked[1];
     if (second) {
       parts.push(`Também atendo ${second.label.toLowerCase()}: ${second.examples[0] ?? second.evidence}`);
     }
+    if (metRequirements.length > 0) {
+      parts.push(`Requisitos complementares da vaga que já atendo: ${metRequirements.join("; ")}.`);
+    }
     if (verdict === "alta") {
       parts.push(
-        "Somando isso ao domínio de Excel avançado, Microsoft 365, Google Workspace e ERPs (Acelerato, Redmine, Ellevo, Unico, RH Health, Sicoob, Sintegra), consigo assumir a rotina com pouca curva de adaptação.",
+        "Somando isso ao domínio de Excel avançado, Microsoft 365, Google Workspace e sistemas corporativos (Acelerato, Redmine, Ellevo, Unico, RH Health, Cardio, Sicoob, Sintegra, eSocial), assumo a rotina com pouca curva de adaptação.",
       );
     } else if (verdict === "media") {
       parts.push(
-        `Existe aderência parcial${missingAreas.length ? `: parte dos requisitos (${missingAreas.join(", ")}) foge do meu histórico` : ", já que a vaga mistura temas dentro e fora da minha atuação principal"}. Nas frentes administrativas e financeiras, porém, a entrega é imediata.`,
+        `A nota não chegou a 100% porque${missingAreas.length ? ` a vaga pede ${missingAreas.join(", ")}, fora do meu histórico` : " a descrição mistura temas dentro e fora da minha atuação principal"}. Nas frentes administrativas e financeiras, porém, a entrega é imediata.`,
       );
     } else {
       parts.push(
         `A aderência ao meu histórico é baixa${missingAreas.length ? `, principalmente por exigir ${missingAreas.join(", ")}` : ""}.`,
+      );
+    }
+    if (unknownTerms.length > 0) {
+      parts.push(
+        "Alguns termos da descrição eu não reconheci — eles não descontaram nota nenhuma. Se você me disser o que significam, eu recalculo com mais precisão.",
       );
     }
   }
@@ -505,6 +565,8 @@ export function analyzeVaga(text: string): MatchResult | null {
     summary: parts.filter(Boolean).join(" "),
     matchedAreas: ranked,
     missingAreas,
+    metRequirements,
+    unknownTerms,
     companies,
     companyOnly: false,
   };
