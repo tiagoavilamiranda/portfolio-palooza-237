@@ -327,9 +327,47 @@ export type MatchResult = {
   summary: string;
   matchedAreas: { label: string; evidence: string; examples: string[]; hits: string[] }[];
   missingAreas: string[];
+  metRequirements: string[]; // requisitos extras que eu atendo (CNH, modalidade etc.)
+  unknownTerms: string[]; // termos que não reconheci — não descontam nota
   companies: CompanyHit[];
   companyOnly: boolean; // quando a busca foi só pelo nome de uma empresa: sem nota
 };
+
+// Requisitos que eu ATENDO — nunca descontam nota, aparecem como pontos positivos.
+const metRequirementRules: { label: string; keywords: string[] }[] = [
+  {
+    label: "CNH categoria B — tenho carteira de habilitação B e disponibilidade para dirigir",
+    keywords: ["cnh", "carteira de habilitacao", "habilitacao b", "categoria b", "possuir cnh", "carro proprio", "dirigir"],
+  },
+  {
+    label: "Modelo de trabalho — tenho disponibilidade para atuar presencial, híbrido ou 100% remoto",
+    keywords: ["remoto", "home office", "homeoffice", "hibrido", "presencial", "teletrabalho", "anywhere"],
+  },
+  {
+    label: "Disponibilidade de horário e para viagens quando necessário",
+    keywords: ["disponibilidade de horario", "viagens", "viajar", "escala", "turno"],
+  },
+  {
+    label: "Ensino superior completo e MBA (Administração, Gestão de Pessoas e Gestão de TI)",
+    keywords: ["ensino superior", "superior completo", "graduacao", "cursando superior", "pos graduacao", "mba"],
+  },
+  {
+    label: "Pacote Office / Excel avançado",
+    keywords: ["pacote office", "excel avancado", "office 365", "microsoft 365"],
+  },
+];
+
+// Palavras comuns que nunca contam como requisito nem como termo desconhecido.
+const stopwords = new Set(
+  ("a o as os de do da dos das e ou em no na nos nas um uma uns umas para por com sem sobre ao aos que se sua seu suas seus " +
+    "vaga vagas empresa empresas atividades atividade atribuicoes atribuicao principais requisitos requisito desejavel " +
+    "diferencial obrigatorio experiencia experiencias conhecimento conhecimentos area areas funcao funcoes cargo perfil " +
+    "sera serao ser ter tem possuir realizar efetuar executar apoio demais entre outros outras todos todas mais menos " +
+    "nivel nivel superior junto ainda bem tambem quando onde como qual quais nossa nosso nossos nossas voce nos " +
+    "salario beneficios beneficio horario local trabalho trabalhar equipe dia dias mes meses ano anos print anexo " +
+    "descricao vale refeicao transporte plano contrato clt pj estagio efetivo imediato oportunidade candidato " +
+    "responsavel responsabilidades rotinas rotina").split(" "),
+);
 
 // Requisitos que o perfil hoje NÃO cobre — usados para penalizar a nota.
 const gaps: { label: string; keywords: string[] }[] = [
