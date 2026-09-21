@@ -145,6 +145,8 @@ export function CompatibilidadeVagaPage() {
                 setText("");
                 setResult(null);
                 setError(null);
+                setGlossary({});
+                setDrafts({});
               }}
               className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
