@@ -70,20 +70,6 @@ export const areas: Area[] = [
     ],
   },
   {
-    id: "faturamento",
-    label: "Faturamento e notas fiscais",
-    strength: 0.9,
-    evidence: "emissão e lançamento de NF-e e MDF-e, faturamento e conferência fiscal",
-    examples: [
-      "Na Sol & Neve, emissão de NF-e de entrada e saída e de MDF-e para a operação de transporte.",
-      "Na Quero Mais Tintas, lançamento de notas fiscais de entrada e saída junto ao controle de compras e estoque.",
-    ],
-    keywords: [
-      "faturament", "nota fiscal", "notas fiscais", "nf-e", "nfe", "nfs", "mdf-e", "mdfe", "fiscal",
-      "emissao de notas", "tributa", "escritura", "imposto", "danfe", "xml",
-    ],
-  },
-  {
     id: "atendimento",
     label: "Atendimento e suporte",
     strength: 0.93,
