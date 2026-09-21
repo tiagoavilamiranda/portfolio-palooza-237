@@ -58,16 +58,27 @@ export function CompatibilidadeVagaPage() {
   const [result, setResult] = useState<MatchResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [glossary, setGlossary] = useState<Record<string, string>>({});
+  const [drafts, setDrafts] = useState<Record<string, string>>({});
 
-  function run(value: string) {
+  function run(value: string, gloss: Record<string, string> = glossary) {
     setError(null);
-    const r = analyzeVaga(value);
+    const r = analyzeVaga(value, gloss);
     if (!r) {
       setError("Escreva ou cole a descrição da vaga (ou apenas uma palavra-chave).");
       setResult(null);
       return;
     }
     setResult(r);
+  }
+
+  function explainTerm(term: string) {
+    const meaning = (drafts[term] ?? "").trim();
+    if (!meaning) return;
+    const next = { ...glossary, [term]: meaning };
+    setGlossary(next);
+    setDrafts((d) => ({ ...d, [term]: "" }));
+    run(text, next);
   }
 
   async function onFile(e: React.ChangeEvent<HTMLInputElement>) {
