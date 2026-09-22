@@ -5,7 +5,7 @@
 // (strength: 0 a 1) e os exemplos reais de trabalho usados na explicação.
 // ============================================================================
 
-import { experiences } from "@/data/portfolio";
+import { experiences, developmentDocs } from "@/data/portfolio";
 
 export type Area = {
   id: string;
