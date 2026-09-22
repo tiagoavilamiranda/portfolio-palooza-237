@@ -5,7 +5,7 @@
 // (strength: 0 a 1) e os exemplos reais de trabalho usados na explicação.
 // ============================================================================
 
-import { experiences } from "@/data/portfolio";
+import { experiences, developmentDocs } from "@/data/portfolio";
 
 export type Area = {
   id: string;
@@ -19,23 +19,39 @@ export type Area = {
 export const areas: Area[] = [
   {
     id: "financeiro",
-    label: "Financeiro completo (contas a pagar e receber, faturamento, boletos e notas fiscais)",
+    label: "Financeiro (contas a pagar e receber, cobrança, conciliação e caixa)",
     strength: 0.97,
     evidence:
-      "rotina financeira de ponta a ponta — contas a pagar e a receber, faturamento, emissão de boletos e de notas fiscais (NF-e/MDF-e), cobrança, inadimplência, conciliação bancária e controle de caixa são partes do mesmo processo que eu executo há mais de 10 anos",
+      "rotina financeira de ponta a ponta — contas a pagar e a receber, cobrança, inadimplência, conciliação bancária, controle de caixa e pagamento a fornecedores, executada há mais de 10 anos",
     examples: [
-      "Na Unimed Leopoldina, ciclo completo de faturamento e recebimento: geração de boletos, contas a pagar e a receber, conciliação bancária, régua de cobrança, negativação no SPC/Serasa e relatórios financeiros para a diretoria.",
-      "Na Sol & Neve, faturamento fiscal integrado ao financeiro: emissão de NF-e de entrada e saída e MDF-e, conferência dos títulos gerados e acompanhamento dos recebimentos.",
-      "Na Quero Mais Tintas, gestão financeira completa: boletos pelo Sicoob, lançamento de notas fiscais, controle de caixa, pagamento a fornecedores e acompanhamento da inadimplência.",
+      "Na Unimed Leopoldina, contas a pagar e a receber, conciliação bancária, régua de cobrança, negativação no SPC/Serasa e relatórios financeiros para a diretoria.",
+      "Na Quero Mais Tintas, controle de caixa, recebimentos, pagamento a fornecedores e acompanhamento diário da inadimplência.",
+      "Na Sol & Neve, conferência de títulos, acompanhamento de recebimentos e apoio às rotinas fiscais (NF-e de entrada e saída e MDF-e).",
     ],
     keywords: [
-      "financeir", "financa", "financas", "contas a pagar", "contas a receber", "cobranc", "boleto",
+      "financeir", "financa", "financas", "contas a pagar", "contas a receber", "cobranc",
       "inadimplen", "conciliac", "tesourar", "fluxo de caixa", "caixa", "pagamento", "recebimento",
-      "titulo", "remessa bancaria", "banco", "bancari", "sicoob", "baixa de titulo", "cnab",
-      "contas", "pagar", "receber", "credito", "debito", "spc", "serasa", "juros", "repasse",
-      "faturament", "nota fiscal", "notas fiscais", "nf-e", "nfe", "nfs", "mdf-e", "mdfe", "fiscal",
-      "emissao de notas", "tributa", "escritura", "imposto", "danfe", "xml", "fatura", "duplicata",
+      "banco", "bancari", "contas", "pagar", "receber", "credito", "debito", "spc", "serasa",
+      "repasse", "nota fiscal", "notas fiscais", "nf-e", "nfe", "nfs", "mdf-e", "mdfe", "fiscal",
+      "emissao de notas", "tributa", "escritura", "imposto", "danfe", "xml",
       "orcamentari", "custos", "despesas", "reembolso", "prestacao de contas",
+    ],
+  },
+  {
+    id: "faturamento",
+    label: "Faturamento e boletos (emissão, remessa/retorno bancário, baixa e atualização)",
+    strength: 0.97,
+    evidence:
+      "faturamento na prática: emissão e reemissão de boletos, geração e envio do arquivo de remessa para o banco, retorno e baixa de títulos, cancelamento/refazimento de cobranças e atualização de valores com multa, juros e desconto",
+    examples: [
+      "Na Unimed Leopoldina, faturamento mensal de beneficiários: geração e reemissão de boletos, envio dos arquivos de remessa ao banco, processamento do retorno, baixa e desfazimento de títulos e atualização de valores com multa e juros.",
+      "Na Quero Mais Tintas, emissão de boletos pelo Sicoob, segunda via, renegociação e reemissão de títulos vencidos com multa e juros, além do acompanhamento das baixas e dos recebimentos.",
+    ],
+    keywords: [
+      "faturament", "faturista", "fatura", "boleto", "boletos", "segunda via", "2 via", "duplicata",
+      "titulo", "titulos", "remessa", "remessa bancaria", "retorno bancario", "cnab", "sicoob",
+      "baixa de titulo", "baixa", "juros", "multa", "mora", "reemiss", "renegociac", "carne",
+      "mensalidade", "cobranca bancaria", "registro de boleto",
     ],
   },
   {
@@ -218,6 +234,24 @@ export const areas: Area[] = [
     ],
     keywords: ["lideranc", "gestor", "coordenac", "coordenador", "supervis", "equipe", "gerenc"],
   },
+  {
+    id: "comportamental",
+    label: "Perfil comportamental e desenvolvimento profissional",
+    strength: 0.9,
+    evidence:
+      "perfil comportamental mapeado e plano de desenvolvimento documentado — os dois relatórios estão publicados na página “Perfil Profissional & Desenvolvimento” deste portfólio",
+    examples: [
+      "O relatório de Perfil Comportamental (Mapa) mostra como eu trabalho: organização, comunicação, foco em processo e relacionamento com clientes e times internos.",
+      "O documento de Desenvolvimento Profissional (Propósito) traz meu plano de evolução, autoconhecimento e as competências que venho desenvolvendo — ambos disponíveis para download na página Perfil Profissional & Desenvolvimento.",
+    ],
+    keywords: [
+      "perfil comportamental", "comportament", "soft skill", "soft skills", "autoconhecimento",
+      "proativ", "proatividade", "comunicac", "organizac", "resilien", "trabalho em equipe",
+      "relacionamento interpessoal", "interpessoal", "dinamic", "flexibil", "adaptab",
+      "desenvolvimento profissional", "aprendizado continuo", "etica", "comprometiment",
+      "protagonismo", "colaborativ", "empati", "disc", "mapeamento de perfil",
+    ],
+  },
 ];
 
 // Sinônimos e variações (inclusive erros comuns de português) → termo canônico.
@@ -331,6 +365,7 @@ export type MatchResult = {
   unknownTerms: string[]; // termos que não reconheci — não descontam nota
   companies: CompanyHit[];
   companyOnly: boolean; // quando a busca foi só pelo nome de uma empresa: sem nota
+  docs: { title: string; desc: string; url: string }[]; // Perfil Comportamental / Desenvolvimento
 };
 
 // Requisitos que eu ATENDO — nunca descontam nota, aparecem como pontos positivos.
@@ -420,6 +455,7 @@ export function analyzeVaga(
       unknownTerms: [],
       companies,
       companyOnly: true,
+      docs: [],
     };
   }
 
@@ -551,6 +587,9 @@ export function analyzeVaga(
         `A aderência ao meu histórico é baixa${missingAreas.length ? `, principalmente por exigir ${missingAreas.join(", ")}` : ""}.`,
       );
     }
+    parts.push(
+      "Para complementar a avaliação, o relatório de Perfil Comportamental (Mapa) e o documento de Desenvolvimento Profissional (Propósito) estão disponíveis logo abaixo para leitura e download.",
+    );
     if (unknownTerms.length > 0) {
       parts.push(
         "Alguns termos da descrição eu não reconheci — eles não descontaram nota nenhuma. Se você me disser o que significam, eu recalculo com mais precisão.",
@@ -569,5 +608,9 @@ export function analyzeVaga(
     unknownTerms,
     companies,
     companyOnly: false,
+    docs:
+      matchedAreas.length > 0
+        ? developmentDocs.map((d) => ({ title: d.title, desc: d.desc, url: d.file }))
+        : [],
   };
 }
