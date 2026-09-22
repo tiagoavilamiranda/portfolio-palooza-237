@@ -587,6 +587,9 @@ export function analyzeVaga(
         `A aderência ao meu histórico é baixa${missingAreas.length ? `, principalmente por exigir ${missingAreas.join(", ")}` : ""}.`,
       );
     }
+    parts.push(
+      "Para complementar a avaliação, o relatório de Perfil Comportamental (Mapa) e o documento de Desenvolvimento Profissional (Propósito) estão disponíveis logo abaixo para leitura e download.",
+    );
     if (unknownTerms.length > 0) {
       parts.push(
         "Alguns termos da descrição eu não reconheci — eles não descontaram nota nenhuma. Se você me disser o que significam, eu recalculo com mais precisão.",
