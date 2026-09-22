@@ -234,6 +234,24 @@ export const areas: Area[] = [
     ],
     keywords: ["lideranc", "gestor", "coordenac", "coordenador", "supervis", "equipe", "gerenc"],
   },
+  {
+    id: "comportamental",
+    label: "Perfil comportamental e desenvolvimento profissional",
+    strength: 0.9,
+    evidence:
+      "perfil comportamental mapeado e plano de desenvolvimento documentado — os dois relatórios estão publicados na página “Perfil Profissional & Desenvolvimento” deste portfólio",
+    examples: [
+      "O relatório de Perfil Comportamental (Mapa) mostra como eu trabalho: organização, comunicação, foco em processo e relacionamento com clientes e times internos.",
+      "O documento de Desenvolvimento Profissional (Propósito) traz meu plano de evolução, autoconhecimento e as competências que venho desenvolvendo — ambos disponíveis para download na página Perfil Profissional & Desenvolvimento.",
+    ],
+    keywords: [
+      "perfil comportamental", "comportament", "soft skill", "soft skills", "autoconhecimento",
+      "proativ", "proatividade", "comunicac", "organizac", "resilien", "trabalho em equipe",
+      "relacionamento interpessoal", "interpessoal", "dinamic", "flexibil", "adaptab",
+      "desenvolvimento profissional", "aprendizado continuo", "etica", "comprometiment",
+      "protagonismo", "colaborativ", "empati", "disc", "mapeamento de perfil",
+    ],
+  },
 ];
 
 // Sinônimos e variações (inclusive erros comuns de português) → termo canônico.
