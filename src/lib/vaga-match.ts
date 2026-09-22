@@ -605,5 +605,9 @@ export function analyzeVaga(
     unknownTerms,
     companies,
     companyOnly: false,
+    docs:
+      matchedAreas.length > 0
+        ? developmentDocs.map((d) => ({ title: d.title, desc: d.desc, url: d.file }))
+        : [],
   };
 }
