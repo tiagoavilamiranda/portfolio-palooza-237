@@ -365,6 +365,7 @@ export type MatchResult = {
   unknownTerms: string[]; // termos que não reconheci — não descontam nota
   companies: CompanyHit[];
   companyOnly: boolean; // quando a busca foi só pelo nome de uma empresa: sem nota
+  docs: { title: string; desc: string; url: string }[]; // Perfil Comportamental / Desenvolvimento
 };
 
 // Requisitos que eu ATENDO — nunca descontam nota, aparecem como pontos positivos.
