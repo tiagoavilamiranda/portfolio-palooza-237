@@ -455,6 +455,7 @@ export function analyzeVaga(
       unknownTerms: [],
       companies,
       companyOnly: true,
+      docs: [],
     };
   }
 
