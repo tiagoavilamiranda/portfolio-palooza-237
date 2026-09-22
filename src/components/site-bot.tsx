@@ -6,8 +6,8 @@
 // ============================================================================
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Bot, Send, X } from "lucide-react";
-import { profile } from "@/data/portfolio";
+import { Bot, Send, X, Eraser } from "lucide-react";
+import { profile, experiences, about } from "@/data/portfolio";
 
 type Entry = {
   id: string;
