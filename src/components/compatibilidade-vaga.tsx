@@ -251,6 +251,33 @@ export function CompatibilidadeVagaPage() {
               </div>
             )}
 
+            {result.docs.length > 0 && (
+              <div className="rounded-2xl border border-primary/30 bg-background/50 p-6">
+                <h3 className="font-serif text-xl text-foreground">
+                  Perfil Profissional & Desenvolvimento
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Materiais que refletem meu perfil, autoconhecimento e desenvolvimento
+                  profissional — úteis para avaliar a aderência comportamental à vaga.
+                </p>
+                <ul className="mt-3 space-y-2 text-sm text-foreground/85">
+                  {result.docs.map((d) => (
+                    <li key={d.title}>
+                      <a
+                        href={d.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium text-primary underline underline-offset-4"
+                      >
+                        {d.title}
+                      </a>{" "}
+                      — {d.desc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {Object.keys(glossary).length > 0 && (
               <div className="rounded-2xl border border-border bg-background/50 p-6">
                 <h3 className="font-serif text-xl text-foreground">Termos que você me explicou</h3>
