@@ -127,26 +127,129 @@ const knowledge: Entry[] = [
 type Msg = { from: "bot" | "user"; text: string; to?: string; linkLabel?: string };
 
 function normalize(s: string) {
-  return ` ${s
+  return s
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, " ")
-    .trim()} `;
+    .trim();
+}
+
+const stop = new Set([
+  "o","a","os","as","de","do","da","dos","das","em","no","na","nos","nas","um","uma","e","que","qual","quais",
+  "onde","como","quando","quem","porque","por","para","pra","com","sem","ele","ela","voce","vc","tiago","me",
+  "diz","fala","sabe","seu","sua","seus","suas","esta","estao","fica","ficam","ver","vejo","tem","ha","mais","hoje",
+]);
+
+function tokens(q: string) {
+  return normalize(q).split(" ").filter((t) => t.length > 2 && !stop.has(t));
+}
+
+// Compara token e palavra-chave aceitando variações (trabalha/trabalhou/trabalho, finanças/financeiro)
+function similar(token: string, key: string) {
+  if (token === key) return true;
+  const min = Math.min(token.length, key.length);
+  if (min < 4) return false;
+  return token.slice(0, min - 1) === key.slice(0, min - 1);
+}
+
+const current = experiences[0];
+const aboutShort = about.split("\n\n")[0] ?? "";
+
+// Respostas diretas — o robô responde o fato, não só onde encontrar
+const facts: { test: RegExp; build: () => Msg }[] = [
+  {
+    test: /\b(onde|qual|que)\b.*\b(trabalh\w*|empres\w*|atua|emprego)\b|\b(trabalh\w*)\b.*\b(onde|hoje|atualmente|agora)\b|\bempresa atual\b|\btrabalha aonde\b/,
+    build: () => ({
+      from: "bot",
+      text: `Hoje o Tiago trabalha na ${current.company}, como ${current.role} (${current.period}), em ${current.location ?? profile.location}. Antes disso passou por ${experiences
+        .slice(1)
+        .map((e) => e.company)
+        .join(", ")}.`,
+      to: "/profissional",
+      linkLabel: "Ver a trajetória completa",
+    }),
+  },
+  {
+    test: /\b(quem e|quem sou|quem ele|sobre o tiago|resumo|apresent\w*)\b/,
+    build: () => ({ from: "bot", text: aboutShort, to: "/sobre", linkLabel: "Abrir Sobre" }),
+  },
+  {
+    test: /\b(mora|moro|cidade|localiza\w*|reside|regiao|estado)\b/,
+    build: () => ({
+      from: "bot",
+      text: `O Tiago mora em ${profile.location}, com disponibilidade para trabalho presencial, híbrido ou remoto.`,
+      to: "/offline",
+      linkLabel: "Ver contato e mapa",
+    }),
+  },
+  {
+    test: /\b(email|e mail|contato|falar|whatsapp|linkedin)\b/,
+    build: () => ({
+      from: "bot",
+      text: `Contato do Tiago: e-mail ${profile.email} e LinkedIn ${profile.linkedinLabel}.`,
+      to: "/offline",
+      linkLabel: "Abrir contato",
+    }),
+  },
+  {
+    test: /\b(quanto tempo|experiencia de|anos de)\b/,
+    build: () => ({
+      from: "bot",
+      text: `O Tiago tem mais de 8 anos de experiência administrativa, financeira, cadastral e de suporte, passando por ${experiences
+        .map((e) => e.company)
+        .join(", ")}.`,
+      to: "/profissional",
+      linkLabel: "Abrir Profissional",
+    }),
+  },
+];
+
+// Se a pessoa cita uma empresa, respondemos cargo e período daquela empresa
+function companyFact(q: string): Msg | null {
+  const t = normalize(q);
+  const found = experiences.find((e) =>
+    normalize(e.company)
+      .split(" ")
+      .filter((w) => w.length > 3)
+      .some((w) => t.includes(w)),
+  );
+  if (!found) return null;
+  const roles = found.roles?.map((r) => `${r.title} (${r.period})`).join(" · ");
+  return {
+    from: "bot",
+    text: `Na ${found.company}: ${roles ?? `${found.role} — ${found.period}`}.`,
+    to: "/profissional",
+    linkLabel: "Abrir Profissional",
+  };
 }
 
 function answerFor(question: string): Msg[] {
   const q = normalize(question);
-  if (/\b(oi|ola|bom dia|boa tarde|boa noite|tudo bem)\b/.test(q)) {
+  if (/^(oi|ola|bom dia|boa tarde|boa noite|tudo bem)\b/.test(q)) {
     return [
       {
         from: "bot",
-        text: "Olá! Eu sou o assistente do portfólio do Tiago. Pergunte, por exemplo: “onde fica a experiência dele?”, “onde vejo os certificados?” ou “como faço para testar uma vaga?”.",
+        text: "Olá! Eu sou o assistente do portfólio do Tiago. Pode perguntar direto: “onde o Tiago trabalha?”, “quais sistemas ele usa?” ou “como falo com ele?”.",
       },
     ];
   }
+
+  const direct = facts.find((f) => f.test.test(q));
+  if (direct) {
+    const extra = companyFact(q);
+    return extra ? [direct.build(), extra] : [direct.build()];
+  }
+
+  const byCompany = companyFact(q);
+  if (byCompany) return [byCompany];
+
+  const ts = tokens(question);
   const scored = knowledge
-    .map((e) => ({ e, score: e.keywords.filter((k) => q.includes(` ${k}`)).length }))
+    .map((e) => ({
+      e,
+      score: ts.reduce((acc, t) => acc + (e.keywords.some((k) => similar(t, k)) ? 1 : 0), 0),
+    }))
     .filter((x) => x.score > 0)
     .sort((a, b) => b.score - a.score);
 
@@ -154,7 +257,7 @@ function answerFor(question: string): Msg[] {
     return [
       {
         from: "bot",
-        text: "Ainda não sei responder isso. Posso te mostrar: Sobre, Profissional, Graduação, Certificações, Habilidades, Ferramentas, Portfólio, Dedicatória, OffLine, Perfil & Desenvolvimento ou Compatibilidade da Vaga. Qual deles você procura?",
+        text: "Não entendi bem essa pergunta. Posso falar sobre: onde o Tiago trabalha, trajetória profissional, formação, certificações, habilidades, ferramentas e sistemas, portfólio, dedicatória, vida fora do trabalho, perfil & desenvolvimento ou compatibilidade com uma vaga. Qual desses?",
       },
     ];
   }
