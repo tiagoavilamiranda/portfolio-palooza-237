@@ -291,12 +291,24 @@ export function SiteBot() {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, open]);
 
+  // Cada pergunta começa uma conversa nova: o histórico anterior é apagado
   function ask(text: string) {
     const question = text.trim();
     if (!question) return;
-    setMessages((m) => [...m, { from: "user", text: question }, ...answerFor(question)]);
+    setMessages([{ from: "user", text: question }, ...answerFor(question)]);
     setInput("");
   }
+
+  function clearChat() {
+    setMessages([
+      {
+        from: "bot",
+        text: "Conversa limpa. Pode perguntar o que quiser sobre o Tiago.",
+      },
+    ]);
+    setInput("");
+  }
+
 
   return (
     <>
