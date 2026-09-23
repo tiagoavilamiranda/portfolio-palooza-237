@@ -270,8 +270,8 @@ function answerFor(question: string): Msg[] {
 }
 
 const suggestions = [
-  "Onde fica a experiência?",
-  "Onde vejo os certificados?",
+  "Onde o Tiago trabalha?",
+  "Quais sistemas ele usa?",
   "Como testo uma vaga?",
   "Como falo com o Tiago?",
 ];
@@ -291,18 +291,35 @@ export function SiteBot() {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, open]);
 
+  // Cada pergunta começa uma conversa nova: o histórico anterior é apagado
   function ask(text: string) {
     const question = text.trim();
     if (!question) return;
-    setMessages((m) => [...m, { from: "user", text: question }, ...answerFor(question)]);
+    setMessages([{ from: "user", text: question }, ...answerFor(question)]);
     setInput("");
   }
+
+  function clearChat() {
+    setMessages([
+      {
+        from: "bot",
+        text: "Conversa limpa. Pode perguntar o que quiser sobre o Tiago.",
+      },
+    ]);
+    setInput("");
+  }
+
 
   return (
     <>
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => {
+          setOpen((o) => {
+            if (o) clearChat();
+            return !o;
+          });
+        }}
         aria-label="Abrir assistente do site"
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full text-primary-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-110"
         style={{ background: "var(--gradient-gold)" }}
@@ -314,12 +331,21 @@ export function SiteBot() {
         <div className="fixed bottom-24 right-6 z-50 flex h-[28rem] w-[min(22rem,calc(100vw-3rem))] flex-col overflow-hidden rounded-3xl border border-primary/40 bg-card/95 shadow-[var(--shadow-gold)] backdrop-blur">
           <div className="flex items-center gap-3 border-b border-border px-5 py-4">
             <Bot className="h-5 w-5 text-primary" />
-            <div>
+            <div className="flex-1">
               <p className="font-serif text-lg text-foreground">Assistente do portfólio</p>
               <p className="text-[11px] text-muted-foreground">
-                Pergunte onde está cada informação
+                Pergunte sobre o Tiago ou onde fica cada informação
               </p>
             </div>
+            <button
+              type="button"
+              onClick={clearChat}
+              aria-label="Limpar conversa"
+              title="Limpar conversa"
+              className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              <Eraser className="h-4 w-4" />
+            </button>
           </div>
 
           <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
