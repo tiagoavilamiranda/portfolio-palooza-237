@@ -270,8 +270,8 @@ function answerFor(question: string): Msg[] {
 }
 
 const suggestions = [
-  "Onde fica a experiência?",
-  "Onde vejo os certificados?",
+  "Onde o Tiago trabalha?",
+  "Quais sistemas ele usa?",
   "Como testo uma vaga?",
   "Como falo com o Tiago?",
 ];
