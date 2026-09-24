@@ -18,6 +18,22 @@ import {
 import { profile as profileData } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Tiago de Avila Miranda — Portfólio Profissional" },
+      {
+        name: "description",
+        content: "Portfólio profissional de Tiago de Avila Miranda: trajetória, formação, habilidades, projetos e compatibilidade com vagas.",
+      },
+      { property: "og:title", content: "Tiago de Avila Miranda — Portfólio Profissional" },
+      {
+        property: "og:description",
+        content: "Conheça a trajetória profissional, a formação e as competências de Tiago de Avila Miranda.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
