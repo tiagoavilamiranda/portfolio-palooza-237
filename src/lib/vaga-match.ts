@@ -22,7 +22,7 @@ export const areas: Area[] = [
     label: "Financeiro (contas a pagar e receber, cobrança, conciliação e caixa)",
     strength: 0.97,
     evidence:
-      "rotina financeira de ponta a ponta — contas a pagar e a receber, cobrança, inadimplência, conciliação bancária, controle de caixa e pagamento a fornecedores, executada há mais de 10 anos",
+      "rotina financeira de ponta a ponta — contas a pagar e a receber, cobrança, inadimplência, conciliação bancária, controle de caixa e pagamento a fornecedores, executada há mais de 10 anos, com MBA em Finanças, Auditoria e Controladoria em andamento",
     examples: [
       "Na Unimed Leopoldina, contas a pagar e a receber, conciliação bancária, régua de cobrança, negativação no SPC/Serasa e relatórios financeiros para a diretoria.",
       "Na Quero Mais Tintas, controle de caixa, recebimentos, pagamento a fornecedores e acompanhamento diário da inadimplência.",
@@ -35,6 +35,21 @@ export const areas: Area[] = [
       "repasse", "nota fiscal", "notas fiscais", "nf-e", "nfe", "nfs", "mdf-e", "mdfe", "fiscal",
       "emissao de notas", "tributa", "escritura", "imposto", "danfe", "xml",
       "orcamentari", "custos", "despesas", "reembolso", "prestacao de contas",
+    ],
+  },
+  {
+    id: "auditoria-controladoria",
+    label: "Auditoria e controladoria",
+    strength: 0.72,
+    evidence:
+      "MBA em Finanças, Auditoria e Controladoria em andamento na Anhanguera Educacional, aliado à experiência prática com conferência, controles, relatórios e conciliação financeira",
+    examples: [
+      "Na Unimed Leopoldina e na Quero Mais Tintas, conferência de documentos e títulos, conciliação financeira, controles de recebimentos e relatórios.",
+      "Na Anhanguera Educacional, curso MBA em Finanças, Auditoria e Controladoria, de setembro de 2026 a julho de 2027.",
+    ],
+    keywords: [
+      "auditoria", "auditor", "controladoria", "controller", "controle interno", "controles internos",
+      "compliance financeiro", "governanca", "demonstracoes financeiras", "dre", "balanco",
     ],
   },
   {
@@ -383,8 +398,8 @@ const metRequirementRules: { label: string; keywords: string[] }[] = [
     keywords: ["disponibilidade de horario", "viagens", "viajar", "escala", "turno"],
   },
   {
-    label: "Ensino superior completo e MBA (Administração, Gestão de Pessoas e Gestão de TI)",
-    keywords: ["ensino superior", "superior completo", "graduacao", "cursando superior", "pos graduacao", "mba"],
+    label: "Ensino superior completo e formação continuada — Administração, MBA em Gestão de Pessoas, MBA em Finanças/Auditoria/Controladoria e Gestão de TI",
+    keywords: ["ensino superior", "superior completo", "graduacao", "cursando superior", "pos graduacao", "mba", "financas", "auditoria", "controladoria"],
   },
   {
     label: "Pacote Office / Excel avançado",
@@ -493,7 +508,8 @@ export function analyzeVaga(
   const areaScore =
     matchedAreas.length > 0
       ? matchedAreas.reduce((acc, m) => {
-          const a = areas.find((x) => x.label === m.label)!;
+          const a = areas.find((x) => x.label === m.label);
+          if (!a) return acc;
           const weight = Math.min(1, 0.6 + m.hits.length * 0.2);
           return acc + a.strength * weight;
         }, 0) /
@@ -563,10 +579,12 @@ export function analyzeVaga(
     parts.push(
       `Esta vaga tem nota ${score}% de compatibilidade com o meu perfil. Os requisitos se concentram em ${top.join(", ")} — exatamente o que faço no dia a dia há mais de 10 anos de trajetória administrativa e financeira.`,
     );
-    const lead = ranked[0]!;
-    parts.push(
-      `Em ${lead.label.toLowerCase()}, minha experiência é direta: ${lead.evidence}. ${lead.examples[0] ?? ""}`.trim(),
-    );
+    const lead = ranked[0];
+    if (lead) {
+      parts.push(
+        `Em ${lead.label.toLowerCase()}, minha experiência é direta: ${lead.evidence}. ${lead.examples[0] ?? ""}`.trim(),
+      );
+    }
     const second = ranked[1];
     if (second) {
       parts.push(`Também atendo ${second.label.toLowerCase()}: ${second.examples[0] ?? second.evidence}`);

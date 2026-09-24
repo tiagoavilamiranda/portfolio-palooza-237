@@ -7,7 +7,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Bot, Send, X, Eraser } from "lucide-react";
-import { profile, experiences, about } from "@/data/portfolio";
+import { profile, experiences, about, education } from "@/data/portfolio";
 
 type Entry = {
   id: string;
@@ -36,9 +36,9 @@ const knowledge: Entry[] = [
   },
   {
     id: "graduacao",
-    keywords: ["graduacao", "faculdade", "formacao", "estudo", "estudou", "mba", "pos", "unopar", "doctum", "escolaridade"],
+    keywords: ["graduacao", "faculdade", "formacao", "estudo", "estudou", "mba", "pos", "unopar", "doctum", "anhanguera", "financas", "auditoria", "controladoria", "escolaridade"],
     answer:
-      "A formação acadêmica (graduações, MBA e ensino técnico) fica na página Graduação, com instituição e período de cada curso.",
+      "A formação acadêmica fica na página Graduação. Ela inclui o MBA em Finanças, Auditoria e Controladoria na Anhanguera, Gestão de TI na UNOPAR, MBA em Gestão de Pessoas e Liderança na Doctum, graduação em Administração e curso Técnico em Administração.",
     to: "/graduacao",
     linkLabel: "Abrir Graduação",
   },
@@ -155,9 +155,21 @@ function similar(token: string, key: string) {
 
 const current = experiences[0];
 const aboutShort = about.split("\n\n")[0] ?? "";
+const financeMba = education.find((item) => item.org.includes("Anhanguera"));
 
 // Respostas diretas — o robô responde o fato, não só onde encontrar
 const facts: { test: RegExp; build: () => Msg }[] = [
+  {
+    test: /\b(anhanguera|auditoria|controladoria|mba em financas|pos graduacao|pos em financas)\b/,
+    build: () => ({
+      from: "bot",
+      text: financeMba
+        ? `O Tiago cursa ${financeMba.title} na ${financeMba.org}, no período de ${financeMba.period}.`
+        : "A formação em Finanças, Auditoria e Controladoria está detalhada na página Graduação.",
+      to: "/graduacao",
+      linkLabel: "Abrir Graduação",
+    }),
+  },
   {
     test: /\b(onde|qual|que)\b.*\b(trabalh\w*|empres\w*|atua|emprego)\b|\b(trabalh\w*)\b.*\b(onde|hoje|atualmente|agora)\b|\bempresa atual\b|\btrabalha aonde\b/,
     build: () => ({

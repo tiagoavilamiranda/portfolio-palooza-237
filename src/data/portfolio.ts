@@ -144,6 +144,12 @@ export const experiences: Experience[] = [
 
 export const education = [
   {
+    title: "Pós-graduação Lato Sensu — MBA Finanças, Auditoria e Controladoria",
+    org: "Anhanguera Educacional",
+    period: "set 2026 — jul 2027",
+    extra: "Curso em andamento",
+  },
+  {
     title: "Curso Superior de Tecnologia — Gestão da Tecnologia da Informação",
     org: "UNOPAR — Universidade Norte do Paraná",
     period: "fev 2025 — jul 2027",
