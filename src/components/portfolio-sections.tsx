@@ -25,6 +25,7 @@ import {
   about,
   experiences,
   education,
+  educationOutlook,
   certifications,
   skills,
   tools,
@@ -268,6 +269,10 @@ export function ProfissionalPage() {
 export function GraduacaoPage() {
   return (
     <SubPage eyebrow="03" title="Graduação & Formação" Icon={GraduationCap}>
+      <div className="mb-10 max-w-4xl border-l-2 border-primary pl-5">
+        <h3 className="font-serif text-2xl text-foreground">Áreas em que posso atuar</h3>
+        <p className="mt-3 text-sm leading-relaxed text-foreground/80 md:text-base">{educationOutlook}</p>
+      </div>
       <div className="grid gap-6 md:grid-cols-2">
         {education.map((e) => (
           <EduCard key={e.title} title={e.title} org={e.org} period={e.period} extra={e.extra} />

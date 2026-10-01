@@ -77,7 +77,7 @@ export const areas: Area[] = [
       "atuação administrativa generalista em todas as empresas da minha trajetória, com formação técnica e superior em Administração",
     examples: [
       "Na Sol & Neve, rotina administrativa completa: cadastros, documentos, contratos de comodato, estoque, expedição e apoio ao RH.",
-      "Na Dimensa, organização de demandas das squads, controle de planilhas online e interface entre clientes e time técnico.",
+       "Na Evertec Brasil, organização de demandas das squads, controle de planilhas online e interface entre clientes e time técnico.",
     ],
     keywords: [
       "administrat", "auxiliar administrativo", "assistente administrativo", "analista administrativo",
@@ -107,7 +107,7 @@ export const areas: Area[] = [
     evidence:
       "atendimento multicanal a clientes, beneficiários e equipes internas, com controle de chamados e SLA",
     examples: [
-      "Na Dimensa, tratativa de chamados com controle de SLA e prazos no Acelerato e no Redmine, sempre com contato proativo com o cliente.",
+       "Na Evertec Brasil, tratativa de chamados com controle de SLA e prazos no Acelerato e no Redmine, sempre com contato proativo com o cliente.",
       "Na Unimed, atendimento presencial, telefônico e digital a beneficiários e cooperados, incluindo 2ª via de boletos e cartões.",
     ],
     keywords: [
@@ -121,9 +121,9 @@ export const areas: Area[] = [
     label: "Tecnologia e sistemas",
     strength: 0.8,
     evidence:
-      "técnico de suporte ao negócio na Dimensa, com graduação em Gestão de TI em andamento (UNOPAR)",
+       "técnico de suporte ao negócio na Evertec Brasil, com graduação em Gestão de TI em andamento (UNOPAR)",
     examples: [
-      "Na Dimensa, gestão de acessos, perfis e permissões de usuários, apoio em banco de dados e testes/homologação de sistemas.",
+       "Na Evertec Brasil, gestão de acessos, perfis e permissões de usuários, apoio em banco de dados e testes/homologação de sistemas.",
       "Adaptação rápida a ERPs e sistemas corporativos: Ellevo, Acelerato, Redmine, Unico, RH Health, Director e Cardio.",
     ],
     keywords: [
@@ -154,7 +154,7 @@ export const areas: Area[] = [
     strength: 0.85,
     evidence: "controles e relatórios em Excel avançado, Power BI e acompanhamento de indicadores",
     examples: [
-      "Na Dimensa, monitoramento de demandas e indicadores em Excel online, com relatórios gerenciais recorrentes.",
+       "Na Evertec Brasil, monitoramento de demandas e indicadores em Excel online, com relatórios gerenciais recorrentes.",
       "Certificações em Power BI e Power Apps (Viscari) e em análise de dados para tomada de decisão (Escola Conquer).",
     ],
     keywords: [
@@ -245,7 +245,7 @@ export const areas: Area[] = [
     strength: 0.6,
     evidence: "MBA em Gestão de Pessoas e Liderança, com experiência coordenando demandas e reuniões",
     examples: [
-      "Condução de reuniões técnicas e organização de demandas entre áreas na Dimensa.",
+       "Condução de reuniões técnicas e organização de demandas entre áreas na Evertec Brasil.",
     ],
     keywords: ["lideranc", "gestor", "coordenac", "coordenador", "supervis", "equipe", "gerenc"],
   },
@@ -344,7 +344,7 @@ function close(a: string, b: string) {
 type CompanyHit = { company: string; role: string; period: string; location?: string; roles?: { title: string; period: string }[] };
 
 const companyAliases: { match: string[]; company: string }[] = [
-  { match: ["dimensa"], company: "Dimensa Tecnologia" },
+  { match: ["evertec", "dimensa"], company: "Evertec Brasil" },
   { match: ["sol e neve", "sol neve", "expresso frio"], company: "Sol & Neve Açaí & Sorvete" },
   { match: ["energisa"], company: "Energisa" },
   { match: ["unimed"], company: "Unimed Leopoldina" },

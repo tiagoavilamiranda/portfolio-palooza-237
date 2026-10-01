@@ -3,7 +3,7 @@
 // Basta trocar os textos, datas, empresas, cursos, etc.
 // ============================================================================
 
-import logoDimensa from "@/assets/logo-10.png.asset.json";
+import logoEvertec from "@/assets/evertec-brasil.png.asset.json";
 import logoSolNeve from "@/assets/logo-11.png.asset.json";
 import logoEnergisa from "@/assets/logo-12.png.asset.json";
 import logoUnimed from "@/assets/logo-13.png.asset.json";
@@ -26,7 +26,7 @@ export const profile = {
   location: "Leopoldina, Minas Gerais, Brasil",
 };
 
-export const about = `Administrador formado, atualmente cursando Gestão de TI, com experiência nas áreas administrativa, financeira, cadastral e de atendimento interno, atuando em empresas como Unimed, Energisa, Sol e Neve e Dimensa.
+export const about = `Administrador formado, atualmente cursando Gestão de TI, com experiência nas áreas administrativa, financeira, cadastral e de atendimento interno, atuando em empresas como Unimed, Energisa, Sol e Neve e Evertec Brasil.
 
 Ao longo da minha trajetória, desenvolvi experiência em cadastro e atualização de clientes PF e PJ (CPF e CNPJ), implantação e manutenção de módulos em sistemas corporativos, emissão e atualização de boletos, negociação e reprocessamento de títulos, geração de remessas bancárias, faturamento, emissão e envio de notas fiscais eletrônicas (NF-e), controle e envio de contratos de comodato, elaboração de relatórios gerenciais e suporte às rotinas administrativas e financeiras.
 
@@ -64,10 +64,10 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     role: "Técnico de suporte ao negócio",
-    company: "Dimensa Tecnologia",
+    company: "Evertec Brasil",
     period: "mar 2024 — o momento",
     location: "Leopoldina, Minas Gerais, Brasil · Híbrido",
-    logo: logoDimensa.url,
+    logo: logoEvertec.url,
     logoBg: "#0f172a",
     desc: "Atendimento e suporte técnico a sistemas corporativos. Análise, tratativa e acompanhamento de chamados conforme SLA. Gestão de tickets nas plataformas Acelerato e Redmine. Acompanhamento de treinamentos e suporte aos clientes durante a utilização dos sistemas. Gestão de acessos, perfis e permissões de usuários. Validação de cadastros e liberação de credenciais. Apoio em infraestrutura e banco de dados. Monitoramento e controle de demandas via Excel e plataformas corporativas. Elaboração de relatórios e acompanhamento de indicadores. Interface entre clientes, equipe técnica e áreas internas. Organização e condução de reuniões técnicas via Google Meet.",
   },
@@ -153,7 +153,7 @@ export const education = [
     title: "Curso Superior de Tecnologia — Gestão da Tecnologia da Informação",
     org: "UNOPAR — Universidade Norte do Paraná",
     period: "fev 2025 — jul 2027",
-    extra: "Competências: IA generativa para gestão e Tecnologia da informação",
+    extra: "Curso em andamento · Competências: IA generativa para gestão e Tecnologia da informação",
   },
   {
     title: "MBA em Gestão de Pessoas e Liderança",
@@ -174,6 +174,8 @@ export const education = [
   },
 ];
 
+export const educationOutlook = "Minha formação em Administração e Técnico em Administração, aliada ao MBA em Gestão de Pessoas e Liderança, abre caminhos em rotinas administrativas, gestão de processos, atendimento, cadastro e Recursos Humanos. A graduação em Gestão de TI e o MBA em Finanças, Auditoria e Controladoria, ambos em andamento, ampliam minhas possibilidades em suporte a sistemas, análise de dados, faturamento, financeiro, controles internos e apoio à auditoria e à controladoria. Nessas áreas, posso unir os estudos à experiência prática com boletos, cobrança, relatórios, sistemas corporativos e organização de processos.";
+
 export const certifications = [
   { title: "Análise de dados como aliada da tomada de decisão", org: "Escola Conquer", date: "jun 2026" },
   { title: "Customer Success", org: "Sebrae", date: "jul 2026" },
@@ -181,7 +183,7 @@ export const certifications = [
   { title: "Power BI Expert na Prática", org: "Viscari Inc.", date: "jan 2026" },
   { title: "Simplifica Inteligência Artificial Express", org: "SIMPLIFICA TREINAMENTOS", date: "jan 2026" },
   { title: "Power Apps Expert na Prática", org: "Viscari Inc.", date: "jan 2026" },
-  { title: "Proteção contra Phishing e Engenharia Social", org: "Dimensa Tecnologia", date: "out 2025" },
+  { title: "Proteção contra Phishing e Engenharia Social", org: "Evertec Brasil", date: "out 2025" },
   { title: "LGPD — Lei Geral de Proteção de Dados", org: "Energisa", date: "mai 2021" },
 ];
 
@@ -260,7 +262,7 @@ export const hobbies = [
 // Dedicatória — homenagem a cada empresa da trajetória
 export const dedications = [
   {
-    company: "Dimensa Tecnologia",
+    company: "Evertec Brasil",
     message:
       "Obrigado pela confiança e pela oportunidade de crescer em um ambiente de tecnologia e inovação. Aqui aprendi que suporte de verdade é escutar antes de resolver.",
   },
