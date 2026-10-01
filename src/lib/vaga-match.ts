@@ -344,7 +344,7 @@ function close(a: string, b: string) {
 type CompanyHit = { company: string; role: string; period: string; location?: string; roles?: { title: string; period: string }[] };
 
 const companyAliases: { match: string[]; company: string }[] = [
-  { match: ["evertec", "dimensa"], company: "Evertec Brasil" },
+  { match: ["evertec"], company: "Evertec Brasil" },
   { match: ["sol e neve", "sol neve", "expresso frio"], company: "Sol & Neve Açaí & Sorvete" },
   { match: ["energisa"], company: "Energisa" },
   { match: ["unimed"], company: "Unimed Leopoldina" },
