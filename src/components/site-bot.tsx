@@ -7,7 +7,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Bot, Send, X, Eraser } from "lucide-react";
-import { profile, experiences, about, education } from "@/data/portfolio";
+import { profile, experiences, about, education, educationOutlook } from "@/data/portfolio";
 
 type Entry = {
   id: string;
@@ -20,9 +20,9 @@ type Entry = {
 const knowledge: Entry[] = [
   {
     id: "profissional",
-    keywords: ["experiencia", "experiencias", "trajetoria", "profissional", "emprego", "empresa", "empresas", "carreira", "trabalhou", "trabalho", "cargo", "cargos", "curriculo", "dimensa", "unimed", "energisa", "sol", "neve", "plan", "minas", "quero", "tintas"],
+    keywords: ["experiencia", "experiencias", "trajetoria", "profissional", "emprego", "empresa", "empresas", "carreira", "trabalhou", "trabalho", "cargo", "cargos", "curriculo", "evertec", "unimed", "energisa", "sol", "neve", "plan", "minas", "quero", "tintas"],
     answer:
-      "A trajetória profissional fica na página Profissional: cada empresa aparece com o logo, o cargo, o período e uma linha do tempo quando tive mais de uma função na mesma empresa (Dimensa, Sol & Neve, Energisa, Unimed Leopoldina, Plan Minas e Quero Mais Tintas).",
+      "A trajetória profissional fica na página Profissional: cada empresa aparece com o logo, o cargo, o período e uma linha do tempo quando tive mais de uma função na mesma empresa (Evertec Brasil, Sol & Neve, Energisa, Unimed Leopoldina, Plan Minas e Quero Mais Tintas).",
     to: "/profissional",
     linkLabel: "Abrir Profissional",
   },
@@ -38,7 +38,7 @@ const knowledge: Entry[] = [
     id: "graduacao",
     keywords: ["graduacao", "faculdade", "formacao", "estudo", "estudou", "mba", "pos", "unopar", "doctum", "anhanguera", "financas", "auditoria", "controladoria", "escolaridade"],
     answer:
-      "A formação acadêmica fica na página Graduação. Ela inclui o MBA em Finanças, Auditoria e Controladoria na Anhanguera, Gestão de TI na UNOPAR, MBA em Gestão de Pessoas e Liderança na Doctum, graduação em Administração e curso Técnico em Administração.",
+      "A formação acadêmica fica na página Graduação. O MBA em Finanças, Auditoria e Controladoria na Anhanguera e a graduação em Gestão de TI na UNOPAR estão em andamento; há também MBA em Gestão de Pessoas e Liderança, graduação em Administração e curso Técnico em Administração.",
     to: "/graduacao",
     linkLabel: "Abrir Graduação",
   },
@@ -46,7 +46,7 @@ const knowledge: Entry[] = [
     id: "certificacoes",
     keywords: ["certificacao", "certificacoes", "certificado", "cursos", "curso", "sebrae", "conquer", "viscari", "lgpd", "power"],
     answer:
-      "Os cursos e certificados (Sebrae, Escola Conquer, Viscari, Dimensa, Energisa e outros) estão na página Certificações, com a data de emissão de cada um.",
+      "Os cursos e certificados (Sebrae, Escola Conquer, Viscari, Evertec Brasil, Energisa e outros) estão na página Certificações, com a data de emissão de cada um.",
     to: "/certificacoes",
     linkLabel: "Abrir Certificações",
   },
@@ -159,6 +159,22 @@ const financeMba = education.find((item) => item.org.includes("Anhanguera"));
 
 // Respostas diretas — o robô responde o fato, não só onde encontrar
 const facts: { test: RegExp; build: () => Msg }[] = [
+  {
+    test: /\b(areas? (de atuacao|para trabalhar)|onde pode trabalhar|em que (area|areas) (pode|consegue) (atuar|trabalhar)|o que (pode|consegue) fazer com (os )?estudos)\b/,
+    build: () => ({ from: "bot", text: educationOutlook, to: "/graduacao", linkLabel: "Abrir Graduação" }),
+  },
+  {
+    test: /\b(gestao de ti|gestao da tecnologia|tecnologia da informacao|unopar)\b/,
+    build: () => {
+      const tiCourse = education.find((item) => item.title.includes("Gestão da Tecnologia"));
+      return {
+        from: "bot",
+        text: tiCourse ? `O Tiago cursa ${tiCourse.title} na ${tiCourse.org}, de ${tiCourse.period}. ${tiCourse.extra ?? ""}` : "A formação em Gestão de TI está na página Graduação.",
+        to: "/graduacao",
+        linkLabel: "Abrir Graduação",
+      };
+    },
+  },
   {
     test: /\b(anhanguera|auditoria|controladoria|mba em financas|pos graduacao|pos em financas)\b/,
     build: () => ({
