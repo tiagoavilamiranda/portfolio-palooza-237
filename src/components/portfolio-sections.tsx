@@ -168,9 +168,11 @@ function ExperienceCard({ exp }: { exp: Experience }) {
               {r.location && (
                 <p className="mt-0.5 text-xs text-muted-foreground">{r.location}</p>
               )}
-              <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-foreground/80">
-                {r.desc}
-              </p>
+              {r.desc && (
+                <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-foreground/80">
+                  {r.desc}
+                </p>
+              )}
             </li>
           ))}
         </ol>
