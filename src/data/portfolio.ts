@@ -63,13 +63,25 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    role: "Técnico de suporte ao negócio",
+    role: "Trajetória na Evertec Brasil",
     company: "Evertec Brasil",
-    period: "mar 2024 — o momento",
+    period: "Tempo integral · mar 2024 — o momento",
     location: "Leopoldina, Minas Gerais, Brasil · Híbrido",
     logo: logoEvertec.url,
     logoBg: "#0f172a",
-    desc: "Atendimento e suporte técnico a sistemas corporativos. Análise, tratativa e acompanhamento de chamados conforme SLA. Gestão de tickets nas plataformas Acelerato e Redmine. Acompanhamento de treinamentos e suporte aos clientes durante a utilização dos sistemas. Gestão de acessos, perfis e permissões de usuários. Validação de cadastros e liberação de credenciais. Apoio em infraestrutura e banco de dados. Monitoramento e controle de demandas via Excel e plataformas corporativas. Elaboração de relatórios e acompanhamento de indicadores. Interface entre clientes, equipe técnica e áreas internas. Organização e condução de reuniões técnicas via Google Meet.",
+    desc: "Atuação em suporte técnico e operacional a sistemas corporativos, com interface entre clientes, usuários, equipe técnica e áreas internas. Promovido de Técnico de suporte ao negócio para Analista de suporte em out 2026.",
+    roles: [
+      {
+        title: "Analista de suporte",
+        period: "out 2026 — o momento",
+        desc: "",
+      },
+      {
+        title: "Técnico de suporte ao negócio",
+        period: "mar 2024 — set 2026 · 2 anos 7 meses",
+        desc: "Atuação em suporte técnico e operacional a sistemas corporativos, com interface entre clientes, usuários, equipe técnica e áreas internas.\n\nAtendimento, análise, tratativa e acompanhamento de chamados conforme SLA.\nGestão de tickets nas plataformas Acelerato e Redmine.\nGestão de acessos, perfis, permissões, cadastros e credenciais.\nSuporte e orientação aos usuários durante a utilização dos sistemas.\nApoio em infraestrutura e banco de dados.\nMonitoramento e controle de demandas por Excel e plataformas corporativas.\nElaboração de relatórios e acompanhamento de indicadores.\nParticipação em treinamentos e reuniões técnicas.\nAplicação de IA generativa no apoio à análise, organização e gestão de demandas.",
+      },
+    ],
   },
   {
     role: "Auxiliar de escritório III (Geral)",
