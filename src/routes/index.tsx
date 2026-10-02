@@ -14,6 +14,7 @@ import {
   HandHeart,
   Brain,
   Target,
+  Download,
 } from "lucide-react";
 import { profile as profileData } from "@/data/portfolio";
 
@@ -147,6 +148,14 @@ function Index() {
                 <Target className="h-4 w-4" />
                 Compatibilidade Vaga
               </Link>
+              <a
+                href="/curriculo-tiago-de-avila-miranda.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+              >
+                <Download className="h-4 w-4" />
+                Baixar currículo (PDF)
+              </a>
             </div>
           </div>
 
