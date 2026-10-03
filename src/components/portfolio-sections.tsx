@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { RecadoForm } from "@/components/recado-form";
 import {
   ArrowLeft,
   IdCard,
@@ -493,6 +494,7 @@ export function OfflinePage() {
           </div>
         </div>
       </div>
+      <RecadoForm />
     </SubPage>
   );
 }
