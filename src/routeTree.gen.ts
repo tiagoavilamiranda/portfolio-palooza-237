@@ -13,6 +13,7 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProfissionalRouteImport } from './routes/profissional'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PerfilDesenvolvimentoRouteImport } from './routes/perfil-desenvolvimento'
+import { Route as PainelRouteImport } from './routes/painel'
 import { Route as OfflineRouteImport } from './routes/offline'
 import { Route as HabilidadesRouteImport } from './routes/habilidades'
 import { Route as GraduacaoRouteImport } from './routes/graduacao'
@@ -40,6 +41,11 @@ const PortfolioRoute = PortfolioRouteImport.update({
 const PerfilDesenvolvimentoRoute = PerfilDesenvolvimentoRouteImport.update({
   id: '/perfil-desenvolvimento',
   path: '/perfil-desenvolvimento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PainelRoute = PainelRouteImport.update({
+  id: '/painel',
+  path: '/painel',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OfflineRoute = OfflineRouteImport.update({
@@ -92,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
   '/offline': typeof OfflineRoute
+  '/painel': typeof PainelRoute
   '/perfil-desenvolvimento': typeof PerfilDesenvolvimentoRoute
   '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByTo {
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
   '/offline': typeof OfflineRoute
+  '/painel': typeof PainelRoute
   '/perfil-desenvolvimento': typeof PerfilDesenvolvimentoRoute
   '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
@@ -121,6 +129,7 @@ export interface FileRoutesById {
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
   '/offline': typeof OfflineRoute
+  '/painel': typeof PainelRoute
   '/perfil-desenvolvimento': typeof PerfilDesenvolvimentoRoute
   '/portfolio': typeof PortfolioRoute
   '/profissional': typeof ProfissionalRoute
@@ -137,6 +146,7 @@ export interface FileRouteTypes {
     | '/graduacao'
     | '/habilidades'
     | '/offline'
+    | '/painel'
     | '/perfil-desenvolvimento'
     | '/portfolio'
     | '/profissional'
@@ -151,6 +161,7 @@ export interface FileRouteTypes {
     | '/graduacao'
     | '/habilidades'
     | '/offline'
+    | '/painel'
     | '/perfil-desenvolvimento'
     | '/portfolio'
     | '/profissional'
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/graduacao'
     | '/habilidades'
     | '/offline'
+    | '/painel'
     | '/perfil-desenvolvimento'
     | '/portfolio'
     | '/profissional'
@@ -180,6 +192,7 @@ export interface RootRouteChildren {
   GraduacaoRoute: typeof GraduacaoRoute
   HabilidadesRoute: typeof HabilidadesRoute
   OfflineRoute: typeof OfflineRoute
+  PainelRoute: typeof PainelRoute
   PerfilDesenvolvimentoRoute: typeof PerfilDesenvolvimentoRoute
   PortfolioRoute: typeof PortfolioRoute
   ProfissionalRoute: typeof ProfissionalRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/perfil-desenvolvimento'
       fullPath: '/perfil-desenvolvimento'
       preLoaderRoute: typeof PerfilDesenvolvimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/painel': {
+      id: '/painel'
+      path: '/painel'
+      fullPath: '/painel'
+      preLoaderRoute: typeof PainelRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/offline': {
@@ -284,6 +304,7 @@ const rootRouteChildren: RootRouteChildren = {
   GraduacaoRoute: GraduacaoRoute,
   HabilidadesRoute: HabilidadesRoute,
   OfflineRoute: OfflineRoute,
+  PainelRoute: PainelRoute,
   PerfilDesenvolvimentoRoute: PerfilDesenvolvimentoRoute,
   PortfolioRoute: PortfolioRoute,
   ProfissionalRoute: ProfissionalRoute,
