@@ -14,7 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      site_visits: {
+        Row: {
+          city: string | null
+          country: string | null
+          created_at: string
+          device: string | null
+          id: string
+          path: string
+          referrer: string | null
+          region: string | null
+          source: string | null
+        }
+        Insert: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          device?: string | null
+          id?: string
+          path?: string
+          referrer?: string | null
+          region?: string | null
+          source?: string | null
+        }
+        Update: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          device?: string | null
+          id?: string
+          path?: string
+          referrer?: string | null
+          region?: string | null
+          source?: string | null
+        }
+        Relationships: []
+      }
+      visitor_messages: {
+        Row: {
+          company: string | null
+          contact: string | null
+          created_at: string
+          id: string
+          message: string
+          name: string
+        }
+        Insert: {
+          company?: string | null
+          contact?: string | null
+          created_at?: string
+          id?: string
+          message: string
+          name: string
+        }
+        Update: {
+          company?: string | null
+          contact?: string | null
+          created_at?: string
+          id?: string
+          message?: string
+          name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
