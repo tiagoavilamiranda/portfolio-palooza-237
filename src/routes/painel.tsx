@@ -60,7 +60,10 @@ function Login() {
       if (error) setMsg("E-mail ou senha incorretos (ou e-mail ainda não confirmado).");
     } else {
       const { error } = await supabase.auth.signUp({ email, password: pass, options: { emailRedirectTo: `${window.location.origin}/painel` } });
-      setMsg(error ? error.message : "Conta criada! Confirme pelo link enviado ao seu e-mail e depois entre.");
+      if (!error) setMsg("Conta criada! Confirme pelo link enviado ao seu e-mail (veja também a caixa de spam) e depois entre.");
+      else if (/weak|pwned|guess/i.test(error.message)) setMsg("Essa senha é muito comum e foi recusada por segurança. Use uma senha mais forte, com letras, números e símbolos (ex.: Leopoldina#2026Tiago).");
+      else if (/registered|exists/i.test(error.message)) setMsg("Esse e-mail já tem acesso. Volte e clique em Entrar.");
+      else setMsg("Não foi possível criar o acesso: " + error.message);
     }
   }
   const input = "w-full rounded-lg border border-primary/30 bg-background/60 px-4 py-2.5 text-sm focus:border-primary focus:outline-none";
