@@ -19,7 +19,7 @@ export const Route = createFileRoute("/painel")({
   component: Painel,
 });
 
-type Visit = { id: string; created_at: string; path: string; source: string | null; city: string | null; region: string | null; country: string | null; device: string | null };
+type Visit = { id: string; created_at: string; path: string; source: string | null; city: string | null; region: string | null; country: string | null; device: string | null; session_id: string | null };
 type Msg = { id: string; created_at: string; name: string; company: string | null; contact: string | null; message: string };
 
 const fmt = (d: string) => new Date(d).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
@@ -122,6 +122,15 @@ function Dashboard({ email }: { email: string }) {
   }
 
   const today = visits.filter((v) => new Date(v.created_at).toDateString() === new Date().toDateString()).length;
+  const groups: Visit[][] = [];
+  const bySid = new Map<string, Visit[]>();
+  for (const v of [...visits].reverse()) {
+    if (!v.session_id) { groups.push([v]); continue; }
+    const g = bySid.get(v.session_id);
+    if (g) g.push(v);
+    else { const n = [v]; bySid.set(v.session_id, n); groups.push(n); }
+  }
+  groups.reverse();
   const linkedin = visits.filter((v) => v.source === "LinkedIn").length;
 
   return (
@@ -145,17 +154,23 @@ function Dashboard({ email }: { email: string }) {
       {tab === "v" ? (
         <div className="mt-4 overflow-x-auto rounded-xl border border-border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-card text-xs text-muted-foreground"><tr><th className="p-3">Quando</th><th className="p-3">Página</th><th className="p-3">Origem</th><th className="p-3">Cidade</th><th className="p-3">Aparelho</th></tr></thead>
+            <thead className="bg-card text-xs text-muted-foreground"><tr><th className="p-3">Quando</th><th className="p-3">Páginas vistas (em ordem)</th><th className="p-3">Origem</th><th className="p-3">Cidade</th><th className="p-3">Aparelho</th></tr></thead>
             <tbody>
-              {visits.map((v) => (
-                <tr key={v.id} className="border-t border-border">
-                  <td className="p-3 whitespace-nowrap">{fmt(v.created_at)}</td>
-                  <td className="p-3">{pageName(v.path)}</td>
-                  <td className="p-3">{v.source ?? "—"}</td>
-                  <td className="p-3">{[v.city, v.region, v.country && (COUNTRIES[v.country] ?? v.country)].filter(Boolean).join(", ") || "Não identificada"}</td>
-                  <td className="p-3">{v.device ?? "—"}</td>
-                </tr>
-              ))}
+              {groups.map((g) => {
+                const v = g[0];
+                return (
+                  <tr key={v.id} className="border-t border-border align-top">
+                    <td className="p-3 whitespace-nowrap">{fmt(v.created_at)}</td>
+                    <td className="p-3">
+                      {g.map((x) => pageName(x.path)).join(" → ")}
+                      {g.length > 1 && <span className="ml-2 text-xs text-muted-foreground">({g.length} páginas)</span>}
+                    </td>
+                    <td className="p-3">{v.source ?? "—"}</td>
+                    <td className="p-3">{[v.city, v.region, v.country && (COUNTRIES[v.country] ?? v.country)].filter(Boolean).join(", ") || "Não identificada"}</td>
+                    <td className="p-3">{v.device ?? "—"}</td>
+                  </tr>
+                );
+              })}
               {!visits.length && <tr><td colSpan={5} className="p-6 text-center text-muted-foreground">Nenhuma visita registrada ainda.</td></tr>}
             </tbody>
           </table>
