@@ -23,6 +23,22 @@ type Visit = { id: string; created_at: string; path: string; source: string | nu
 type Msg = { id: string; created_at: string; name: string; company: string | null; contact: string | null; message: string };
 
 const fmt = (d: string) => new Date(d).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+const PAGES: Record<string, string> = {
+  "/": "Página inicial",
+  "/sobre": "Sobre",
+  "/profissional": "Trajetória Profissional",
+  "/graduacao": "Graduação",
+  "/certificacoes": "Certificações",
+  "/habilidades": "Habilidades",
+  "/ferramentas": "Ferramentas & Sistemas",
+  "/offline": "OffLine",
+  "/portfolio": "Portfólio",
+  "/dedicatoria": "Dedicatória",
+  "/perfil-desenvolvimento": "Perfil & Desenvolvimento",
+  "/compatibilidade-vaga": "Compatibilidade Vaga",
+};
+const pageName = (p: string) => PAGES[p.replace(/\/$/, "") || "/"] ?? p;
+const COUNTRIES: Record<string, string> = { BR: "Brasil", US: "EUA", PT: "Portugal" };
 
 function Painel() {
   const [session, setSession] = useState<Session | null>(null);
@@ -134,9 +150,9 @@ function Dashboard({ email }: { email: string }) {
               {visits.map((v) => (
                 <tr key={v.id} className="border-t border-border">
                   <td className="p-3 whitespace-nowrap">{fmt(v.created_at)}</td>
-                  <td className="p-3">{v.path}</td>
+                  <td className="p-3">{pageName(v.path)}</td>
                   <td className="p-3">{v.source ?? "—"}</td>
-                  <td className="p-3">{[v.city, v.region, v.country].filter(Boolean).join(", ") || "—"}</td>
+                  <td className="p-3">{[v.city, v.region, v.country && (COUNTRIES[v.country] ?? v.country)].filter(Boolean).join(", ") || "Não identificada"}</td>
                   <td className="p-3">{v.device ?? "—"}</td>
                 </tr>
               ))}
