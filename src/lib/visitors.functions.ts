@@ -19,6 +19,7 @@ export const logVisit = createServerFn({ method: "POST" })
         referrer: z.string().max(500).optional(),
         source: z.string().max(60).optional(),
         device: z.string().max(20).optional(),
+        session: z.string().max(60).optional(),
       })
       .parse(d),
   )
@@ -54,6 +55,7 @@ export const logVisit = createServerFn({ method: "POST" })
       referrer: data.referrer || null,
       source: data.source || null,
       device: data.device || null,
+      session_id: data.session || null,
       city,
       region,
       country,
