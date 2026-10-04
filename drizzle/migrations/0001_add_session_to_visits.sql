@@ -1,0 +1,1 @@
+ALTER TABLE public.site_visits ADD COLUMN IF NOT EXISTS session_id text;

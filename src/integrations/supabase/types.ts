@@ -24,6 +24,7 @@ export type Database = {
           path: string
           referrer: string | null
           region: string | null
+          session_id: string | null
           source: string | null
         }
         Insert: {
@@ -35,6 +36,7 @@ export type Database = {
           path?: string
           referrer?: string | null
           region?: string | null
+          session_id?: string | null
           source?: string | null
         }
         Update: {
@@ -46,6 +48,7 @@ export type Database = {
           path?: string
           referrer?: string | null
           region?: string | null
+          session_id?: string | null
           source?: string | null
         }
         Relationships: []

@@ -25,12 +25,18 @@ export function VisitTracker() {
       source = detectSource(ref, new URLSearchParams(window.location.search));
       sessionStorage.setItem(key, source);
     }
+    let sid = sessionStorage.getItem("tv_sid");
+    if (!sid) {
+      sid = crypto.randomUUID();
+      sessionStorage.setItem("tv_sid", sid);
+    }
     logVisit({
       data: {
         path: pathname,
         referrer: ref || undefined,
         source,
         device: window.innerWidth < 768 ? "Celular" : "Computador",
+        session: sid,
       },
     }).catch(() => {});
   }, [pathname]);
