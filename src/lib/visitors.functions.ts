@@ -24,14 +24,39 @@ export const logVisit = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    let city = decode(getRequestHeader("cf-ipcity"));
+    let region = decode(getRequestHeader("cf-region"));
+    let country = decode(getRequestHeader("cf-ipcountry"));
+    if (!city) {
+      const ip =
+        getRequestHeader("cf-connecting-ip") ||
+        getRequestHeader("x-real-ip") ||
+        getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim();
+      if (ip) {
+        try {
+          const ctrl = new AbortController();
+          const t = setTimeout(() => ctrl.abort(), 2500);
+          const r = await fetch(`https://ipwho.is/${encodeURIComponent(ip)}?lang=pt-BR`, { signal: ctrl.signal });
+          clearTimeout(t);
+          const g = (await r.json()) as { success?: boolean; city?: string; region?: string; country_code?: string };
+          if (g.success) {
+            city = decode(g.city) ?? city;
+            region = decode(g.region) ?? region;
+            country = decode(g.country_code) ?? country;
+          }
+        } catch {
+          /* sem cidade */
+        }
+      }
+    }
     await supabaseAdmin.from("site_visits").insert({
       path: data.path,
       referrer: data.referrer || null,
       source: data.source || null,
       device: data.device || null,
-      city: decode(getRequestHeader("cf-ipcity")),
-      region: decode(getRequestHeader("cf-region")),
-      country: decode(getRequestHeader("cf-ipcountry")),
+      city,
+      region,
+      country,
     });
     return { ok: true };
   });
