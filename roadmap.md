@@ -9,4 +9,4 @@
 - [x] Trocar Dimensa por Evertec Brasil e aplicar a imagem enviada em todo o portfólio
 - [x] Validar página, robô e compatibilidade de vagas
 - Visitas + recados com painel privado (/painel) — feito
-- [ ] Currículo: QR code LinkedIn (com nome) + link do portfólio em local estratégico
+- [x] Currículo: QR code LinkedIn (com nome) + link do portfólio em local estratégico
