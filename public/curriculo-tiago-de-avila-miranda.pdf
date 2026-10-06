@@ -1,51 +1,25 @@
 %PDF-1.4
-%âãÏÓ
+%ÂµÂ¶
+% Written by MuPDF 1.28.2
+
 1 0 obj
-<<
-/Producer (pypdf)
->>
+<</Producer(pypdf)>>
 endobj
+
 2 0 obj
-<<
-/Type /Pages
-/Count 2
-/Kids [ 4 0 R 28 0 R ]
->>
+<</Type/Pages/Count 2/Kids[4 0 R 28 0 R]>>
 endobj
+
 3 0 obj
-<<
-/Type /Catalog
-/Pages 2 0 R
->>
+<</Type/Catalog/Pages 2 0 R>>
 endobj
+
 4 0 obj
-<<
-/Contents 5 0 R
-/MediaBox [ 0 0 595.2756 841.8898 ]
-/Resources <<
-/Font <<
-/F1 6 0 R
-/F1-0 7 0 R
-/F2 8 0 R
-/F2+0 9 0 R
-/F3+0 13 0 R
-/F3+0-0 17 0 R
-/F4+0 21 0 R
->>
-/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
->>
-/Rotate 0
-/Trans <<
->>
-/Type /Page
-/Annots [ 25 0 R 26 0 R 27 0 R ]
-/Parent 2 0 R
->>
+<</Type/Page/Contents 5 0 R/MediaBox[0 0 595.2756 841.8898]/Resources<</Font<</F1 6 0 R/F1-0 7 0 R/F2 8 0 R/F2+0 9 0 R/F3+0 13 0 R/F3+0-0 17 0 R/F4+0 21 0 R>>/ProcSet[/ImageB/ImageC/ImageI/PDF/Text]>>/Rotate 0/Trans<<>>/Annots[25 0 R 26 0 R 27 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R]/Parent 2 0 R>>
 endobj
+
 5 0 obj
-<<
-/Length 32414
->>
+<</Length 32414>>
 stream
 q
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -3259,67 +3233,29 @@ Q
 
 endstream
 endobj
+
 6 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica/Encoding/WinAnsiEncoding/Name/F1>>
 endobj
+
 7 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica/Encoding/WinAnsiEncoding/Name/F1>>
 endobj
+
 8 0 obj
-<<
-/BaseFont /Times-Roman
-/Encoding /WinAnsiEncoding
-/Name /F2
-/Subtype /Type1
-/Type /Font
->>
+<</Type/Font/Subtype/Type1/BaseFont/Times-Roman/Encoding/WinAnsiEncoding/Name/F2>>
 endobj
+
 9 0 obj
-<<
-/BaseFont /AAAAAA+DejaVuSans-Bold
-/FirstChar 0
-/FontDescriptor 10 0 R
-/LastChar 127
-/Name /F2+0
-/Subtype /TrueType
-/ToUnicode 12 0 R
-/Type /Font
-/Widths [ 600.0977 683.1055 678.2227 687.0117 592.7734 342.7734 674.8047 733.8867 773.9258 1000 674.8047 850.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 348.1445 456.0547 520.9961 837.8906 695.8008 1001.953 872.0703 306.1523 457.0312 457.0312 522.9492 837.8906 379.8828 415.0391 379.8828 365.2344 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 399.9023 399.9023 837.8906 837.8906 837.8906 580.0781 1000 773.9258 762.207 733.8867 830.0781 683.1055 683.1055 820.8008 836.9141 372.0703 372.0703 774.9023 637.207 995.1172 836.9141 850.0977 732.9102 850.0977 770.0195 720.2148 682.1289 812.0117 773.9258 1103.027 770.9961 724.1211 725.0977 457.0312 365.2344 457.0312 837.8906 500 500 674.8047 715.8203 592.7734 715.8203 678.2227 435.0586 715.8203 711.9141 342.7734 342.7734 665.0391 342.7734 1041.992 711.9141 687.0117 715.8203 715.8203 493.1641 595.2148 478.0273 711.9141 651.8555 923.8281 645.0195 651.8555 582.0312 711.9141 365.2344 711.9141 837.8906 600.0977 ]
->>
+<</Type/Font/Subtype/TrueType/BaseFont/AAAAAA+DejaVuSans-Bold/FirstChar 0/FontDescriptor 10 0 R/LastChar 127/Name/F2+0/ToUnicode 12 0 R/Widths[600.0977 683.1055 678.2227 687.0117 592.7734 342.7734 674.8047 733.8867 773.9258 1000 674.8047 850.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 348.1445 456.0547 520.9961 837.8906 695.8008 1001.953 872.0703 306.1523 457.0312 457.0312 522.9492 837.8906 379.8828 415.0391 379.8828 365.2344 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 399.9023 399.9023 837.8906 837.8906 837.8906 580.0781 1000 773.9258 762.207 733.8867 830.0781 683.1055 683.1055 820.8008 836.9141 372.0703 372.0703 774.9023 637.207 995.1172 836.9141 850.0977 732.9102 850.0977 770.0195 720.2148 682.1289 812.0117 773.9258 1103.027 770.9961 724.1211 725.0977 457.0312 365.2344 457.0312 837.8906 500 500 674.8047 715.8203 592.7734 715.8203 678.2227 435.0586 715.8203 711.9141 342.7734 342.7734 665.0391 342.7734 1041.992 711.9141 687.0117 715.8203 715.8203 493.1641 595.2148 478.0273 711.9141 651.8555 923.8281 645.0195 651.8555 582.0312 711.9141 365.2344 711.9141 837.8906 600.0977]>>
 endobj
+
 10 0 obj
-<<
-/Ascent 759.7656
-/CapHeight 759.7656
-/Descent -240.2344
-/Flags 262148
-/FontBBox [ -1069.336 -415.0391 1975.098 1175.293 ]
-/FontFile2 11 0 R
-/FontName /AAAAAA+DejaVuSans-Bold
-/ItalicAngle 0
-/MissingWidth 600.0977
-/StemV 165
-/Type /FontDescriptor
->>
+<</Type/FontDescriptor/Ascent 759.7656/CapHeight 759.7656/Descent -240.2344/Flags 262148/FontBBox[-1069.336 -415.0391 1975.098 1175.293]/FontFile2 11 0 R/FontName/AAAAAA+DejaVuSans-Bold/ItalicAngle 0/MissingWidth 600.0977/StemV 165>>
 endobj
+
 11 0 obj
-<<
-/Filter [ /FlateDecode ]
-/Length1 36548
-/Length 19118
->>
+<</Filter[/FlateDecode]/Length1 36548/Length 19118>>
 stream
 xœì½	|Eö \ÕÕİÓİs'3“L®éC„$$‡L€!Äî+!	$™˜D@ğ>A@\YDd‘EEDÔèzÀª+è"º,+¬®FtıXÅ˜4ß«ê™ˆ®ëºûßï÷ûÒtOuuõ«w¿W¯{„Bf´T8abjúô)ëî‡`Ÿ\V[Zo\aÊA€İU¶°I½ò™şB\>ìÅ•õójgp¾DˆßãwÍ«Y\Y[ü—×àzvqUEiùM³&Ãy.½>°
 :,şç„ó„ªÚ¦kr…ş×Áy;Ào©ñ—•†¿Ñ{ BcÃõ3µ¥×Ô‹ûÅ~åmƒsµ®´¶¢!îÁOà¼¡a™õşÆ¦‹'Ñt„ni§×ë*ê—–nı¡[£2<‚0¿†;ˆÀ'CX3ÄèŸä=TÉ… F‰‘ç8şcTwñ¨ã¢’P’Ä#ÕTX™ST¤^¼(:4Ş`¨Å• |ñâE¤ÿa„Ù§	‰Xa­¬—>ò0£ˆHB2RıÔ?ÈÁ‚¬È†ì(…"r"
@@ -3391,49 +3327,24 @@ Qnõ4øŒ{ùH3‰p"–7LêGÂ5f'.˜ÍÕFœĞçôG9	µ“ØáÜ®[9±Zl‚5”Xó±¬àÍpÅÜFLéÄ¤]Ä¸
 Š jDPˆàãù6BÊ	wqx/³€íÿï˜x™w0¦´ö2jÀ0Ğ !e  ±ú‘
 endstream
 endobj
+
 12 0 obj
-<<
-/Filter [ /FlateDecode ]
-/Length 709
->>
+<</Filter[/FlateDecode]/Length 709>>
 stream
 xœ}ÕMkZA†á½¿â,[JÑ3ïW"˜˜@ı )İSK<ÊQù÷ç<’¥THæVg’‹9‹w|û°xè¶§füµß¯ó©Ùl»uŸûs¿ÊÍS~Şv£65ëíêty7ü^í–‡Ñ¸~|=òî¡ÛìGÓi3şV¾<ú×æİ|x}Xä_ËçÇewüx³Y¿¿ôëÜo»çÿly</y—»S3ÍfÍ:oÊ?û´<|^îr3ş÷¹?»¾¿r“†÷-Ñ«ı:ËUî—İsM'“Y3ûÙ(wë¿¾kÓÏ<mV?—ıeï¤¼f¥Û¡oçè4ôİ5Z†¾´òó@{vv‹şaÏ{8{]:MZEÏ¹øüfè…¡o+Ï¢ê»ªïÿt[ùÛ¶êTµT­U[Õ^uT}UõuÕóªoª®ümåo+[ùıihúî0Ñ_–Òô'ÜU¢?áı	÷–è/Kiúî?Ñ_–Òô'<ÓDÂ³Nô—¥4ıe)MÂóMô—¥4ıeM…~_èø…~_èø…~_èø…~_èø…~_èø…~_èø…~_èø…~_èø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?è¿LˆË$À¬ÀØ{D«sß—5ÌÆağ`äl»ü6>ûNáç7Ô¤Ç
 endstream
 endobj
+
 13 0 obj
-<<
-/BaseFont /AAAAAA+DejaVuSans
-/FirstChar 0
-/FontDescriptor 14 0 R
-/LastChar 127
-/Name /F3+0
-/Subtype /TrueType
-/ToUnicode 16 0 R
-/Type /Font
-/Widths [ 600.0977 612.793 317.8711 611.8164 277.832 549.8047 615.2344 612.793 1000 611.8164 633.7891 611.8164 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 317.8711 400.8789 459.9609 837.8906 636.2305 950.1953 779.7852 274.9023 390.1367 390.1367 500 837.8906 317.8711 360.8398 317.8711 336.9141 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 336.9141 336.9141 837.8906 837.8906 837.8906 530.7617 1000 684.082 686.0352 698.2422 770.0195 631.8359 575.1953 774.9023 751.9531 294.9219 294.9219 655.7617 557.1289 862.793 748.0469 787.1094 603.0273 787.1094 694.8242 634.7656 610.8398 731.9336 684.082 988.7695 685.0586 610.8398 685.0586 390.1367 336.9141 390.1367 837.8906 500 500 612.793 634.7656 549.8047 634.7656 615.2344 352.0508 634.7656 633.7891 277.832 277.832 579.1016 277.832 974.1211 633.7891 611.8164 634.7656 634.7656 411.1328 520.9961 392.0898 633.7891 591.7969 817.8711 591.7969 591.7969 524.9023 636.2305 336.9141 636.2305 837.8906 600.0977 ]
->>
+<</Type/Font/Subtype/TrueType/BaseFont/AAAAAA+DejaVuSans/FirstChar 0/FontDescriptor 14 0 R/LastChar 127/Name/F3+0/ToUnicode 16 0 R/Widths[600.0977 612.793 317.8711 611.8164 277.832 549.8047 615.2344 612.793 1000 611.8164 633.7891 611.8164 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 317.8711 400.8789 459.9609 837.8906 636.2305 950.1953 779.7852 274.9023 390.1367 390.1367 500 837.8906 317.8711 360.8398 317.8711 336.9141 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 336.9141 336.9141 837.8906 837.8906 837.8906 530.7617 1000 684.082 686.0352 698.2422 770.0195 631.8359 575.1953 774.9023 751.9531 294.9219 294.9219 655.7617 557.1289 862.793 748.0469 787.1094 603.0273 787.1094 694.8242 634.7656 610.8398 731.9336 684.082 988.7695 685.0586 610.8398 685.0586 390.1367 336.9141 390.1367 837.8906 500 500 612.793 634.7656 549.8047 634.7656 615.2344 352.0508 634.7656 633.7891 277.832 277.832 579.1016 277.832 974.1211 633.7891 611.8164 634.7656 634.7656 411.1328 520.9961 392.0898 633.7891 591.7969 817.8711 591.7969 591.7969 524.9023 636.2305 336.9141 636.2305 837.8906 600.0977]>>
 endobj
+
 14 0 obj
-<<
-/Ascent 759.7656
-/CapHeight 759.7656
-/Descent -240.2344
-/Flags 4
-/FontBBox [ -1020.508 -462.8906 1793.457 1232.422 ]
-/FontFile2 15 0 R
-/FontName /AAAAAA+DejaVuSans
-/ItalicAngle 0
-/MissingWidth 600.0977
-/StemV 87
-/Type /FontDescriptor
->>
+<</Type/FontDescriptor/Ascent 759.7656/CapHeight 759.7656/Descent -240.2344/Flags 4/FontBBox[-1020.508 -462.8906 1793.457 1232.422]/FontFile2 15 0 R/FontName/AAAAAA+DejaVuSans/ItalicAngle 0/MissingWidth 600.0977/StemV 87>>
 endobj
+
 15 0 obj
-<<
-/Filter [ /FlateDecode ]
-/Length1 36472
-/Length 19265
->>
+<</Filter[/FlateDecode]/Length1 36472/Length 19265>>
 stream
 xœì½	|Eö8^ÕÕÇLÏ=™É}tn!		W aH I!LÈA‚‰98e¹„€ ! ˆED–ˆw<‘½ wYp]EwY¿ìŠ4¿WÕ39 ]×=ÿŸÏ?C§¯ªWï~¯^Õ„B&´”›3>1¹°÷ìŞğä%³Š«‹á¾pø–Ì®SPeH*BÜX¸WË«§Ïº¯ïìñp™>s^ùë~‘÷Wş«Š²âÒec>@hÔÛğ¾<0m— vÜ¢¨ŠYusMÃ‡î€û(€÷ÒLwIqÑO³«}Ş<«xn5ÿxBch¥ªxVY˜{ÜSpÿ9Bwèªİµu7Î¢É­¼LßW×”U–ş—«¬	óf¼	p"l†Bµ3ù-*çì@…A$DÇsUİøj¿!GÅñH1æ–g”"RnÜªo‘fáOŠ¾ñá¤ı`„ÙÙˆD,³«Åì)|äaDIH‡ôHFôCŒ 3² +²!;òAäD¾Èù£ ˆ‚P0
 A¡()(E H…¢QŠE=Pê‰z¡xÔ% D”„ú d”‚ú¢~¨?€¢T4FCĞh(t¥¡t4@(D£@£Ñ4CÙ(å¢;QòÑT€&¢I¨x|ºMASÑ=¨£i¨•¢2T¦£
@@ -3502,51 +3413,26 @@ Mİ-ğ]¨³Ò ³qè]B™lƒİªF7»uìSzÔ–•)ÓÊfºçÄ%(?`c[‚2ræ¼êŠZ¥rVµ»¦®¬T)¯qÏRÒjÊf{6yÇ`éê
 1	YV2ÊDFª$s#ÉØHF¨d8×[~¤¿@ÒÆ—J†©dèva¨ƒÜ1Ä"Üa'C›„!®2ØD©$U%8„×È€şVa€ƒôïgú[I?éJRL$¹AHVIIJ4I&’h 	½õB‚•ôÖ“ødÒ«g´Ğ«”ôŒ³=£Iœôˆz¤‘Øhmb,$Ú@¢T©’	:ÃíD)%a×H(ZJBL$8¬’ k$0ÀM€JüK‰pÊO%¾ĞÉ7€8UâP‰JìĞÀ®ĞjK'Ö…ÄRJÌ*1}“JŒĞÚèK*‘­D¯4Ó©Drÿ7¶f $0ˆ2E™ÿ13ùLºÌŒÌÿ˜w0¦´ö2jÀ0ĞÀd#¶X
 endstream
 endobj
+
 16 0 obj
-<<
-/Filter [ /FlateDecode ]
-/Length 700
->>
+<</Filter[/FlateDecode]/Length 700>>
 stream
 xœmÕ½nA†á«Ø2Q
 Ø9¶„°±%ùQˆÒc¢° 
 ß}æÛ9£$H0/ì,<Š3¾Z<u»s3şÒÖË|n¶»nÓçÓáÒ¯sóœ_vİ¨MÍf·>_ß¯ëıê8—›—¯§sŞ?uÛÃh:mÆ_ËÅÓ¹mŞÍ‡Ç‡Eş¹ú~Y®ºÓûÑøs¿Éı®{ùÿÕååxü•÷¹;7“ÑlÖlò¶üÄÇÕñÓjŸ›ñ?·üÙğíõ˜›4¼o©\6ùt\­s¿ê^òh:™Ìši<ÎF¹Ûüu­M7¼çy»ş±ê¯{'å1+İı è4ô] eèÇásåÚØÃgÏÑÁnÑ7¥Ó¤Uô-¿ÇĞsö°ÿ=ì¹¯<‹ªª~üÓmåoÛªSÕRµVmU{ÕQõMÕ·UÏ«¾«ºò·•¿­ümåOô§¡éO8·DYJÓŸpş‰ş„³Jô'œg¢¿,¥éOø_ıe)MYJÓŸpş‰ş²”¦¿,¥éOø¯ıe)MYFS¡_àú~¡_àú~¡_àú~¡_àú~¡_àú~¡_àú~¡_àú~¡_àú~¥_áWú~¥_áWú~¥_áWú~¥_áWú~¥_áWú~¥_áWú~¥_áWú~¥_áWú~£ßà7ú~£ßà7ú~£ßà7ú~£ßà7ú~£ßà7ú~£ßà7ú~£ßà7ú~£ßà7ú~§ßáwú~§ßáwú~§ßáwú~§ßáwú~§ßáwú~§ßáwú~§ßáwú~§ßáwúş ?àúş ?àúş ?àúş ?àúş ?àúş ?àúş ?àúş ?àú¯â:	0+0çŞfĞúÒ÷e<Ãp<9».¿ÍËãáˆ»ğüÈŸÍ
 endstream
 endobj
+
 17 0 obj
-<<
-/BaseFont /AAAAAA+DejaVuSans-Bold
-/FirstChar 0
-/FontDescriptor 18 0 R
-/LastChar 127
-/Name /F3+0
-/Subtype /TrueType
-/ToUnicode 20 0 R
-/Type /Font
-/Widths [ 600.0977 1000 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 348.1445 456.0547 520.9961 837.8906 695.8008 1001.953 872.0703 306.1523 457.0312 457.0312 522.9492 837.8906 379.8828 415.0391 379.8828 365.2344 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 399.9023 399.9023 837.8906 837.8906 837.8906 580.0781 1000 773.9258 762.207 733.8867 830.0781 683.1055 683.1055 820.8008 836.9141 372.0703 372.0703 774.9023 637.207 995.1172 836.9141 850.0977 732.9102 850.0977 770.0195 720.2148 682.1289 812.0117 773.9258 1103.027 770.9961 724.1211 725.0977 457.0312 365.2344 457.0312 837.8906 500 500 674.8047 715.8203 592.7734 715.8203 678.2227 435.0586 715.8203 711.9141 342.7734 342.7734 665.0391 342.7734 1041.992 711.9141 687.0117 715.8203 715.8203 493.1641 595.2148 478.0273 711.9141 651.8555 923.8281 645.0195 651.8555 582.0312 711.9141 365.2344 711.9141 837.8906 600.0977 ]
->>
+<</Type/Font/Subtype/TrueType/BaseFont/AAAAAA+DejaVuSans-Bold/FirstChar 0/FontDescriptor 18 0 R/LastChar 127/Name/F3+0/ToUnicode 20 0 R/Widths[600.0977 1000 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 348.1445 456.0547 520.9961 837.8906 695.8008 1001.953 872.0703 306.1523 457.0312 457.0312 522.9492 837.8906 379.8828 415.0391 379.8828 365.2344 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 695.8008 399.9023 399.9023 837.8906 837.8906 837.8906 580.0781 1000 773.9258 762.207 733.8867 830.0781 683.1055 683.1055 820.8008 836.9141 372.0703 372.0703 774.9023 637.207 995.1172 836.9141 850.0977 732.9102 850.0977 770.0195 720.2148 682.1289 812.0117 773.9258 1103.027 770.9961 724.1211 725.0977 457.0312 365.2344 457.0312 837.8906 500 500 674.8047 715.8203 592.7734 715.8203 678.2227 435.0586 715.8203 711.9141 342.7734 342.7734 665.0391 342.7734 1041.992 711.9141 687.0117 715.8203 715.8203 493.1641 595.2148 478.0273 711.9141 651.8555 923.8281 645.0195 651.8555 582.0312 711.9141 365.2344 711.9141 837.8906 600.0977]>>
 endobj
+
 18 0 obj
-<<
-/Ascent 759.7656
-/CapHeight 759.7656
-/Descent -240.2344
-/Flags 262148
-/FontBBox [ -1069.336 -415.0391 1975.098 1175.293 ]
-/FontFile2 19 0 R
-/FontName /AAAAAA+DejaVuSans-Bold
-/ItalicAngle 0
-/MissingWidth 600.0977
-/StemV 165
-/Type /FontDescriptor
->>
+<</Type/FontDescriptor/Ascent 759.7656/CapHeight 759.7656/Descent -240.2344/Flags 262148/FontBBox[-1069.336 -415.0391 1975.098 1175.293]/FontFile2 19 0 R/FontName/AAAAAA+DejaVuSans-Bold/ItalicAngle 0/MissingWidth 600.0977/StemV 165>>
 endobj
+
 19 0 obj
-<<
-/Filter [ /FlateDecode ]
-/Length1 35180
-/Length 18207
->>
+<</Filter[/FlateDecode]/Length1 35180/Length 18207>>
 stream
 xœí½\U8~Îœ™¹3sßÀ.Ï¼"Š€(>ò¢<D	ñ™.‚—xh¦¦mï‡Y™¦fùÈ53×H]3S³¢¶‡nµi­™™›V[dm?+#ßsæ^fm[íãÿÿügæÌÌ9ßó}¿ç;"Œ2£¥ˆ ‚qã“S§NZ}?Üyö‰¥Õ%µò­JBx ìÁ¥óÔ+Ÿî'!ÄåÁ^T^;»újnî—ñ ÿöÙUÊ?šë‹ Ï‡N«ğ””İ4}â«el…ç+à†å	Ã_àú¸îQQİp->²¡<À¿©Ê[Zò`ó6€?ò6xŞ\]rm­¸Eì‹P&ÀCjMIµ§.öÁOàº
 ¡aiµŞú†‹'ĞT„nØLŸ×Öyj•lú®›2<Š0¿’ÛÀ§¿°fˆÒÏäTÎ F‰‘ç8şcTsñ/¨ı¢Ò£8Gª© <«©H½xQÒ‚ğZC5ş°á‹/"ı#ÌÎ&$b…µ–²»¿æ‡ğ€­ˆHB2Rà›‘Y‘ÙQ 
@@ -3612,11 +3498,9 @@ f$8’=@N8†£(8†±;NveÇvfGB€ê`W´Mp k°£[ĞbxneW´M°›Ğ]pÏÌî™Ñ!Äc6¢)p>!p\
 Š jDPˆàæùVBÊ£8¼—YÀv‚ÌïÅe7/Ã}şÿñƒşÛü"ÑÿÇ~Şa
 endstream
 endobj
+
 20 0 obj
-<<
-/Filter [ /FlateDecode ]
-/Length 683
->>
+<</Filter[/FlateDecode]/Length 683>>
 stream
 xœ}ÕMkQÆñ½Ÿb–-¥èó–‚yi ‹¾Ğ”î^SK2Êhùö=OH/¥TĞóg.şÀÅ™^Ş\İÛc7ı:îV·õØm¶Ãz¬‡İÓ¸ªİ]½ß“Òwëíêøruú\=.÷“i¾}>ëãÍ°ÙMæónú-oãs÷æüôzwU-<İ.‡Ãû‹İÃúídúe\×q;Üÿç‘Û§ış¡>ÖáØÍ&‹E·®›ü±OËıçåcí¦ÿ>÷ç©ïÏûÚõ§ëBôj·®‡ırUÇåp_'óÙlÑÍãz1©Ãú¯{¥?ã™»Íêçr|yv–¯EvÉîgEÑ}ó½4­M[ÓŞt4}Öô‡¦Ï›¾hú²é«¦?6}ı§Kã/¥éÆ_iü¥ñ—Æ_iü¥ñ—Æ_iü¥ñ—Æ_OjúsdÓŸ#›şÙô÷øzúsdÓŸ#›şÙôçÈ¦?G6ı9²éÏ‘MlúsdÓŸ#›ş“¹Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ò¯ğ+ı
 ¿Ò¯ğ+ı
@@ -3629,40 +3513,17 @@ xœ}ÕMkQÆñ½Ÿb–-¥èó–‚yi ‹¾Ğ”î^SK2Êhùö=OH/¥TĞóg.şÀÅ™^Ş\İÛc7ı:îV·õØm¶Ãz¬‡İÓ
 ¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ıĞğıĞğıĞğıĞğıĞğıĞğıĞğıĞğı/âe`W`í½.¢ÕÓ8æ:íÆÓâÁÊÙõu}îw{œÂû7Mö£°
 endstream
 endobj
+
 21 0 obj
-<<
-/BaseFont /AAAAAA+DejaVuSans
-/FirstChar 0
-/FontDescriptor 22 0 R
-/LastChar 127
-/Name /F4+0
-/Subtype /TrueType
-/ToUnicode 24 0 R
-/Type /Font
-/Widths [ 600.0977 612.793 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 317.8711 400.8789 459.9609 837.8906 636.2305 950.1953 779.7852 274.9023 390.1367 390.1367 500 837.8906 317.8711 360.8398 317.8711 336.9141 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 336.9141 336.9141 837.8906 837.8906 837.8906 530.7617 1000 684.082 686.0352 698.2422 770.0195 631.8359 575.1953 774.9023 751.9531 294.9219 294.9219 655.7617 557.1289 862.793 748.0469 787.1094 603.0273 787.1094 694.8242 634.7656 610.8398 731.9336 684.082 988.7695 685.0586 610.8398 685.0586 390.1367 336.9141 390.1367 837.8906 500 500 612.793 634.7656 549.8047 634.7656 615.2344 352.0508 634.7656 633.7891 277.832 277.832 579.1016 277.832 974.1211 633.7891 611.8164 634.7656 634.7656 411.1328 520.9961 392.0898 633.7891 591.7969 817.8711 591.7969 591.7969 524.9023 636.2305 336.9141 636.2305 837.8906 600.0977 ]
->>
+<</Type/Font/Subtype/TrueType/BaseFont/AAAAAA+DejaVuSans/FirstChar 0/FontDescriptor 22 0 R/LastChar 127/Name/F4+0/ToUnicode 24 0 R/Widths[600.0977 612.793 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 317.8711 400.8789 459.9609 837.8906 636.2305 950.1953 779.7852 274.9023 390.1367 390.1367 500 837.8906 317.8711 360.8398 317.8711 336.9141 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 336.9141 336.9141 837.8906 837.8906 837.8906 530.7617 1000 684.082 686.0352 698.2422 770.0195 631.8359 575.1953 774.9023 751.9531 294.9219 294.9219 655.7617 557.1289 862.793 748.0469 787.1094 603.0273 787.1094 694.8242 634.7656 610.8398 731.9336 684.082 988.7695 685.0586 610.8398 685.0586 390.1367 336.9141 390.1367 837.8906 500 500 612.793 634.7656 549.8047 634.7656 615.2344 352.0508 634.7656 633.7891 277.832 277.832 579.1016 277.832 974.1211 633.7891 611.8164 634.7656 634.7656 411.1328 520.9961 392.0898 633.7891 591.7969 817.8711 591.7969 591.7969 524.9023 636.2305 336.9141 636.2305 837.8906 600.0977]>>
 endobj
+
 22 0 obj
-<<
-/Ascent 759.7656
-/CapHeight 759.7656
-/Descent -240.2344
-/Flags 4
-/FontBBox [ -1020.508 -462.8906 1793.457 1232.422 ]
-/FontFile2 23 0 R
-/FontName /AAAAAA+DejaVuSans
-/ItalicAngle 0
-/MissingWidth 600.0977
-/StemV 87
-/Type /FontDescriptor
->>
+<</Type/FontDescriptor/Ascent 759.7656/CapHeight 759.7656/Descent -240.2344/Flags 4/FontBBox[-1020.508 -462.8906 1793.457 1232.422]/FontFile2 23 0 R/FontName/AAAAAA+DejaVuSans/ItalicAngle 0/MissingWidth 600.0977/StemV 87>>
 endobj
+
 23 0 obj
-<<
-/Filter [ /FlateDecode ]
-/Length1 35600
-/Length 18712
->>
+<</Filter[/FlateDecode]/Length1 35600/Length 18712>>
 stream
 xœí½	|Eö8^ÕÕ×ôÜ“™ÜGç"B“@ 1„@P0!	B&æ ].! hD"Dd‘Å€¨¨ˆ²®¸Ë‚ëªx­ˆ¬_vUHšÿ«ê™€®«îñû|ş:İ]]õêİïÕëš€0BÈŒæ#‚rÇŒMJ)ì5³´œ£ dFqµ¡A†î‡ÉÌ:U†¥!ÄåÀ½V^=uÆ½gNCˆ‡{ôäÔé³Ëû>hxî¿EÈ}°¢¬¸tQNÁ{eî…ç}+ Á¼IzîÏÁ}LÅŒº;/ïÛ¡,À[:İSRüİ¡ÏŠö<?2£øÎjşmñ„†CR«Šg”ExF=÷óºI®öÔÖ]9&"´x)}^]SV=@ú\.Ş†P0oÁ ®S…u0C¸~&@åœ¨0Š„È<ÇñŸ¢ª+¿GmW”˜¢x©¦ÜòÌRäFê•+¢SsâõÒüQÂWŞ¿‚ôŒ0;›ˆv5ŸµşœdÀ¶"’ŒHAF€oFdE6dGä‡œÈ…üQ 
 DA(… P†ÂQRQ$ŠBÑ(Å¢n(uGñ¨ê‰P/”ˆ’P2º¥ TÔõA}Q?t#JCıÑ 4İ„¡Á@k:Ê@CĞP”‰²Ğ04e£h$ÊA£Ğh4å¢›Q‹òÑ8T€Æ£	¨ø~ºMB“Ñm¨ˆ1¥jAGáóÚ6à­pWÍw@K3·-FõĞò
@@ -3744,125 +3605,193 @@ P=ô(¾ÅZQÌ(RJü®†>S n%ôSa¼f/fÏ â©]S9µ¢Ní^¯¦$'§ªSf«•uµu5eÅ3Ôìª’D5}út5
 İ¬$ÖHb4­‘(+‰:#D-%—H8^JÂÌ$8ª‘K$8ƒÁMFKI p*@#ş0È?ˆ¸4âÔˆŸFĞÁ¡;ĞjÏ ¶»‰µ”X4b6ùf˜ ·ÉŸ5¢ØˆA#2t“5"9‰XJxxÈƒ¸´ppÏõ"ØFFp.]|îùÿÂúo#ğƒ?aÿç(…­
 endstream
 endobj
+
 24 0 obj
-<<
-/Filter [ /FlateDecode ]
-/Length 676
->>
+<</Filter[/FlateDecode]/Length 676>>
 stream
 xœmÕMkQÆñ½Ÿb–-]˜;ç­Ò¼@}¡)İ½¦–:Ê¨‹|ûÇ'$—¶‚ÿ8sñ.ÎôêîúnØ»é×q·¼¯Çn½Vc=ìNã²võq3LJß­6ËãóÕùs¹]ì'Ó<|ÿt8Öíİ°ŞMf³nú-oãS÷æòüzw]-~œîÃáídúe\Õq3<şÿîıi¿ÿ]·u8v“ù¼[ÕuşÄ§Åşób[»é?G^øş´¯]¾.T.w«zØ/–u\u2»¸˜w³¸Oê°úë^éßóÌÃzùs1>?{‘¯yv9÷Mî›ï¥imÚšö¦£é÷Mhú²éM_5}İôMÓ·¯])M7şÒøKã/¿4şÒøKã/¿4şÒøKã/¿4şÒø{úûsÓŸ#›şÿEOlúsdÓŸ#›şÙôçÈ¦?G6ı9²éÏ‘MlúsdÓŸ#›şÙôç˜Ì„~_èø…~_èø…~_èø…~_èø…~_èø…~_èø…~_èø…~_èø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èŞÏ› »{îe-Oã˜ëé¼Ï‹+g3Ô—}¹ßíq
 ï?‰Ì¶
 endstream
 endobj
+
 25 0 obj
-<<
-/A <<
-/S /URI
-/Type /Action
-/URI (https\072\057\057www\056linkedin\056com\057in\057tiago\055de\055avila\055miranda\05553674293\057)
->>
-/Border [ 0 0 0 ]
-/Rect [ 487.2756 683.8898 553.2756 749.8898 ]
-/Subtype /Link
-/Type /Annot
->>
+<</Type/Annot/Subtype/Link/A<</Type/Action/S/URI/URI(https://www.linkedin.com/in/tiago-de-avila-miranda-53674293/)>>/Border[0 0 0]/Rect[487.2756 683.8898 553.2756 749.8898]>>
 endobj
+
 26 0 obj
-<<
-/A <<
-/S /URI
-/Type /Action
-/URI (https\072\057\057portfolio\055palooza\055237\056lovable\056app\057)
->>
-/Border [ 0 0 0 ]
-/Rect [ 44 707.8898 240 718.8898 ]
-/Subtype /Link
-/Type /Annot
->>
+<</Type/Annot/Subtype/Link/A<</Type/Action/S/URI/URI(https://portfolio-palooza-237.lovable.app/)>>/Border[0 0 0]/Rect[44 707.8898 240 718.8898]>>
 endobj
+
 27 0 obj
-<<
-/A <<
-/S /URI
-/Type /Action
-/URI (https\072\057\057www\056linkedin\056com\057in\057tiago\055de\055avila\055miranda\05553674293\057)
->>
-/Border [ 0 0 0 ]
-/Rect [ 44 719.8898 260 730.8898 ]
-/Subtype /Link
-/Type /Annot
->>
+<</Type/Annot/Subtype/Link/A<</Type/Action/S/URI/URI(https://www.linkedin.com/in/tiago-de-avila-miranda-53674293/)>>/Border[0 0 0]/Rect[44 719.8898 260 730.8898]>>
 endobj
+
 28 0 obj
-<<
-/Contents 29 0 R
-/MediaBox [ 0 0 595.2756 841.8898 ]
-/Resources <<
-/Font 30 0 R
-/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->>
-/Rotate 0
-/Trans <<
->>
-/Type /Page
-/Parent 2 0 R
->>
+<</Type/Page/Contents 29 0 R/MediaBox[0 0 595.2756 841.8898]/Resources<</Font 30 0 R/ProcSet[/PDF/Text/ImageB/ImageC/ImageI]>>/Rotate 0/Trans<<>>/Parent 2 0 R/Annots[41 0 R 42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R 52 0 R 53 0 R]>>
 endobj
+
 29 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ]
-/Length 1292
->>
+<</Filter[/ASCII85Decode/FlateDecode]/Length 1292>>
 stream
 Gb!<NhfIL2&BE]"=6q0Fo/N%c@IDBj8XTqmLY]S/]I6*s>2,d7TtUL*<]6c76C^_:AgklRA]\,(5?dHW#rq]+oe.fqqAEOu#S7fX"VBSb+hNIS]D-\<FsHqs\rgo$;(od6YepqkYNNK)qiU1J*nVb/4lV)t?JoY\_16/'O;0agq`EXWVM->uA"YWhSPA**a6DG@`4:SH&.c$7-K@Di!OC%5rFQi8(OdGZ,`HR.@3N[nTbs]9j;LZLEC_`.:]AlW3d7CSXf\:rK=T(@AAkm.(FEkGobrJ-kg#tG"#"%-8m7r=T5"bnc!44G#mqXVZE0;7l+CmY!<R8OU?-F5's/9o3V&cc$?_EseXn5h[3!A.61YFg`sp;+%Xd-oVU^C3%i7[X3A#JYa]?X"pDdcXSrRhIf2"`Y3%JPmQ\K/S='SfTfTe.gE6s<@EOh12TOoF;&N0&R2n.7\p/]fR^,:.fj089640O;)3<t?+b^KA=2hrj6>#L?OI4aUF_N!#'S;38-S)UQ?OfI0YNr06(Thj@!.W,a1@2R;u;$pU.p[Lu0+]79d8<:.+F+Rc7o.m(uQ%HE]9C0TOPi#DFM<8t2nh%hR];\3/Ose$`m]hpm)qH]`:7O0HaXeBl0LtOdVjF3]$OH]T3Yfu%420gsGfM.)FE=.dM'6q&'H3>i,g]fCGoaIH=k$Mb";BKg#dRm2BSHiCAC@ZK1uYTI;Vp5b<Z2!a-SI[fNPS)Z>*P1f(rLUPa@&6nPeTtbf/r$;T#tuMXZqR$qjOPm8d\L.p:h6aPXJ5q]O'pa,AJ-H$dGU_R*h?#3[S`h``o$l@\&F2OZ+mCSr4o;%82Fe9<9Vl+_Yb4W#u$.j,m#TX=rn>6GF!73Tk'0<O1V_5A1Ne1F4f&^e3gU.$s-@8\*na,b'ZOPr4sV&8]`s3.nr>>3$-Khus\;3<t/5Z8)jRpBS]lU/-Dmh_$X>c8c_H?VQ<fh(-$>$;DI:j98DAdb.4K6Bg(RSg66tS3d;A36dUXgmV+C05,hkZAIbV!D`[^BBu'"=/nI9<<)K9Yqcnb8M(_nG[XugP[HTY\ufc:!->+C=&LYl%f])m7B\0#(@6[XFV&FB(rq.S$d869CoIRQqB+=9#*';D_$$jEf&?k`Ft4Tm]KiCX\QpS/".aPCNYXH+U+gVL_2Oj=&Z$k#cF8%.-kp=h*cAeA;b>u)O78:\]NWjP2bCH9/f*sT`Ljf-p]"D6Hne5H't#+#_&B,f3RL;bF5/YjNme#hSdmAO>_]-<8LEQ4"Ttde!fa';ARGF4&ha.cL`mj&~>
 endstream
 endobj
+
 30 0 obj
-<<
-/F1 6 0 R
-/F2+0 9 0 R
-/F3+0 13 0 R
->>
+<</F1 6 0 R/F2+0 9 0 R/F3+0 13 0 R>>
 endobj
+
+31 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#evertec-brasil)>>/Rect[515.06637 640.22769 549.3294 649.22769]/BS<</W 0>>/Subtype/Link/NM(fitz-L0)>>
+endobj
+
+32 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#evertec-brasil)>>/Rect[46 627.72769 71.083 636.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L1)>>
+endobj
+
+33 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#evertec-brasil)>>/Rect[46 572.4874 124.14 582.4874]/BS<</W 0>>/Subtype/Link/NM(fitz-L2)>>
+endobj
+
+34 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#sol-neve-acai-sorvete)>>/Rect[46 463.48747 194.5 473.48747]/BS<</W 0>>/Subtype/Link/NM(fitz-L3)>>
+endobj
+
+35 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#sol-neve-acai-sorvete)>>/Rect[172.09929 627.72769 223.92144 636.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L4)>>
+endobj
+
+36 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#energisa)>>/Rect[119.56614 627.72769 158.61716 636.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L5)>>
+endobj
+
+37 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#energisa)>>/Rect[46 368.98747 94.950008 378.98747]/BS<</W 0>>/Subtype/Link/NM(fitz-L6)>>
+endobj
+
+38 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#unimed-leopoldina)>>/Rect[46 286.98744 154.45001 296.98744]/BS<</W 0>>/Subtype/Link/NM(fitz-L7)>>
+endobj
+
+39 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#plan-minas)>>/Rect[46 190.48743 107.31 200.48743]/BS<</W 0>>/Subtype/Link/NM(fitz-L8)>>
+endobj
+
+40 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#quero-mais-tintas-ltda)>>/Rect[46 133.48743 176.63 143.48743]/BS<</W 0>>/Subtype/Link/NM(fitz-L9)>>
+endobj
+
+41 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#evertec-brasil)>>/Rect[275.08699 615.72769 337.29505 624.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L0)>>
+endobj
+
+42 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/profissional#energisa)>>/Rect[95.069 590.72769 134.12 599.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L1)>>
+endobj
+
+43 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/graduacao#curso-superior-de-tecnologia-gestao-da-tecnologia-da-informacao)>>/Rect[132.78801 757.22769 318.14308 766.22769]/BS<</W 0>>/Subtype/Link/NM(fitz-L2)>>
+endobj
+
+44 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/graduacao#mba-em-gestao-de-pessoas-e-lideranca)>>/Rect[56 732.22769 257.82505 741.22769]/BS<</W 0>>/Subtype/Link/NM(fitz-L3)>>
+endobj
+
+45 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/graduacao#tecnico-em-administracao)>>/Rect[56 707.22769 189.47 716.22769]/BS<</W 0>>/Subtype/Link/NM(fitz-L4)>>
+endobj
+
+46 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/certificacoes#analise-de-dados-como-aliada-da-tomada-de-decisao)>>/Rect[56 665.72769 293.34797 674.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L5)>>
+endobj
+
+47 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/certificacoes#customer-success)>>/Rect[56 653.22769 138.80899 662.22769]/BS<</W 0>>/Subtype/Link/NM(fitz-L6)>>
+endobj
+
+48 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/certificacoes#gestao-financeira)>>/Rect[56 603.22769 137.423 612.22769]/BS<</W 0>>/Subtype/Link/NM(fitz-L7)>>
+endobj
+
+49 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/certificacoes#power-bi-expert-na-pratica)>>/Rect[56 640.72769 175.664 649.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L8)>>
+endobj
+
+50 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/certificacoes#simplifica-inteligencia-artificial-express)>>/Rect[56 628.22769 233.14699 637.22769]/BS<</W 0>>/Subtype/Link/NM(fitz-L9)>>
+endobj
+
+51 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/certificacoes#power-apps-expert-na-pratica)>>/Rect[186.923 640.72769 320.03306 649.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L10)>>
+endobj
+
+52 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/certificacoes#protecao-contra-phishing-e-engenharia-social)>>/Rect[56 615.72769 260.36299 624.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L11)>>
+endobj
+
+53 0 obj
+<</A<</S/URI/URI(https://portfolio-palooza-237.lovable.app/certificacoes#lgpd-lei-geral-de-protecao-de-dados)>>/Rect[56 590.72769 80.345 599.72769]/BS<</W 0>>/Subtype/Link/NM(fitz-L12)>>
+endobj
+
 xref
-0 31
+0 54
 0000000000 65535 f 
-0000000015 00000 n 
-0000000054 00000 n 
-0000000120 00000 n 
-0000000169 00000 n 
-0000000486 00000 n 
-0000032953 00000 n 
-0000033060 00000 n 
-0000033167 00000 n 
-0000033276 00000 n 
-0000034586 00000 n 
-0000034853 00000 n 
-0000054065 00000 n 
-0000054851 00000 n 
-0000056144 00000 n 
-0000056400 00000 n 
-0000075759 00000 n 
-0000076536 00000 n 
-0000077847 00000 n 
-0000078114 00000 n 
-0000096415 00000 n 
-0000097175 00000 n 
-0000098474 00000 n 
-0000098730 00000 n 
-0000117536 00000 n 
-0000118289 00000 n 
-0000118538 00000 n 
-0000118746 00000 n 
-0000118984 00000 n 
-0000119186 00000 n 
-0000120571 00000 n 
+0000000042 00000 n 
+0000000079 00000 n 
+0000000138 00000 n 
+0000000184 00000 n 
+0000000534 00000 n 
+0000033000 00000 n 
+0000033097 00000 n 
+0000033194 00000 n 
+0000033293 00000 n 
+0000034587 00000 n 
+0000034838 00000 n 
+0000054044 00000 n 
+0000054825 00000 n 
+0000056102 00000 n 
+0000056342 00000 n 
+0000075695 00000 n 
+0000076467 00000 n 
+0000077762 00000 n 
+0000078013 00000 n 
+0000096308 00000 n 
+0000097063 00000 n 
+0000098346 00000 n 
+0000098586 00000 n 
+0000117386 00000 n 
+0000118134 00000 n 
+0000118326 00000 n 
+0000118489 00000 n 
+0000118670 00000 n 
+0000118947 00000 n 
+0000120326 00000 n 
+0000120380 00000 n 
+0000120570 00000 n 
+0000120751 00000 n 
+0000120930 00000 n 
+0000121117 00000 n 
+0000121315 00000 n 
+0000121500 00000 n 
+0000121678 00000 n 
+0000121865 00000 n 
+0000122042 00000 n 
+0000122231 00000 n 
+0000122422 00000 n 
+0000122601 00000 n 
+0000122838 00000 n 
+0000123041 00000 n 
+0000123229 00000 n 
+0000123449 00000 n 
+0000123636 00000 n 
+0000123822 00000 n 
+0000124017 00000 n 
+0000124230 00000 n 
+0000124435 00000 n 
+0000124651 00000 n 
+
 trailer
-<<
-/Size 31
-/Root 3 0 R
-/Info 1 0 R
->>
+<</Size 54/Info 1 0 R/Root 3 0 R/ID[<67C3852BC29E5947C29AC28BC39359C2><BCC629621B4E9A9A9362DBC14C5E1CDB>]>>
 startxref
-120628
+124855
 %%EOF
