@@ -37,6 +37,7 @@ import {
   hobbies,
   developmentDocs,
   type Experience,
+  slugify,
 } from "@/data/portfolio";
 
 function triggerShake() {
@@ -127,7 +128,7 @@ function CompanyBadge({ exp }: { exp: Experience }) {
 function ExperienceCard({ exp }: { exp: Experience }) {
   const hasRoles = exp.roles && exp.roles.length > 0;
   return (
-    <div className="group relative rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/60 hover:shadow-[var(--shadow-gold)]">
+    <div id={slugify(exp.company)} className="cv-target group relative rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/60 hover:shadow-[var(--shadow-gold)]">
       <div className="flex items-start gap-4">
         <CompanyBadge exp={exp} />
         <div className="min-w-0 flex-1">
@@ -278,7 +279,7 @@ export function GraduacaoPage() {
       </div>
       <div className="grid gap-6 md:grid-cols-2">
         {education.map((e) => (
-          <EduCard key={e.title} title={e.title} org={e.org} period={e.period} extra={e.extra} />
+          <div key={e.title} id={slugify(e.title)} className="cv-target rounded-2xl"><EduCard title={e.title} org={e.org} period={e.period} extra={e.extra} /></div>
         ))}
       </div>
     </SubPage>
@@ -292,7 +293,8 @@ export function CertificacoesPage() {
         {certifications.map((c) => (
           <div
             key={c.title}
-            className="flex items-start gap-4 rounded-xl border border-border bg-card p-5"
+            id={slugify(c.title)}
+            className="cv-target flex items-start gap-4 rounded-xl border border-border bg-card p-5"
           >
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/50">
               <Award className="h-5 w-5 text-primary" />

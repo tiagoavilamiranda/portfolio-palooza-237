@@ -320,3 +320,14 @@ export const developmentDocs = [
     date: "2026",
   },
 ];
+
+// Gera o "endereço" de cada item (ex.: "Unimed Leopoldina" → "unimed-leopoldina"),
+// usado pelo currículo virtual e pelo PDF para abrir o portfólio no lugar certo.
+export function slugify(text: string) {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
