@@ -9,73 +9,23 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as ProfissionalRouteImport } from './routes/profissional'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as PerfilDesenvolvimentoRouteImport } from './routes/perfil-desenvolvimento'
-import { Route as PainelRouteImport } from './routes/painel'
-import { Route as OfflineRouteImport } from './routes/offline'
-import { Route as HabilidadesRouteImport } from './routes/habilidades'
-import { Route as GraduacaoRouteImport } from './routes/graduacao'
-import { Route as FerramentasRouteImport } from './routes/ferramentas'
-import { Route as DedicatoriaRouteImport } from './routes/dedicatoria'
-import { Route as CompatibilidadeVagaRouteImport } from './routes/compatibilidade-vaga'
-import { Route as CertificacoesRouteImport } from './routes/certificacoes'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CertificacoesRouteImport } from './routes/certificacoes'
+import { Route as CompatibilidadeVagaRouteImport } from './routes/compatibilidade-vaga'
+import { Route as DedicatoriaRouteImport } from './routes/dedicatoria'
+import { Route as FerramentasRouteImport } from './routes/ferramentas'
+import { Route as GraduacaoRouteImport } from './routes/graduacao'
+import { Route as HabilidadesRouteImport } from './routes/habilidades'
+import { Route as OfflineRouteImport } from './routes/offline'
+import { Route as PainelRouteImport } from './routes/painel'
+import { Route as PerfilDesenvolvimentoRouteImport } from './routes/perfil-desenvolvimento'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as ProfissionalRouteImport } from './routes/profissional'
+import { Route as SobreRouteImport } from './routes/sobre'
 
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProfissionalRoute = ProfissionalRouteImport.update({
-  id: '/profissional',
-  path: '/profissional',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PerfilDesenvolvimentoRoute = PerfilDesenvolvimentoRouteImport.update({
-  id: '/perfil-desenvolvimento',
-  path: '/perfil-desenvolvimento',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PainelRoute = PainelRouteImport.update({
-  id: '/painel',
-  path: '/painel',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OfflineRoute = OfflineRouteImport.update({
-  id: '/offline',
-  path: '/offline',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HabilidadesRoute = HabilidadesRouteImport.update({
-  id: '/habilidades',
-  path: '/habilidades',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GraduacaoRoute = GraduacaoRouteImport.update({
-  id: '/graduacao',
-  path: '/graduacao',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FerramentasRoute = FerramentasRouteImport.update({
-  id: '/ferramentas',
-  path: '/ferramentas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DedicatoriaRoute = DedicatoriaRouteImport.update({
-  id: '/dedicatoria',
-  path: '/dedicatoria',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CompatibilidadeVagaRoute = CompatibilidadeVagaRouteImport.update({
-  id: '/compatibilidade-vaga',
-  path: '/compatibilidade-vaga',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CertificacoesRoute = CertificacoesRouteImport.update({
@@ -83,9 +33,59 @@ const CertificacoesRoute = CertificacoesRouteImport.update({
   path: '/certificacoes',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CompatibilidadeVagaRoute = CompatibilidadeVagaRouteImport.update({
+  id: '/compatibilidade-vaga',
+  path: '/compatibilidade-vaga',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DedicatoriaRoute = DedicatoriaRouteImport.update({
+  id: '/dedicatoria',
+  path: '/dedicatoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FerramentasRoute = FerramentasRouteImport.update({
+  id: '/ferramentas',
+  path: '/ferramentas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GraduacaoRoute = GraduacaoRouteImport.update({
+  id: '/graduacao',
+  path: '/graduacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HabilidadesRoute = HabilidadesRouteImport.update({
+  id: '/habilidades',
+  path: '/habilidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfflineRoute = OfflineRouteImport.update({
+  id: '/offline',
+  path: '/offline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PainelRoute = PainelRouteImport.update({
+  id: '/painel',
+  path: '/painel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilDesenvolvimentoRoute = PerfilDesenvolvimentoRouteImport.update({
+  id: '/perfil-desenvolvimento',
+  path: '/perfil-desenvolvimento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfissionalRoute = ProfissionalRouteImport.update({
+  id: '/profissional',
+  path: '/profissional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -201,81 +201,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/profissional': {
-      id: '/profissional'
-      path: '/profissional'
-      fullPath: '/profissional'
-      preLoaderRoute: typeof ProfissionalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/perfil-desenvolvimento': {
-      id: '/perfil-desenvolvimento'
-      path: '/perfil-desenvolvimento'
-      fullPath: '/perfil-desenvolvimento'
-      preLoaderRoute: typeof PerfilDesenvolvimentoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/painel': {
-      id: '/painel'
-      path: '/painel'
-      fullPath: '/painel'
-      preLoaderRoute: typeof PainelRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/offline': {
-      id: '/offline'
-      path: '/offline'
-      fullPath: '/offline'
-      preLoaderRoute: typeof OfflineRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/habilidades': {
-      id: '/habilidades'
-      path: '/habilidades'
-      fullPath: '/habilidades'
-      preLoaderRoute: typeof HabilidadesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/graduacao': {
-      id: '/graduacao'
-      path: '/graduacao'
-      fullPath: '/graduacao'
-      preLoaderRoute: typeof GraduacaoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ferramentas': {
-      id: '/ferramentas'
-      path: '/ferramentas'
-      fullPath: '/ferramentas'
-      preLoaderRoute: typeof FerramentasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dedicatoria': {
-      id: '/dedicatoria'
-      path: '/dedicatoria'
-      fullPath: '/dedicatoria'
-      preLoaderRoute: typeof DedicatoriaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/compatibilidade-vaga': {
-      id: '/compatibilidade-vaga'
-      path: '/compatibilidade-vaga'
-      fullPath: '/compatibilidade-vaga'
-      preLoaderRoute: typeof CompatibilidadeVagaRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/certificacoes': {
@@ -285,11 +215,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CertificacoesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/compatibilidade-vaga': {
+      id: '/compatibilidade-vaga'
+      path: '/compatibilidade-vaga'
+      fullPath: '/compatibilidade-vaga'
+      preLoaderRoute: typeof CompatibilidadeVagaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dedicatoria': {
+      id: '/dedicatoria'
+      path: '/dedicatoria'
+      fullPath: '/dedicatoria'
+      preLoaderRoute: typeof DedicatoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ferramentas': {
+      id: '/ferramentas'
+      path: '/ferramentas'
+      fullPath: '/ferramentas'
+      preLoaderRoute: typeof FerramentasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/graduacao': {
+      id: '/graduacao'
+      path: '/graduacao'
+      fullPath: '/graduacao'
+      preLoaderRoute: typeof GraduacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/habilidades': {
+      id: '/habilidades'
+      path: '/habilidades'
+      fullPath: '/habilidades'
+      preLoaderRoute: typeof HabilidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offline': {
+      id: '/offline'
+      path: '/offline'
+      fullPath: '/offline'
+      preLoaderRoute: typeof OfflineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/painel': {
+      id: '/painel'
+      path: '/painel'
+      fullPath: '/painel'
+      preLoaderRoute: typeof PainelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil-desenvolvimento': {
+      id: '/perfil-desenvolvimento'
+      path: '/perfil-desenvolvimento'
+      fullPath: '/perfil-desenvolvimento'
+      preLoaderRoute: typeof PerfilDesenvolvimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profissional': {
+      id: '/profissional'
+      path: '/profissional'
+      fullPath: '/profissional'
+      preLoaderRoute: typeof ProfissionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
