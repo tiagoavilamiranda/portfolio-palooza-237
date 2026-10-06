@@ -161,3 +161,7 @@
 .page-shake {
   animation: page-shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
 }
+
+.cv-target { scroll-margin-top: 6rem; }
+.cv-target:target { outline: 2px solid var(--primary); outline-offset: 4px; animation: cv-pulse 1.6s ease-out 2; }
+@keyframes cv-pulse { 0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 60%, transparent); } 100% { box-shadow: 0 0 0 18px transparent; } }

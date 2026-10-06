@@ -37,6 +37,7 @@ import {
   hobbies,
   developmentDocs,
   type Experience,
+  slugify,
 } from "@/data/portfolio";
 
 function triggerShake() {
