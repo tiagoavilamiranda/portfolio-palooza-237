@@ -148,6 +148,14 @@ function Index() {
                 <Target className="h-4 w-4" />
                 Compatibilidade Vaga
               </Link>
+              <Link
+                to="/curriculo"
+                onClick={triggerShake}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-6 py-3 text-sm font-medium text-primary transition-transform hover:scale-105"
+              >
+                <IdCard className="h-4 w-4" />
+                Currículo Virtual
+              </Link>
               <a
                 href="/curriculo-tiago-de-avila-miranda.pdf"
                 download
