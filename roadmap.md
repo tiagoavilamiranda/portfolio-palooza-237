@@ -10,3 +10,4 @@
 - [x] Validar página, robô e compatibilidade de vagas
 - Visitas + recados com painel privado (/painel) — feito
 - [x] Currículo: QR code LinkedIn (com nome) + link do portfólio em local estratégico
+- [x] Currículo virtual (/curriculo) + PDF clicável levando a cada item do portfólio
