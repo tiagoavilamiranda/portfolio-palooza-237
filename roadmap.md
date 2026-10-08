@@ -11,3 +11,5 @@
 - Visitas + recados com painel privado (/painel) — feito
 - [x] Currículo: QR code LinkedIn (com nome) + link do portfólio em local estratégico
 - [x] Currículo virtual (/curriculo) + PDF clicável levando a cada item do portfólio
+- [ ] Conectar o projeto ao GitHub (tiagoavilamiranda) e deixar o repositório público
+- [x] README.md na raiz do projeto (vira a capa do repositório ao conectar)
