@@ -7,6 +7,8 @@ Portfólio web pessoal, com currículo virtual interativo, análise de compatibi
 
 **Localização:** Leopoldina, Minas Gerais, Brasil
 
+![Página inicial do portfólio](docs/home.png)
+
 ---
 
 ## O que tem aqui
@@ -19,6 +21,18 @@ Portfólio web pessoal, com currículo virtual interativo, análise de compatibi
 | **Perfil Profissional & Desenvolvimento** | Perfil comportamental e plano de desenvolvimento profissional em PDF, com visualização e download. |
 | **Painel privado** | Área protegida por login que registra visitas (data, hora, origem, cidade aproximada, aparelho) e recados deixados por visitantes. |
 | **Dedicatória** | Homenagem a cada empresa da trajetória. |
+
+### Compatibilidade da Vaga
+
+O visitante cola a descrição da vaga, envia o PDF ou digita uma palavra-chave e recebe a nota com a explicação:
+
+![Análise de compatibilidade com nota 91%](docs/compat.png)
+
+### Currículo Virtual
+
+Experiências, cursos e certificações em uma página, com cada item clicável:
+
+![Currículo virtual](docs/curriculo.png)
 
 ## Trajetória
 
@@ -47,6 +61,12 @@ Portfólio web pessoal, com currículo virtual interativo, análise de compatibi
 - **pdf.js** (leitura do PDF da vaga no navegador)
 
 A parte de análise de compatibilidade roda inteiramente no navegador do visitante: nenhuma descrição de vaga é enviada para o servidor.
+
+## O que este projeto demonstra
+
+- **Produto, não só página.** Navegação própria, dados centralizados e uma área restrita por login para visitas e recados.
+- **Privacidade por padrão.** A análise de vaga acontece no navegador de quem usa; nada é enviado a um servidor.
+- **Código organizado.** Dados e aparência ficam separados: trocar um texto ou acrescentar uma empresa não exige mexer na interface.
 
 ## Estrutura do projeto
 
