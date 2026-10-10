@@ -13,4 +13,5 @@
 - [x] Currículo virtual (/curriculo) + PDF clicável levando a cada item do portfólio
 - [x] Conectar o projeto ao GitHub (tiagoavilamiranda/portfolio-palooza-237)
 - [x] README.md na raiz do projeto, com prints das telas principais
-- [ ] Tornar o repositório público no GitHub (Settings → Change visibility → Public)
+- [x] Tornar o repositório público no GitHub (confirmado anteriormente)
+- [ ] Modernizar o currículo em PDF, substituir palavras-chave no topo por resumo e verificar o download
