@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep the education career summary in shared portfolio data so the Graduação page and assistant describe the same opportunities.
+- Generate the recruitment PDF with scripts/generate-cv.py using shared portfolio data for identity, roles, education and certifications; this keeps linked records consistent while allowing concise editorial responsibility summaries.
