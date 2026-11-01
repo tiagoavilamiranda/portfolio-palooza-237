@@ -14,5 +14,5 @@
 - [x] Conectar o projeto ao GitHub (tiagoavilamiranda/portfolio-palooza-237)
 - [x] README.md na raiz do projeto, com prints das telas principais
 - [x] Tornar o repositório público no GitHub (confirmado anteriormente)
-- [ ] Modernizar o currículo em PDF, substituir palavras-chave no topo por resumo e verificar o download
-- [ ] Adicionar MBA em Business Intelligence (Anhanguera, out 2026 — ago 2027) à formação, assistente, compatibilidade, currículo virtual, PDF e apresentação no GitHub
+- [x] Modernizar o currículo em PDF, substituir palavras-chave no topo por resumo e verificar o download
+- [x] Adicionar MBA em Business Intelligence (Anhanguera, out 2026 — ago 2027) à formação, assistente, compatibilidade, currículo virtual, PDF e apresentação no GitHub
