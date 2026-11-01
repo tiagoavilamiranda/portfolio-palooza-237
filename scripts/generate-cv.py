@@ -96,7 +96,7 @@ story += [p('Portfólio: ' + linked('portfolio-palooza-237.lovable.app', BASE), 
 story += [p('CNH B · Disponibilidade para trabalho presencial, híbrido ou remoto', 'contact')]
 story += [p('RESUMO PROFISSIONAL', 'section')]
 story += [p('Administrador com experiência em suporte a sistemas corporativos e rotinas administrativas e financeiras. '
-            'Atualmente Analista de suporte na Evertec Brasil, com atuação em chamados, acessos, orientação a usuários e relatórios. '
+            'Atuação na Evertec Brasil em chamados, acessos, orientação a usuários e relatórios. '
             'Trajetória em faturamento, cadastro, cobrança e Recursos Humanos. Cursa Gestão da Tecnologia da Informação e '
             'os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, unindo experiência operacional e formação em gestão e dados.')]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]
