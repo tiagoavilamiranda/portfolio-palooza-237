@@ -89,7 +89,10 @@ bullets = [
 
 story = []
 profile = data['profile']
-story += [p(escape(profile['name']), 'name'), p(escape(data['experiences'][0]['roles'][0]['title']).capitalize(), 'role')]
+# Roles omitted from the recruitment PDF (still shown in the portfolio).
+cv_omitted_roles = {'Analista de suporte'}
+headline_role = next(r['title'] for r in data['experiences'][0]['roles'] if r['title'] not in cv_omitted_roles)
+story += [p(escape(profile['name']), 'name'), p(escape(headline_role).capitalize(), 'role')]
 story += [p(f"{escape(profile['location'])} · {linked(profile['email'], 'mailto:' + profile['email'])}", 'contact')]
 story += [p(linked('linkedin.com/in/tiago-de-avila-miranda-53674293', profile['linkedin']), 'contact')]
 story += [p('Portfólio: ' + linked('portfolio-palooza-237.lovable.app', BASE), 'contact')]
@@ -107,6 +110,8 @@ def experience(index, compact=False):
     block += [p(period(e['period']) + ' · ' + escape((e.get('location') or '').replace('Minas Gerais, Brasil', 'MG')), 'meta')]
     if e.get('roles'):
         for role in e['roles']:
+            if role['title'] in cv_omitted_roles:
+                continue
             block += [p(escape(role['title']) + ' <font name="CV">· ' + escape(period(role['period'])) + '</font>', 'position')]
     else:
         block += [p(escape(e['role']), 'position')]
