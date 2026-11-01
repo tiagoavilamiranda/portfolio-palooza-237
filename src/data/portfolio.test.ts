@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { describe, expect, test } from "bun:test";
 import { education, educationSummary } from "./portfolio";
 import { analyzeVaga } from "../lib/vaga-match";

@@ -38,13 +38,13 @@ styles = {
     'name': ParagraphStyle('name', fontName='CVBold', fontSize=25, leading=31, textColor=INK, spaceAfter=5),
     'role': ParagraphStyle('role', fontName='CV', fontSize=12, leading=17, textColor=ACCENT, spaceAfter=9),
     'contact': ParagraphStyle('contact', fontName='CV', fontSize=9, leading=14, textColor=MUTED),
-    'section': ParagraphStyle('section', fontName='CVBold', fontSize=10, leading=14, textColor=ACCENT, spaceBefore=14, spaceAfter=8),
+    'section': ParagraphStyle('section', fontName='CVBold', fontSize=10, leading=14, textColor=ACCENT, spaceBefore=11, spaceAfter=6),
     'company': ParagraphStyle('company', fontName='CVBold', fontSize=11, leading=15, textColor=INK, spaceAfter=2),
     'meta': ParagraphStyle('meta', fontName='CV', fontSize=8.5, leading=12, textColor=MUTED, spaceAfter=4),
     'position': ParagraphStyle('position', fontName='CVBold', fontSize=9.5, leading=14, textColor=INK, spaceAfter=3),
     'body': ParagraphStyle('body', fontName='CV', fontSize=9.5, leading=14, textColor=INK),
     'bullet': ParagraphStyle('bullet', fontName='CV', fontSize=9.5, leading=14, textColor=INK, leftIndent=10, firstLineIndent=-9, spaceAfter=3),
-    'compact': ParagraphStyle('compact', fontName='CV', fontSize=8.6, leading=12.5, textColor=INK, spaceAfter=3),
+    'compact': ParagraphStyle('compact', fontName='CV', fontSize=8.6, leading=11, textColor=INK, spaceAfter=2),
 }
 
 def p(text, style='body'):
@@ -54,7 +54,7 @@ def linked(text, url):
     return f'<link href={quoteattr(url)}>{escape(text)}</link>'
 
 def period(text):
-    return text.split(' · ')[0].replace('o momento', 'atual')
+    return text.removeprefix('Tempo integral · ').split(' · ')[0].replace('o momento', 'atual')
 
 # Concise editorial summaries of the responsibilities already described in the portfolio.
 bullets = [
@@ -111,7 +111,7 @@ def experience(index, compact=False):
     else:
         block += [p(escape(e['role']), 'position')]
     block += [p('• ' + escape(text), 'compact' if compact else 'bullet') for text in bullets[index]]
-    block += [Spacer(1, 9 if not compact else 6)]
+    block += [Spacer(1, 9 if not compact else 4)]
     return KeepTogether(block)
 
 for i in range(3):
