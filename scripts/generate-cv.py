@@ -2,7 +2,7 @@
 import json
 import subprocess
 from pathlib import Path
-from xml.sax.saxutils import escape
+from xml.sax.saxutils import escape, quoteattr
 
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
@@ -51,7 +51,7 @@ def p(text, style='body'):
     return Paragraph(text, styles[style])
 
 def linked(text, url):
-    return f'<link href="{escape(url, quote=True)}">{escape(text)}</link>'
+    return f'<link href={quoteattr(url)}>{escape(text)}</link>'
 
 def period(text):
     return text.split(' · ')[0].replace('o momento', 'atual')
