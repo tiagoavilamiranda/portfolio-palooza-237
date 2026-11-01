@@ -5,7 +5,7 @@
 // (strength: 0 a 1) e os exemplos reais de trabalho usados na explicação.
 // ============================================================================
 
-import { experiences, developmentDocs } from "@/data/portfolio";
+import { experiences, developmentDocs, educationSummary, education } from "@/data/portfolio";
 
 export type Area = {
   id: string;
@@ -152,14 +152,16 @@ export const areas: Area[] = [
     id: "dados",
     label: "Excel, dados e relatórios",
     strength: 0.85,
-    evidence: "controles e relatórios em Excel avançado, Power BI e acompanhamento de indicadores",
+    evidence: "controles e relatórios em Excel avançado, Power BI e acompanhamento de indicadores, complementados pelo MBA em Business Intelligence em andamento",
     examples: [
        "Na Evertec Brasil, monitoramento de demandas e indicadores em Excel online, com relatórios gerenciais recorrentes.",
       "Certificações em Power BI e Power Apps (Viscari) e em análise de dados para tomada de decisão (Escola Conquer).",
+      ...education.filter((item) => item.title.includes("Business Intelligence")).map((item) => `${item.title} na ${item.org}, ${item.period} — ${item.extra}. Formação em andamento, não experiência profissional específica em BI.`),
     ],
     keywords: [
       "excel", "power bi", "powerbi", "dados", "indicador", "kpi", "dashboard", "analise",
       "relatori", "metrica", "power apps", "planilhas", "procv", "tabela dinamica", "grafico",
+      "business intelligence", "inteligencia de negocios", "intelligence", " bi ",
     ],
   },
   {
@@ -398,8 +400,8 @@ const metRequirementRules: { label: string; keywords: string[] }[] = [
     keywords: ["disponibilidade de horario", "viagens", "viajar", "escala", "turno"],
   },
   {
-    label: "Ensino superior completo e formação continuada — Administração, MBA em Gestão de Pessoas, MBA em Finanças/Auditoria/Controladoria e Gestão de TI",
-    keywords: ["ensino superior", "superior completo", "graduacao", "cursando superior", "pos graduacao", "mba", "financas", "auditoria", "controladoria"],
+    label: `Ensino superior completo e formação continuada — ${educationSummary}`,
+    keywords: ["ensino superior", "superior completo", "graduacao", "cursando superior", "pos graduacao", "mba", "financas", "auditoria", "controladoria", "business intelligence", "inteligencia de negocios"],
   },
   {
     label: "Pacote Office / Excel avançado",

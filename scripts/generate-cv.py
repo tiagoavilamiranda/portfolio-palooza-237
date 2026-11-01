@@ -98,7 +98,7 @@ story += [p('RESUMO PROFISSIONAL', 'section')]
 story += [p('Administrador com experiência em suporte a sistemas corporativos e rotinas administrativas e financeiras. '
             'Atualmente Analista de suporte na Evertec Brasil, com atuação em chamados, acessos, orientação a usuários e relatórios. '
             'Trajetória em faturamento, cadastro, cobrança e Recursos Humanos. Cursa Gestão da Tecnologia da Informação e '
-            'MBA em Finanças, Auditoria e Controladoria, unindo experiência operacional e formação em gestão.')]
+            'os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, unindo experiência operacional e formação em gestão e dados.')]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]
 
 def experience(index, compact=False):
@@ -121,7 +121,7 @@ for i in range(3, 6):
     story.append(experience(i, compact=True))
 story += [p('FORMAÇÃO ACADÊMICA', 'section')]
 for i, e in enumerate(data['education']):
-    title = e['title'].replace('Pós-graduação Lato Sensu — MBA', 'MBA em').replace('Curso Superior de Tecnologia —', 'Tecnologia em').replace('Graduação em Business Administration and Management', 'Bacharelado em Administração')
+    title = e['title'].replace('Pós-graduação Lato Sensu — MBA em', 'MBA em').replace('Pós-graduação Lato Sensu — MBA ', 'MBA em ').replace('Curso Superior de Tecnologia —', 'Tecnologia em').replace('Graduação em Business Administration and Management', 'Bacharelado em Administração')
     current = ' · em andamento' if 'andamento' in e.get('extra', '') else ''
     story.append(p('<b>' + linked(title.strip(), f"{BASE}/graduacao#{data['educationSlugs'][i]}") + '</b><br/>' + escape(e['org']) + ' · ' + escape(e['period']) + current, 'compact'))
 story += [p('CURSOS E CERTIFICAÇÕES', 'section')]
