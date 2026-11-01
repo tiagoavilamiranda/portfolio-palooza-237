@@ -26,7 +26,7 @@ export const profile = {
   location: "Leopoldina, Minas Gerais, Brasil",
 };
 
-export const about = `Administrador formado, atualmente cursando Gestão de TI, com experiência nas áreas administrativa, financeira, cadastral e de atendimento interno, atuando em empresas como Unimed, Energisa, Sol e Neve e Evertec Brasil.
+export const about = `Administrador formado, atualmente cursando Gestão de TI e os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, com experiência nas áreas administrativa, financeira, cadastral e de atendimento interno, atuando em empresas como Unimed, Energisa, Sol e Neve e Evertec Brasil.
 
 Ao longo da minha trajetória, desenvolvi experiência em cadastro e atualização de clientes PF e PJ (CPF e CNPJ), implantação e manutenção de módulos em sistemas corporativos, emissão e atualização de boletos, negociação e reprocessamento de títulos, geração de remessas bancárias, faturamento, emissão e envio de notas fiscais eletrônicas (NF-e), controle e envio de contratos de comodato, elaboração de relatórios gerenciais e suporte às rotinas administrativas e financeiras.
 
@@ -156,6 +156,12 @@ export const experiences: Experience[] = [
 
 export const education = [
   {
+    title: "Pós-graduação Lato Sensu — MBA em Business Intelligence",
+    org: "Anhanguera Educacional",
+    period: "out 2026 — ago 2027",
+    extra: "Curso em andamento",
+  },
+  {
     title: "Pós-graduação Lato Sensu — MBA Finanças, Auditoria e Controladoria",
     org: "Anhanguera Educacional",
     period: "set 2026 — jul 2027",
@@ -186,7 +192,9 @@ export const education = [
   },
 ];
 
-export const educationOutlook = "Minha formação em Administração e Técnico em Administração, aliada ao MBA em Gestão de Pessoas e Liderança, abre caminhos em rotinas administrativas, gestão de processos, atendimento, cadastro e Recursos Humanos. A graduação em Gestão de TI e o MBA em Finanças, Auditoria e Controladoria, ambos em andamento, ampliam minhas possibilidades em suporte a sistemas, análise de dados, faturamento, financeiro, controles internos e apoio à auditoria e à controladoria. Nessas áreas, posso unir os estudos à experiência prática com boletos, cobrança, relatórios, sistemas corporativos e organização de processos.";
+export const educationSummary = education.map((item) => `${item.title} — ${item.org} (${item.period}${item.extra?.includes("andamento") ? ", em andamento" : ""})`).join("; ");
+
+export const educationOutlook = "Minha formação em Administração e Técnico em Administração, aliada ao MBA em Gestão de Pessoas e Liderança, abre caminhos em rotinas administrativas, gestão de processos, atendimento, cadastro e Recursos Humanos. A graduação em Gestão de TI e os MBAs em Finanças, Auditoria e Controladoria e em Business Intelligence, em andamento, ampliam minhas possibilidades em suporte a sistemas, análise de dados, relatórios e indicadores para tomada de decisão, faturamento, financeiro, controles internos e apoio à auditoria e à controladoria. O MBA em Business Intelligence complementa os estudos em dados e inteligência de negócios, sem substituir a experiência prática já adquirida. Nessas áreas, posso unir os estudos à experiência com boletos, cobrança, relatórios, sistemas corporativos e organização de processos.";
 
 export const certifications = [
   { title: "Análise de dados como aliada da tomada de decisão", org: "Escola Conquer", date: "jun 2026" },

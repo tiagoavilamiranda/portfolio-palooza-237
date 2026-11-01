@@ -7,7 +7,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Bot, Send, X, Eraser } from "lucide-react";
-import { profile, experiences, about, education, educationOutlook } from "@/data/portfolio";
+import { profile, experiences, about, education, educationOutlook, educationSummary } from "@/data/portfolio";
 
 type Entry = {
   id: string;
@@ -36,9 +36,9 @@ const knowledge: Entry[] = [
   },
   {
     id: "graduacao",
-    keywords: ["graduacao", "faculdade", "formacao", "estudo", "estudou", "mba", "pos", "unopar", "doctum", "anhanguera", "financas", "auditoria", "controladoria", "escolaridade"],
+    keywords: ["graduacao", "faculdade", "formacao", "estudo", "estudou", "mba", "pos", "unopar", "doctum", "anhanguera", "financas", "auditoria", "controladoria", "escolaridade", "business", "intelligence", "bi"],
     answer:
-      "A formação acadêmica fica na página Graduação. O MBA em Finanças, Auditoria e Controladoria na Anhanguera e a graduação em Gestão de TI na UNOPAR estão em andamento; há também MBA em Gestão de Pessoas e Liderança, graduação em Administração e curso Técnico em Administração.",
+      `A formação acadêmica do Tiago: ${educationSummary}.`,
     to: "/graduacao",
     linkLabel: "Abrir Graduação",
   },
@@ -155,10 +155,24 @@ function similar(token: string, key: string) {
 
 const current = experiences[0];
 const aboutShort = about.split("\n\n")[0] ?? "";
-const financeMba = education.find((item) => item.org.includes("Anhanguera"));
+const financeMba = education.find((item) => item.title.includes("Finanças, Auditoria e Controladoria"));
+const businessMba = education.find((item) => item.title.includes("Business Intelligence"));
 
 // Respostas diretas — o robô responde o fato, não só onde encontrar
 const facts: { test: RegExp; build: () => Msg }[] = [
+  {
+    test: /\b(business intelligence|inteligencia de negocios|mba (em )?bi)\b/,
+    build: () => ({
+      from: "bot",
+      text: businessMba ? `O Tiago cursa ${businessMba.title} na ${businessMba.org}, no período de ${businessMba.period}. ${businessMba.extra}.` : educationSummary,
+      to: "/graduacao",
+      linkLabel: "Abrir Graduação",
+    }),
+  },
+  {
+    test: /\b(anhanguera|formacao|escolaridade|quais (cursos|mbas))\b/,
+    build: () => ({ from: "bot", text: educationSummary, to: "/graduacao", linkLabel: "Abrir Graduação" }),
+  },
   {
     test: /\b(areas? (de atuacao|para trabalhar)|onde pode trabalhar|em que (area|areas) (pode|consegue) (atuar|trabalhar)|o que (pode|consegue) fazer com (os )?estudos)\b/,
     build: () => ({ from: "bot", text: educationOutlook, to: "/graduacao", linkLabel: "Abrir Graduação" }),
@@ -176,7 +190,7 @@ const facts: { test: RegExp; build: () => Msg }[] = [
     },
   },
   {
-    test: /\b(anhanguera|auditoria|controladoria|mba em financas|pos graduacao|pos em financas)\b/,
+    test: /\b(auditoria|controladoria|mba em financas|pos graduacao|pos em financas)\b/,
     build: () => ({
       from: "bot",
       text: financeMba
