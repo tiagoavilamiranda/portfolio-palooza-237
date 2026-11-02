@@ -124,11 +124,11 @@ for i in range(3, 6):
 story += [p('PROJETOS PROFISSIONAIS E TECNOLÓGICOS', 'section')]
 projects = [
     ('Plataforma Integrada de Gestão de Chamados',
-     'Projeto aplicado ao ambiente profissional, com integração via API ao sistema corporativo de chamados, permitindo acompanhar solicitações, consultar históricos e extrair relatórios consolidados.'),
+     'Integração via API ao sistema corporativo de chamados, com acompanhamento de solicitações, históricos e relatórios consolidados.'),
     ('Sistema de Organização e Gestão de Informações',
-     'Ferramenta digital desenvolvida com apoio de IA para registrar anotações, organizar informações do cotidiano profissional e manter históricos para consultas futuras.'),
+     'Ferramenta digital com apoio de IA para registrar anotações e organizar informações do cotidiano profissional.'),
     ('Portfólio Profissional Interativo',
-     'Projeto autoral de site responsivo e interativo para apresentar trajetória, experiências, formação, competências e projetos profissionais.'),
+     'Site responsivo e interativo com trajetória, experiências, formação, competências e projetos.'),
 ]
 for title, desc in projects:
     story.append(p('<b>' + escape(title) + ':</b> ' + escape(desc), 'compact'))
@@ -144,8 +144,7 @@ for i, c in enumerate(data['certifications']):
         continue
     story.append(p(linked(c['title'], f"{BASE}/certificacoes#{data['certificationSlugs'][i]}") + ' — ' + escape(c['org']) + ' · ' + escape(c['date']), 'compact'))
 story += [p('FERRAMENTAS E SISTEMAS', 'section')]
-story += [p('<b>Produtividade e dados:</b> ' + escape(', '.join(data['tools'])) + '.', 'compact')]
-story += [p('<b>Sistemas corporativos:</b> ' + escape(', '.join(data['systems'])) + '.', 'compact')]
+story += [p('<b>Produtividade e dados:</b> ' + escape(', '.join(data['tools'])) + '.<br/><b>Sistemas corporativos:</b> ' + escape(', '.join(data['systems'])) + '.', 'compact')]
 
 def decorate(canvas, doc):
     width, height = A4
