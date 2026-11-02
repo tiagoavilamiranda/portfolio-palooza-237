@@ -89,17 +89,14 @@ bullets = [
 
 story = []
 profile = data['profile']
-# Roles omitted from the recruitment PDF (still shown in the portfolio).
-cv_omitted_roles = {'Analista de suporte'}
-headline_role = next(r['title'] for r in data['experiences'][0]['roles'] if r['title'] not in cv_omitted_roles)
-story += [p(escape(profile['name']), 'name'), p(escape(headline_role).capitalize(), 'role')]
+# No headline role under the name — requested blank; roles still appear in the experience body.
+story += [p(escape(profile['name']), 'name')]
+story += [Spacer(1, 6)]
 story += [p(f"{escape(profile['location'])} · {linked(profile['email'], 'mailto:' + profile['email'])}", 'contact')]
-story += [p(linked('linkedin.com/in/tiago-de-avila-miranda-53674293', profile['linkedin']), 'contact')]
-story += [p('Portfólio: ' + linked('portfolio-palooza-237.lovable.app', BASE), 'contact')]
 story += [p('CNH B · Disponibilidade para trabalho presencial, híbrido ou remoto', 'contact')]
 story += [p('RESUMO PROFISSIONAL', 'section')]
 story += [p('Administrador com experiência em suporte a sistemas corporativos e rotinas administrativas e financeiras. '
-            'Atuação na Evertec Brasil em chamados, acessos, orientação a usuários e relatórios. '
+            'Atuação como Analista de suporte na Evertec Brasil em chamados, acessos, orientação a usuários e relatórios. '
             'Trajetória em faturamento, cadastro, cobrança e Recursos Humanos. Cursa Gestão da Tecnologia da Informação e '
             'os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, unindo experiência operacional e formação em gestão e dados.')]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]
@@ -110,8 +107,6 @@ def experience(index, compact=False):
     block += [p(period(e['period']) + ' · ' + escape((e.get('location') or '').replace('Minas Gerais, Brasil', 'MG')), 'meta')]
     if e.get('roles'):
         for role in e['roles']:
-            if role['title'] in cv_omitted_roles:
-                continue
             block += [p(escape(role['title']) + ' <font name="CV">· ' + escape(period(role['period'])) + '</font>', 'position')]
     else:
         block += [p(escape(e['role']), 'position')]
@@ -152,15 +147,20 @@ def decorate(canvas, doc):
     canvas.drawString(43, 25, profile['name'] + ' · Currículo profissional')
     canvas.drawRightString(width - 43, 25, f'{doc.page} / 2')
     if doc.page == 2:
-        qr = QrCodeWidget(profile['linkedin'])
-        qr.barFillColor = INK
-        bounds = qr.getBounds()
-        size = 34
-        drawing = Drawing(size, size, transform=[size / (bounds[2]-bounds[0]), 0, 0, size / (bounds[3]-bounds[1]), 0, 0])
-        drawing.add(qr)
-        drawing.drawOn(canvas, width - 82, 43)
-        canvas.linkURL(profile['linkedin'], (width - 82, 43, width - 48, 77), relative=0)
-        canvas.drawRightString(width - 88, 55, 'LinkedIn · Tiago de Avila Miranda')
+        def qr(url, x):
+            widget = QrCodeWidget(url)
+            widget.barFillColor = INK
+            bounds = widget.getBounds()
+            size = 34
+            drawing = Drawing(size, size, transform=[size / (bounds[2]-bounds[0]), 0, 0, size / (bounds[3]-bounds[1]), 0, 0])
+            drawing.add(widget)
+            drawing.drawOn(canvas, x, 48)
+            canvas.linkURL(url, (x, 48, x + size, 48 + size), relative=0)
+            return x + size / 2
+        canvas.setFont('CV', 6.5)
+        canvas.setFillColor(MUTED)
+        canvas.drawCentredString(qr(profile['linkedin'], width - 82), 40, 'LinkedIn')
+        canvas.drawCentredString(qr(BASE, width - 150), 40, 'Portfólio profissional')
 
 output = ROOT / 'public/curriculo-tiago-de-avila-miranda.pdf'
 doc = SimpleDocTemplate(str(output), pagesize=A4, leftMargin=43, rightMargin=43, topMargin=42, bottomMargin=87,
