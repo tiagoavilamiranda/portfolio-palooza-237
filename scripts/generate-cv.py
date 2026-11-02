@@ -38,13 +38,13 @@ styles = {
     'name': ParagraphStyle('name', fontName='CVBold', fontSize=25, leading=31, textColor=INK, spaceAfter=5),
     'role': ParagraphStyle('role', fontName='CV', fontSize=12, leading=17, textColor=ACCENT, spaceAfter=9),
     'contact': ParagraphStyle('contact', fontName='CV', fontSize=9, leading=14, textColor=MUTED),
-    'section': ParagraphStyle('section', fontName='CVBold', fontSize=10, leading=14, textColor=ACCENT, spaceBefore=9, spaceAfter=5),
+    'section': ParagraphStyle('section', fontName='CVBold', fontSize=10, leading=14, textColor=ACCENT, spaceBefore=7, spaceAfter=4),
     'company': ParagraphStyle('company', fontName='CVBold', fontSize=11, leading=15, textColor=INK, spaceAfter=2),
     'meta': ParagraphStyle('meta', fontName='CV', fontSize=8.5, leading=12, textColor=MUTED, spaceAfter=3),
     'position': ParagraphStyle('position', fontName='CVBold', fontSize=9.5, leading=14, textColor=INK, spaceAfter=2),
     'body': ParagraphStyle('body', fontName='CV', fontSize=9.5, leading=14, textColor=INK),
     'bullet': ParagraphStyle('bullet', fontName='CV', fontSize=9.5, leading=13.5, textColor=INK, leftIndent=10, firstLineIndent=-9, spaceAfter=2.5),
-    'compact': ParagraphStyle('compact', fontName='CV', fontSize=8.6, leading=10.8, textColor=INK, spaceAfter=1.5),
+    'compact': ParagraphStyle('compact', fontName='CV', fontSize=8.6, leading=10.2, textColor=INK, spaceAfter=1),
 }
 
 def p(text, style='body'):
