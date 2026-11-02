@@ -38,13 +38,13 @@ styles = {
     'name': ParagraphStyle('name', fontName='CVBold', fontSize=25, leading=31, textColor=INK, spaceAfter=5),
     'role': ParagraphStyle('role', fontName='CV', fontSize=12, leading=17, textColor=ACCENT, spaceAfter=9),
     'contact': ParagraphStyle('contact', fontName='CV', fontSize=9, leading=14, textColor=MUTED),
-    'section': ParagraphStyle('section', fontName='CVBold', fontSize=10, leading=14, textColor=ACCENT, spaceBefore=11, spaceAfter=6),
+    'section': ParagraphStyle('section', fontName='CVBold', fontSize=10, leading=14, textColor=ACCENT, spaceBefore=7, spaceAfter=4),
     'company': ParagraphStyle('company', fontName='CVBold', fontSize=11, leading=15, textColor=INK, spaceAfter=2),
-    'meta': ParagraphStyle('meta', fontName='CV', fontSize=8.5, leading=12, textColor=MUTED, spaceAfter=4),
-    'position': ParagraphStyle('position', fontName='CVBold', fontSize=9.5, leading=14, textColor=INK, spaceAfter=3),
+    'meta': ParagraphStyle('meta', fontName='CV', fontSize=8.5, leading=12, textColor=MUTED, spaceAfter=3),
+    'position': ParagraphStyle('position', fontName='CVBold', fontSize=9.5, leading=14, textColor=INK, spaceAfter=2),
     'body': ParagraphStyle('body', fontName='CV', fontSize=9.5, leading=14, textColor=INK),
-    'bullet': ParagraphStyle('bullet', fontName='CV', fontSize=9.5, leading=14, textColor=INK, leftIndent=10, firstLineIndent=-9, spaceAfter=3),
-    'compact': ParagraphStyle('compact', fontName='CV', fontSize=8.6, leading=11, textColor=INK, spaceAfter=2),
+    'bullet': ParagraphStyle('bullet', fontName='CV', fontSize=9.5, leading=13.5, textColor=INK, leftIndent=10, firstLineIndent=-9, spaceAfter=2.5),
+    'compact': ParagraphStyle('compact', fontName='CV', fontSize=8.6, leading=10.2, textColor=INK, spaceAfter=1),
 }
 
 def p(text, style='body'):
@@ -95,10 +95,12 @@ story += [Spacer(1, 6)]
 story += [p(f"{escape(profile['location'])} · {linked(profile['email'], 'mailto:' + profile['email'])}", 'contact')]
 story += [p('CNH B · Disponibilidade para trabalho presencial, híbrido ou remoto', 'contact')]
 story += [p('RESUMO PROFISSIONAL', 'section')]
-story += [p('Administrador com experiência em suporte a sistemas corporativos e rotinas administrativas e financeiras. '
-            'Atuação como Analista de suporte na Evertec Brasil em chamados, acessos, orientação a usuários e relatórios. '
-            'Trajetória em faturamento, cadastro, cobrança e Recursos Humanos. Cursa Gestão da Tecnologia da Informação e '
-            'os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, unindo experiência operacional e formação em gestão e dados.')]
+story += [p('Administrador com experiência nas áreas Administrativa, Financeira, Faturamento, Recursos Humanos e Suporte a '
+            'Sistemas, atuando em empresas de diferentes segmentos. Atualmente, é Analista de Suporte na Evertec Brasil, com '
+            'experiência em gestão de chamados, análise de demandas, sistemas corporativos e relatórios. Possui perfil analítico, '
+            'visão generalista e iniciativa na criação de soluções digitais, automação de processos e aplicação de inteligência '
+            'artificial. Graduado em Administração e cursando Gestão de TI, MBA em Business Intelligence e MBA em Finanças, '
+            'Auditoria e Controladoria.')]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]
 
 def experience(index, compact=False):
@@ -111,7 +113,7 @@ def experience(index, compact=False):
     else:
         block += [p(escape(e['role']), 'position')]
     block += [p('• ' + escape(text), 'compact' if compact else 'bullet') for text in bullets[index]]
-    block += [Spacer(1, 9 if not compact else 4)]
+    block += [Spacer(1, 7 if not compact else 2)]
     return KeepTogether(block)
 
 for i in range(3):
@@ -119,6 +121,17 @@ for i in range(3):
 story += [PageBreak(), p('EXPERIÊNCIA PROFISSIONAL · CONTINUAÇÃO', 'section')]
 for i in range(3, 6):
     story.append(experience(i, compact=True))
+story += [p('PROJETOS PROFISSIONAIS E TECNOLÓGICOS', 'section')]
+projects = [
+    ('Plataforma Integrada de Gestão de Chamados',
+     'Integração via API ao sistema corporativo de chamados, com acompanhamento de solicitações, históricos e relatórios consolidados.'),
+    ('Sistema de Organização e Gestão de Informações',
+     'Ferramenta digital com apoio de IA para registrar anotações e organizar informações do cotidiano profissional.'),
+    ('Portfólio Profissional Interativo',
+     'Site responsivo e interativo com trajetória, experiências, formação, competências e projetos.'),
+]
+for title, desc in projects:
+    story.append(p('<b>' + escape(title) + ':</b> ' + escape(desc), 'compact'))
 story += [p('FORMAÇÃO ACADÊMICA', 'section')]
 for i, e in enumerate(data['education']):
     title = e['title'].replace('Pós-graduação Lato Sensu — MBA em', 'MBA em').replace('Pós-graduação Lato Sensu — MBA ', 'MBA em ').replace('Curso Superior de Tecnologia —', 'Tecnologia em').replace('Graduação em Business Administration and Management', 'Bacharelado em Administração')
@@ -131,8 +144,7 @@ for i, c in enumerate(data['certifications']):
         continue
     story.append(p(linked(c['title'], f"{BASE}/certificacoes#{data['certificationSlugs'][i]}") + ' — ' + escape(c['org']) + ' · ' + escape(c['date']), 'compact'))
 story += [p('FERRAMENTAS E SISTEMAS', 'section')]
-story += [p('<b>Produtividade e dados:</b> ' + escape(', '.join(data['tools'])) + '.', 'compact')]
-story += [p('<b>Sistemas corporativos:</b> ' + escape(', '.join(data['systems'])) + '.', 'compact')]
+story += [p('<b>Produtividade e dados:</b> ' + escape(', '.join(data['tools'])) + '.<br/><b>Sistemas corporativos:</b> ' + escape(', '.join(data['systems'])) + '.', 'compact')]
 
 def decorate(canvas, doc):
     width, height = A4
