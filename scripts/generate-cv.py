@@ -114,7 +114,8 @@ def experience(index, compact=False):
         block += [p(escape(e['role']), 'position')]
     block += [p('• ' + escape(text), 'compact' if compact else 'bullet') for text in bullets[index]]
     block += [Spacer(1, 7 if not compact else 2)]
-    return KeepTogether(block)
+    # Compact blocks may split across the page break so page 1 has no dead space.
+    return block if compact else KeepTogether(block)
 
 for i in range(6):
     story.append(experience(i, compact=i >= 3))
