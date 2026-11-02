@@ -89,17 +89,14 @@ bullets = [
 
 story = []
 profile = data['profile']
-# Roles omitted from the recruitment PDF (still shown in the portfolio).
-cv_omitted_roles = {'Analista de suporte'}
-headline_role = next(r['title'] for r in data['experiences'][0]['roles'] if r['title'] not in cv_omitted_roles)
-story += [p(escape(profile['name']), 'name'), p(escape(headline_role).capitalize(), 'role')]
+# No headline role under the name — requested blank; roles still appear in the experience body.
+story += [p(escape(profile['name']), 'name')]
+story += [Spacer(1, 6)]
 story += [p(f"{escape(profile['location'])} · {linked(profile['email'], 'mailto:' + profile['email'])}", 'contact')]
-story += [p(linked('linkedin.com/in/tiago-de-avila-miranda-53674293', profile['linkedin']), 'contact')]
-story += [p('Portfólio: ' + linked('portfolio-palooza-237.lovable.app', BASE), 'contact')]
 story += [p('CNH B · Disponibilidade para trabalho presencial, híbrido ou remoto', 'contact')]
 story += [p('RESUMO PROFISSIONAL', 'section')]
 story += [p('Administrador com experiência em suporte a sistemas corporativos e rotinas administrativas e financeiras. '
-            'Atuação na Evertec Brasil em chamados, acessos, orientação a usuários e relatórios. '
+            'Atuação como Analista de suporte na Evertec Brasil em chamados, acessos, orientação a usuários e relatórios. '
             'Trajetória em faturamento, cadastro, cobrança e Recursos Humanos. Cursa Gestão da Tecnologia da Informação e '
             'os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, unindo experiência operacional e formação em gestão e dados.')]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]
