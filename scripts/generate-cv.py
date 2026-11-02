@@ -118,7 +118,8 @@ def experience(index, compact=False):
     return block if compact else KeepTogether(block)
 
 for i in range(6):
-    story.append(experience(i, compact=i >= 3))
+    block = experience(i, compact=i >= 3)
+    story.extend(block if isinstance(block, list) else [block])
 story += [p('PROJETOS PROFISSIONAIS E TECNOLÓGICOS', 'section')]
 projects = [
     ('Plataforma Integrada de Gestão de Chamados',
