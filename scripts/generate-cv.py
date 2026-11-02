@@ -95,10 +95,12 @@ story += [Spacer(1, 6)]
 story += [p(f"{escape(profile['location'])} · {linked(profile['email'], 'mailto:' + profile['email'])}", 'contact')]
 story += [p('CNH B · Disponibilidade para trabalho presencial, híbrido ou remoto', 'contact')]
 story += [p('RESUMO PROFISSIONAL', 'section')]
-story += [p('Administrador com experiência em suporte a sistemas corporativos e rotinas administrativas e financeiras. '
-            'Atuação como Analista de suporte na Evertec Brasil em chamados, acessos, orientação a usuários e relatórios. '
-            'Trajetória em faturamento, cadastro, cobrança e Recursos Humanos. Cursa Gestão da Tecnologia da Informação e '
-            'os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, unindo experiência operacional e formação em gestão e dados.')]
+story += [p('Administrador com experiência nas áreas Administrativa, Financeira, Faturamento, Recursos Humanos e Suporte a '
+            'Sistemas, atuando em empresas de diferentes segmentos. Atualmente, é Analista de Suporte na Evertec Brasil, com '
+            'experiência em gestão de chamados, análise de demandas, sistemas corporativos e relatórios. Possui perfil analítico, '
+            'visão generalista e iniciativa na criação de soluções digitais, automação de processos e aplicação de inteligência '
+            'artificial. Graduado em Administração e cursando Gestão de TI, MBA em Business Intelligence e MBA em Finanças, '
+            'Auditoria e Controladoria.')]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]
 
 def experience(index, compact=False):
@@ -119,6 +121,17 @@ for i in range(3):
 story += [PageBreak(), p('EXPERIÊNCIA PROFISSIONAL · CONTINUAÇÃO', 'section')]
 for i in range(3, 6):
     story.append(experience(i, compact=True))
+story += [p('PROJETOS PROFISSIONAIS E TECNOLÓGICOS', 'section')]
+projects = [
+    ('Plataforma Integrada de Gestão de Chamados',
+     'Projeto aplicado ao ambiente profissional, com integração via API ao sistema corporativo de chamados, permitindo acompanhar solicitações, consultar históricos e extrair relatórios consolidados.'),
+    ('Sistema de Organização e Gestão de Informações',
+     'Ferramenta digital desenvolvida com apoio de IA para registrar anotações, organizar informações do cotidiano profissional e manter históricos para consultas futuras.'),
+    ('Portfólio Profissional Interativo',
+     'Projeto autoral de site responsivo e interativo para apresentar trajetória, experiências, formação, competências e projetos profissionais.'),
+]
+for title, desc in projects:
+    story.append(p('<b>' + escape(title) + ':</b> ' + escape(desc), 'compact'))
 story += [p('FORMAÇÃO ACADÊMICA', 'section')]
 for i, e in enumerate(data['education']):
     title = e['title'].replace('Pós-graduação Lato Sensu — MBA em', 'MBA em').replace('Pós-graduação Lato Sensu — MBA ', 'MBA em ').replace('Curso Superior de Tecnologia —', 'Tecnologia em').replace('Graduação em Business Administration and Management', 'Bacharelado em Administração')
