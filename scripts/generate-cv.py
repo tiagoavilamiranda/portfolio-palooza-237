@@ -113,7 +113,7 @@ def experience(index, compact=False):
     else:
         block += [p(escape(e['role']), 'position')]
     block += [p('• ' + escape(text), 'compact' if compact else 'bullet') for text in bullets[index]]
-    block += [Spacer(1, 9 if not compact else 4)]
+    block += [Spacer(1, 7 if not compact else 2)]
     return KeepTogether(block)
 
 for i in range(3):
