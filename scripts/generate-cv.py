@@ -147,15 +147,20 @@ def decorate(canvas, doc):
     canvas.drawString(43, 25, profile['name'] + ' · Currículo profissional')
     canvas.drawRightString(width - 43, 25, f'{doc.page} / 2')
     if doc.page == 2:
-        qr = QrCodeWidget(profile['linkedin'])
-        qr.barFillColor = INK
-        bounds = qr.getBounds()
-        size = 34
-        drawing = Drawing(size, size, transform=[size / (bounds[2]-bounds[0]), 0, 0, size / (bounds[3]-bounds[1]), 0, 0])
-        drawing.add(qr)
-        drawing.drawOn(canvas, width - 82, 43)
-        canvas.linkURL(profile['linkedin'], (width - 82, 43, width - 48, 77), relative=0)
-        canvas.drawRightString(width - 88, 55, 'LinkedIn · Tiago de Avila Miranda')
+        def qr(url, x):
+            widget = QrCodeWidget(url)
+            widget.barFillColor = INK
+            bounds = widget.getBounds()
+            size = 34
+            drawing = Drawing(size, size, transform=[size / (bounds[2]-bounds[0]), 0, 0, size / (bounds[3]-bounds[1]), 0, 0])
+            drawing.add(widget)
+            drawing.drawOn(canvas, x, 48)
+            canvas.linkURL(url, (x, 48, x + size, 48 + size), relative=0)
+            return x + size / 2
+        canvas.setFont('CV', 6.5)
+        canvas.setFillColor(MUTED)
+        canvas.drawCentredString(qr(profile['linkedin'], width - 82), 40, 'LinkedIn')
+        canvas.drawCentredString(qr(BASE, width - 150), 40, 'Portfólio profissional')
 
 output = ROOT / 'public/curriculo-tiago-de-avila-miranda.pdf'
 doc = SimpleDocTemplate(str(output), pagesize=A4, leftMargin=43, rightMargin=43, topMargin=42, bottomMargin=87,
