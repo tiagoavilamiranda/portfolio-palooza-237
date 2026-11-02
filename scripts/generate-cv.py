@@ -114,13 +114,12 @@ def experience(index, compact=False):
         block += [p(escape(e['role']), 'position')]
     block += [p('• ' + escape(text), 'compact' if compact else 'bullet') for text in bullets[index]]
     block += [Spacer(1, 7 if not compact else 2)]
-    return KeepTogether(block)
+    # Compact blocks may split across the page break so page 1 has no dead space.
+    return block if compact else KeepTogether(block)
 
-for i in range(3):
-    story.append(experience(i))
-story += [PageBreak(), p('EXPERIÊNCIA PROFISSIONAL · CONTINUAÇÃO', 'section')]
-for i in range(3, 6):
-    story.append(experience(i, compact=True))
+for i in range(6):
+    block = experience(i, compact=i >= 3)
+    story.extend(block if isinstance(block, list) else [block])
 story += [p('PROJETOS PROFISSIONAIS E TECNOLÓGICOS', 'section')]
 projects = [
     ('Plataforma Integrada de Gestão de Chamados',
