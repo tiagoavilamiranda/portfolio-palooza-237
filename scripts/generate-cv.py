@@ -116,11 +116,8 @@ def experience(index, compact=False):
     block += [Spacer(1, 7 if not compact else 2)]
     return KeepTogether(block)
 
-for i in range(3):
-    story.append(experience(i))
-story += [PageBreak(), p('EXPERIÊNCIA PROFISSIONAL · CONTINUAÇÃO', 'section')]
-for i in range(3, 6):
-    story.append(experience(i, compact=True))
+for i in range(6):
+    story.append(experience(i, compact=i >= 3))
 story += [p('PROJETOS PROFISSIONAIS E TECNOLÓGICOS', 'section')]
 projects = [
     ('Plataforma Integrada de Gestão de Chamados',
