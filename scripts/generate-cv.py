@@ -107,8 +107,6 @@ def experience(index, compact=False):
     block += [p(period(e['period']) + ' · ' + escape((e.get('location') or '').replace('Minas Gerais, Brasil', 'MG')), 'meta')]
     if e.get('roles'):
         for role in e['roles']:
-            if role['title'] in cv_omitted_roles:
-                continue
             block += [p(escape(role['title']) + ' <font name="CV">· ' + escape(period(role['period'])) + '</font>', 'position')]
     else:
         block += [p(escape(e['role']), 'position')]
