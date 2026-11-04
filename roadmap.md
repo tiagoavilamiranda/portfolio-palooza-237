@@ -16,3 +16,4 @@
 - [x] Tornar o repositório público no GitHub (confirmado anteriormente)
 - [x] Modernizar o currículo em PDF, substituir palavras-chave no topo por resumo e verificar o download
 - [x] Adicionar MBA em Business Intelligence (Anhanguera, out 2026 — ago 2027) à formação, assistente, compatibilidade, currículo virtual, PDF e apresentação no GitHub
+- [x] Deixar todos os botões da tela inicial transparentes com contorno, sem os preenchidos em dourado
