@@ -110,16 +110,14 @@ function Index() {
               <Link
                 to="/profissional"
                 onClick={triggerShake}
-                className="rounded-full px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-105"
-                style={{ background: "var(--gradient-gold)" }}
+                className="rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
               >
                 Conheça minha trajetória
               </Link>
               <Link
                 to="/dedicatoria"
                 onClick={triggerShake}
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-105"
-                style={{ background: "var(--gradient-gold)" }}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
               >
                 <Heart className="h-4 w-4" />
                 Dedicatória
@@ -142,8 +140,7 @@ function Index() {
               <Link
                 to="/compatibilidade-vaga"
                 onClick={triggerShake}
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-105"
-                style={{ background: "var(--gradient-gold)" }}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
               >
                 <Target className="h-4 w-4" />
                 Compatibilidade Vaga
