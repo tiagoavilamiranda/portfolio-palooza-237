@@ -115,14 +115,6 @@ function Index() {
                 Conheça minha trajetória
               </Link>
               <Link
-                to="/dedicatoria"
-                onClick={triggerShake}
-                className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
-              >
-                <Heart className="h-4 w-4" />
-                Dedicatória
-              </Link>
-              <Link
                 to="/offline"
                 onClick={triggerShake}
                 className="rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
