@@ -44,7 +44,7 @@ styles = {
     'position': ParagraphStyle('position', fontName='CVBold', fontSize=9.5, leading=14, textColor=INK, spaceAfter=2),
     'body': ParagraphStyle('body', fontName='CV', fontSize=9.5, leading=14, textColor=INK),
     'bullet': ParagraphStyle('bullet', fontName='CV', fontSize=9.5, leading=13.5, textColor=INK, leftIndent=10, firstLineIndent=-9, spaceAfter=2.5),
-    'compact': ParagraphStyle('compact', fontName='CV', fontSize=8.6, leading=10.2, textColor=INK, spaceAfter=1),
+    'compact': ParagraphStyle('compact', fontName='CV', fontSize=9, leading=12, textColor=INK, spaceAfter=2),
 }
 
 def p(text, style='body'):
@@ -59,31 +59,25 @@ def period(text):
 # Concise editorial summaries of the responsibilities already described in the portfolio.
 bullets = [
     [
-        'Atendimento, análise e acompanhamento de chamados conforme SLA, com gestão de tickets no Acelerato e Redmine.',
-        'Gestão de acessos, perfis, permissões e cadastros; orientação a usuários de sistemas corporativos.',
-        'Apoio em infraestrutura e banco de dados; elaboração de relatórios e acompanhamento de indicadores.',
-        'Uso de Excel e IA generativa para apoiar a organização, análise e gestão de demandas.',
+        'Suporte a sistemas, gestão de acessos e chamados conforme SLA no Acelerato e Redmine.',
+        'Relatórios e indicadores com Excel e IA generativa; apoio em infraestrutura e banco de dados.',
     ],
     [
-        'Cadastro e atualização de clientes PF/PJ em múltiplas bases, com validação no Sintegra e Connect.',
-        'Emissão de NF-e e MDF-e; gestão de contratos de comodato e controle de bens e equipamentos.',
-        'Controle de estoque, expedição e acompanhamento de garantias; atendimento ao comercial e a clientes.',
-        'Apoio a admissões, desligamentos e benefícios, com rotinas no RH NET Social e eSocial.',
+        'Cadastro PF/PJ, NF-e e MDF-e; contratos de comodato, estoque e expedição.',
+        'Atendimento ao comercial e clientes; apoio a admissões, benefícios e eSocial.',
     ],
     [
-        'Apoio ao recrutamento e seleção: divulgação de vagas, triagem de currículos, entrevistas e cartas-proposta.',
-        'Gestão de processos no Kenoby, chamados no Ellevo e cadastros no RHHealth e Unico.',
-        'Conferência de documentos admissionais e eSocial; avaliações Etalent DISC e planilhas de controle.',
+        'Recrutamento e seleção no Kenoby: vagas, triagem, entrevistas e cartas-proposta.',
+        'Documentação admissional, eSocial e avaliações DISC; cadastros no RHHealth e Unico.',
     ],
     [
-        'Atendimento presencial, telefônico e digital a beneficiários e cooperados; apoio a cadastro, cobrança e faturamento.',
-        'Emissão e reemissão de boletos, remessas bancárias, controle de comissões e organização de contratos.',
-        'Reconhecimento como Estagiário Destaque em 2019, com menção em revista do CIEE.',
+        'Atendimento, cadastro, cobrança e faturamento; boletos, remessas bancárias e comissões.',
+        'Estagiário Destaque em 2019, com menção na revista do CIEE.',
     ],
-    ['Cadastro de clientes, atualização de planos e regras de carência; venda de serviços, atendimento e fechamento de caixa.'],
+    ['Cadastro e atualização de planos; vendas, atendimento e fechamento de caixa.'],
     [
-        'Contas a pagar e receber, boletos no Sicoob, cobrança, NF-e e conciliação financeira.',
-        'Cadastro de produtos, clientes e fornecedores; pedidos de compra, vendas e controle de caixa.',
+        'Contas a pagar/receber, boletos Sicoob, NF-e, cobrança e conciliação financeira.',
+        'Cadastros, compras, vendas e controle de caixa.',
     ],
 ]
 
@@ -95,12 +89,9 @@ story += [Spacer(1, 6)]
 story += [p(f"{escape(profile['location'])} · {linked(profile['email'], 'mailto:' + profile['email'])}", 'contact')]
 story += [p('CNH B · Disponibilidade para trabalho presencial, híbrido ou remoto', 'contact')]
 story += [p('RESUMO PROFISSIONAL', 'section')]
-story += [p('Administrador com experiência nas áreas Administrativa, Financeira, Faturamento, Recursos Humanos e Suporte a '
-            'Sistemas, atuando em empresas de diferentes segmentos. Atualmente, é Analista de Suporte na Evertec Brasil, com '
-            'experiência em gestão de chamados, análise de demandas, sistemas corporativos e relatórios. Possui perfil analítico, '
-            'visão generalista e iniciativa na criação de soluções digitais, automação de processos e aplicação de inteligência '
-            'artificial. Graduado em Administração e cursando Gestão de TI, MBA em Business Intelligence e MBA em Finanças, '
-            'Auditoria e Controladoria.')]
+story += [p('Administrador e Analista de Suporte na Evertec Brasil, com experiência em rotinas administrativas, financeiro, '
+            'faturamento e RH. Atua com sistemas corporativos, chamados e relatórios, aplicando Excel e IA à organização de '
+            'processos. Cursa Gestão de TI e os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria.')]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]
 
 def experience(index, compact=False):
@@ -123,11 +114,11 @@ for i in range(6):
 story += [p('PROJETOS PROFISSIONAIS E TECNOLÓGICOS', 'section')]
 projects = [
     ('Plataforma Integrada de Gestão de Chamados',
-     'Integração via API ao sistema corporativo de chamados, com acompanhamento de solicitações, históricos e relatórios consolidados.'),
+     'Integração via API para acompanhar solicitações, históricos e relatórios.'),
     ('Sistema de Organização e Gestão de Informações',
-     'Ferramenta digital com apoio de IA para registrar anotações e organizar informações do cotidiano profissional.'),
+     'Registro de anotações e organização de informações com apoio de IA.'),
     ('Portfólio Profissional Interativo',
-     'Site responsivo e interativo com trajetória, experiências, formação, competências e projetos.'),
+     'Experiências, formação, competências e projetos reunidos em um site interativo.'),
 ]
 for title, desc in projects:
     story.append(p('<b>' + escape(title) + ':</b> ' + escape(desc), 'compact'))
