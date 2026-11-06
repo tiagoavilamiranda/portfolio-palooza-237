@@ -18,3 +18,5 @@
 - [x] Adicionar MBA em Business Intelligence (Anhanguera, out 2026 — ago 2027) à formação, assistente, compatibilidade, currículo virtual, PDF e apresentação no GitHub
 - [x] Deixar todos os botões da tela inicial transparentes com contorno, sem os preenchidos em dourado
 - [x] Enxugar os textos do currículo em PDF e conferir a leitura, os cargos e os QR codes
+- [ ] Feedback da recrutadora: definir foco de carreira (Processos Administrativos) no topo, Sobre, bio e currículo
+- [ ] Criar versão ATS do currículo em PDF (sem linhas, efeitos nem QR codes) com botão de download próprio

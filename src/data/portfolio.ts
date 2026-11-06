@@ -15,10 +15,10 @@ export const profile = {
   name: "Tiago de Avila Miranda",
   initials: "TAM",
   headline:
-    "Administrador | Administrativo Generalista | Cadastro PF/PJ | Faturamento | Financeiro | Processos Administrativos | Gestão de TI | Microsoft 365 | Google Workspace | IA Aplicada",
+    "Administrador focado em Processos Administrativos | Sistemas Corporativos | Gestão de TI | IA Aplicada",
   shortHeadline: [
-    "Administrador | Gestão de TI | Processos Administrativos",
-    "Cadastro PF/PJ | Faturamento | Financeiro | IA Aplicada",
+    "Administrador | Processos Administrativos",
+    "Sistemas Corporativos | Gestão de TI | IA Aplicada",
   ],
   email: "tiagooavila@yahoo.com.br",
   linkedin: "https://www.linkedin.com/in/tiago-de-avila-miranda-53674293/",
@@ -26,7 +26,7 @@ export const profile = {
   location: "Leopoldina, Minas Gerais, Brasil",
 };
 
-export const about = `Administrador formado, atualmente cursando Gestão de TI e os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, com experiência nas áreas administrativa, financeira, cadastral e de atendimento interno, atuando em empresas como Unimed, Energisa, Sol e Neve e Evertec Brasil.
+export const about = `Administrador formado, com foco em Processos Administrativos e atuação em sistemas corporativos. Atualmente curso Gestão de TI e os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria, com experiência em empresas como Evertec Brasil, Unimed, Energisa e Sol e Neve.
 
 Ao longo da minha trajetória, desenvolvi experiência em cadastro e atualização de clientes PF e PJ (CPF e CNPJ), implantação e manutenção de módulos em sistemas corporativos, emissão e atualização de boletos, negociação e reprocessamento de títulos, geração de remessas bancárias, faturamento, emissão e envio de notas fiscais eletrônicas (NF-e), controle e envio de contratos de comodato, elaboração de relatórios gerenciais e suporte às rotinas administrativas e financeiras.
 

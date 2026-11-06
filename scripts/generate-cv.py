@@ -89,9 +89,11 @@ story += [Spacer(1, 6)]
 story += [p(f"{escape(profile['location'])} · {linked(profile['email'], 'mailto:' + profile['email'])}", 'contact')]
 story += [p('CNH B · Disponibilidade para trabalho presencial, híbrido ou remoto', 'contact')]
 story += [p('RESUMO PROFISSIONAL', 'section')]
-story += [p('Administrador e Analista de Suporte na Evertec Brasil, com experiência em rotinas administrativas, financeiro, '
-            'faturamento e RH. Atua com sistemas corporativos, chamados e relatórios, aplicando Excel e IA à organização de '
-            'processos. Cursa Gestão de TI e os MBAs em Business Intelligence e em Finanças, Auditoria e Controladoria.')]
+SUMMARY = ('Administrador e Analista de Suporte na Evertec Brasil, com foco em Processos Administrativos e atuação em '
+           'sistemas corporativos. Atua com chamados, relatórios, financeiro, faturamento e RH, aplicando Excel e IA à '
+           'organização de processos. Cursa Gestão de TI e os MBAs em Business Intelligence e em Finanças, Auditoria e '
+           'Controladoria.')
+story += [p(SUMMARY)]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]
 
 def experience(index, compact=False):
@@ -170,3 +172,64 @@ doc = SimpleDocTemplate(str(output), pagesize=A4, leftMargin=43, rightMargin=43,
                         subject='Experiência profissional, formação e competências')
 doc.build(story, onFirstPage=decorate, onLaterPages=decorate)
 print(f'Currículo gerado: {output.name}')
+
+# ---------------------------------------------------------------------------
+# Versão ATS: texto puro, sem cores, linhas, efeitos, links ou QR codes, para
+# os sistemas automáticos dos sites de vaga lerem sem tropeçar.
+# ---------------------------------------------------------------------------
+BLACK = colors.black
+ats_styles = {
+    'name': ParagraphStyle('ats_name', fontName='CVBold', fontSize=16, leading=20, textColor=BLACK, spaceAfter=4),
+    'contact': ParagraphStyle('ats_contact', fontName='CV', fontSize=9.5, leading=14, textColor=BLACK),
+    'section': ParagraphStyle('ats_section', fontName='CVBold', fontSize=11, leading=15, textColor=BLACK, spaceBefore=10, spaceAfter=4),
+    'company': ParagraphStyle('ats_company', fontName='CVBold', fontSize=10.5, leading=14, textColor=BLACK, spaceAfter=1),
+    'meta': ParagraphStyle('ats_meta', fontName='CV', fontSize=9, leading=12, textColor=BLACK, spaceAfter=2),
+    'position': ParagraphStyle('ats_position', fontName='CVBold', fontSize=9.5, leading=13, textColor=BLACK, spaceAfter=1),
+    'body': ParagraphStyle('ats_body', fontName='CV', fontSize=9.5, leading=13.5, textColor=BLACK),
+    'bullet': ParagraphStyle('ats_bullet', fontName='CV', fontSize=9.5, leading=13, textColor=BLACK, leftIndent=10, firstLineIndent=-9, spaceAfter=2),
+}
+
+def ap(text, style='body'):
+    return Paragraph(text, ats_styles[style])
+
+ats = [ap(escape(profile['name']), 'name')]
+ats += [ap(f"{escape(profile['location'])} · {escape(profile['email'])}", 'contact')]
+ats += [ap('CNH B · Disponibilidade para trabalho presencial, híbrido ou remoto', 'contact')]
+ats += [ap('LinkedIn: ' + escape(profile['linkedin']), 'contact')]
+ats += [ap('Portfólio profissional: ' + BASE, 'contact')]
+ats += [ap('RESUMO PROFISSIONAL', 'section')]
+ats += [ap(escape(SUMMARY))]
+ats += [ap('EXPERIÊNCIA PROFISSIONAL', 'section')]
+for i in range(6):
+    e = data['experiences'][i]
+    ats += [ap('<b>' + escape(e['company']) + '</b>', 'company')]
+    ats += [ap(escape(period(e['period']) + ' · ' + (e.get('location') or '')), 'meta')]
+    if e.get('roles'):
+        for role in e['roles']:
+            ats += [ap(escape(role['title']) + ' · ' + escape(period(role['period'])), 'position')]
+    else:
+        ats += [ap(escape(e['role']), 'position')]
+    ats += [ap('• ' + escape(text), 'bullet') for text in bullets[i]]
+    ats += [Spacer(1, 4)]
+ats += [ap('PROJETOS PROFISSIONAIS E TECNOLÓGICOS', 'section')]
+for title, desc in projects:
+    ats.append(ap('<b>' + escape(title) + ':</b> ' + escape(desc)))
+ats += [ap('FORMAÇÃO ACADÊMICA', 'section')]
+for e in data['education']:
+    title = e['title'].replace('Pós-graduação Lato Sensu — MBA em', 'MBA em').replace('Pós-graduação Lato Sensu — MBA ', 'MBA em ').replace('Curso Superior de Tecnologia —', 'Tecnologia em').replace('Graduação em Business Administration and Management', 'Bacharelado em Administração')
+    current = ' · em andamento' if 'andamento' in e.get('extra', '') else ''
+    ats.append(ap('<b>' + escape(title.strip()) + '</b><br/>' + escape(e['org']) + ' · ' + escape(e['period']) + current))
+ats += [ap('CURSOS E CERTIFICAÇÕES', 'section')]
+for c in data['certifications']:
+    if 'Inteligência Artificial Express' in c['title']:
+        continue
+    ats.append(ap(escape(c['title']) + ' — ' + escape(c['org']) + ' · ' + escape(c['date'])))
+ats += [ap('FERRAMENTAS E SISTEMAS', 'section')]
+ats += [ap('<b>Produtividade e dados:</b> ' + escape(', '.join(data['tools'])) + '.<br/><b>Sistemas corporativos:</b> ' + escape(', '.join(data['systems'])) + '.')]
+
+ats_output = ROOT / 'public/curriculo-tiago-de-avila-miranda-ats.pdf'
+ats_doc = SimpleDocTemplate(str(ats_output), pagesize=A4, leftMargin=51, rightMargin=51, topMargin=51, bottomMargin=51,
+                            title='Currículo (ATS) — Tiago de Avila Miranda', author=profile['name'],
+                            subject='Experiência profissional, formação e competências')
+ats_doc.build(ats)
+print(f'Currículo ATS gerado: {ats_output.name}')
