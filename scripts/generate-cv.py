@@ -44,7 +44,7 @@ styles = {
     'position': ParagraphStyle('position', fontName='CVBold', fontSize=9.5, leading=14, textColor=INK, spaceAfter=2),
     'body': ParagraphStyle('body', fontName='CV', fontSize=9.5, leading=14, textColor=INK),
     'bullet': ParagraphStyle('bullet', fontName='CV', fontSize=9.5, leading=13.5, textColor=INK, leftIndent=10, firstLineIndent=-9, spaceAfter=2.5),
-    'compact': ParagraphStyle('compact', fontName='CV', fontSize=9, leading=12, textColor=INK, spaceAfter=2),
+    'compact': ParagraphStyle('compact', fontName='CV', fontSize=9, leading=11, textColor=INK, spaceAfter=1),
 }
 
 def p(text, style='body'):
