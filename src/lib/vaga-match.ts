@@ -121,7 +121,7 @@ export const areas: Area[] = [
     label: "Tecnologia e sistemas",
     strength: 0.8,
     evidence:
-       "técnico de suporte ao negócio na Evertec Brasil, com graduação em Gestão de TI em andamento (UNOPAR)",
+       "técnico de suporte ao negócio na Evertec Brasil",
     examples: [
        "Na Evertec Brasil, gestão de acessos, perfis e permissões de usuários, apoio em banco de dados e testes/homologação de sistemas.",
       "Adaptação rápida a ERPs e sistemas corporativos: Ellevo, Acelerato, Redmine, Unico, RH Health, Director e Cardio.",

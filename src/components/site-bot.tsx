@@ -178,18 +178,6 @@ const facts: { test: RegExp; build: () => Msg }[] = [
     build: () => ({ from: "bot", text: educationOutlook, to: "/graduacao", linkLabel: "Abrir Graduação" }),
   },
   {
-    test: /\b(gestao de ti|gestao da tecnologia|tecnologia da informacao|unopar)\b/,
-    build: () => {
-      const tiCourse = education.find((item) => item.title.includes("Gestão da Tecnologia"));
-      return {
-        from: "bot",
-        text: tiCourse ? `O Tiago cursa ${tiCourse.title} na ${tiCourse.org}, de ${tiCourse.period}. ${tiCourse.extra ?? ""}` : "A formação em Gestão de TI está na página Graduação.",
-        to: "/graduacao",
-        linkLabel: "Abrir Graduação",
-      };
-    },
-  },
-  {
     test: /\b(auditoria|controladoria|mba em financas|pos graduacao|pos em financas)\b/,
     build: () => ({
       from: "bot",

@@ -12,10 +12,10 @@ describe("Formação informada no LinkedIn", () => {
       extra: "Curso em andamento",
     });
   });
-  test("nova formação não substitui os outros cursos", () => {
-    assert.equal(education.length, 6);
+  test("Gestão de TI (UNOPAR) não consta na formação", () => {
+    assert.equal(education.length, 5);
+    assert.equal(education.find((item) => item.title.includes("Gestão da Tecnologia")), undefined);
     assert.equal(education.find((item) => item.title.includes("Finanças"))?.period, "set 2026 — jul 2027");
-    assert.equal(education.find((item) => item.title.includes("Gestão da Tecnologia"))?.period, "fev 2025 — jul 2027");
   });
   test("resumo compartilhado preserva os dois MBAs da Anhanguera", () => {
     assert.ok(educationSummary.includes("Business Intelligence"));
