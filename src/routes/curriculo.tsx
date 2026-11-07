@@ -50,13 +50,25 @@ function CurriculoPage() {
         <p className="mt-1 text-sm text-muted-foreground">{profile.location} · {profile.email}</p>
         <p className="mt-4 text-sm leading-relaxed text-foreground/80">{about.split("\n\n")[0]}</p>
         <p className="mt-4 text-xs text-muted-foreground">Clique em qualquer item para ver os detalhes no portfólio.</p>
-        <a
-          href="/curriculo-tiago-de-avila-miranda.pdf"
-          download
-          className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/60 px-5 py-2 text-sm text-primary hover:bg-primary/10"
-        >
-          <Download className="h-4 w-4" /> Baixar em PDF
-        </a>
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <a
+            href="/curriculo-tiago-de-avila-miranda.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-5 py-2 text-sm text-primary hover:bg-primary/10"
+          >
+            <Download className="h-4 w-4" /> Baixar em PDF
+          </a>
+          <a
+            href="/curriculo-tiago-de-avila-miranda-ats.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2 text-sm text-foreground/80 hover:border-primary hover:text-primary"
+          >
+            <Download className="h-4 w-4" /> Versão para sites de vaga (ATS)
+          </a>
+        </div>
+        <p className="mt-2 text-xs text-muted-foreground">
+          Use a versão ATS ao se candidatar em plataformas de recrutamento: ela é lida sem erros pelos sistemas automáticos.
+        </p>
 
         <Section title="Experiência profissional">
           {experiences.map((e) => (

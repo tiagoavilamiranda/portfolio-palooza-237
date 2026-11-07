@@ -181,7 +181,7 @@ BLACK = colors.black
 ats_styles = {
     'name': ParagraphStyle('ats_name', fontName='CVBold', fontSize=16, leading=20, textColor=BLACK, spaceAfter=4),
     'contact': ParagraphStyle('ats_contact', fontName='CV', fontSize=9.5, leading=14, textColor=BLACK),
-    'section': ParagraphStyle('ats_section', fontName='CVBold', fontSize=11, leading=15, textColor=BLACK, spaceBefore=10, spaceAfter=4),
+    'section': ParagraphStyle('ats_section', fontName='CVBold', fontSize=11, leading=15, textColor=BLACK, spaceBefore=10, spaceAfter=4, keepWithNext=1),
     'company': ParagraphStyle('ats_company', fontName='CVBold', fontSize=10.5, leading=14, textColor=BLACK, spaceAfter=1),
     'meta': ParagraphStyle('ats_meta', fontName='CV', fontSize=9, leading=12, textColor=BLACK, spaceAfter=2),
     'position': ParagraphStyle('ats_position', fontName='CVBold', fontSize=9.5, leading=13, textColor=BLACK, spaceAfter=1),
