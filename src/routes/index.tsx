@@ -153,6 +153,14 @@ function Index() {
                 <Download className="h-4 w-4" />
                 Baixar currículo (PDF)
               </a>
+              <a
+                href="/curriculo-tiago-de-avila-miranda-ats.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+              >
+                <Download className="h-4 w-4" />
+                Currículo ATS (sites de vaga)
+              </a>
             </div>
           </div>
 
