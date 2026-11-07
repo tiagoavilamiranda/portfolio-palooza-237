@@ -15,10 +15,10 @@ export const profile = {
   name: "Tiago de Avila Miranda",
   initials: "TAM",
   headline:
-    "Administrador focado em Processos Administrativos | Sistemas Corporativos | Gestão de TI | IA Aplicada",
+    "Administrador focado em Processos Administrativos | Sistemas Corporativos | IA Aplicada",
   shortHeadline: [
     "Administrador | Processos Administrativos",
-    "Sistemas Corporativos | Gestão de TI | IA Aplicada",
+    "Sistemas Corporativos | IA Aplicada",
   ],
   email: "tiagooavila@yahoo.com.br",
   linkedin: "https://www.linkedin.com/in/tiago-de-avila-miranda-53674293/",
