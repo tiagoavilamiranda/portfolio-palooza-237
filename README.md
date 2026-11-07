@@ -47,6 +47,7 @@ Experiências, cursos e certificações em uma página, com cada item clicável:
 
 - **MBA em Business Intelligence** — Anhanguera Educacional (out 2026 – ago 2027, em andamento)
 - **MBA em Finanças, Auditoria e Controladoria** — Anhanguera Educacional (set 2026 – jul 2027, em andamento)
+- **Tecnólogo em Gestão da Tecnologia da Informação** — UNOPAR (fev 2025 – jul 2027, em andamento)
 - **MBA em Gestão de Pessoas e Liderança** — Doctum (2022)
 - **Graduação em Administração** — UNOPAR (2018 – 2021)
 - **Técnico em Administração** — Escola Estadual Sebastião Silva Coutinho (2016 – 2017)

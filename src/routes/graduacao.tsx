@@ -7,7 +7,7 @@ export const Route = createFileRoute("/graduacao")({
       { title: "Graduação e Formação — Tiago de Avila Miranda" },
       {
         name: "description",
-        content: "Formação acadêmica de Tiago de Avila Miranda em Administração, Gestão de Pessoas, Business Intelligence, Finanças, Auditoria e Controladoria.",
+        content: "Formação acadêmica de Tiago de Avila Miranda em Administração, Gestão de TI, Gestão de Pessoas, Business Intelligence, Finanças, Auditoria e Controladoria.",
       },
       { property: "og:title", content: "Graduação e Formação — Tiago de Avila Miranda" },
       {

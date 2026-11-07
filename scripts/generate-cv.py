@@ -91,7 +91,7 @@ story += [p('CNH B · Disponibilidade para trabalho presencial, híbrido ou remo
 story += [p('RESUMO PROFISSIONAL', 'section')]
 SUMMARY = ('Administrador e Analista de Suporte na Evertec Brasil, com foco em Processos Administrativos e atuação em '
            'sistemas corporativos. Atua com chamados, relatórios, financeiro, faturamento e RH, aplicando Excel e IA à '
-           'organização de processos. Cursa os MBAs em Business Intelligence e em Finanças, Auditoria e '
+           'organização de processos. Cursa Gestão de TI e os MBAs em Business Intelligence e em Finanças, Auditoria e '
            'Controladoria.')
 story += [p(SUMMARY)]
 story += [p('EXPERIÊNCIA PROFISSIONAL', 'section')]

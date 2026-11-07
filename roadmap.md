@@ -6,6 +6,7 @@
 - [x] Completar as informações de compartilhamento das páginas
 - [x] Validar a exibição e as respostas
 - [x] Marcar Gestão de TI como curso em andamento e resumir áreas de atuação na Graduação
+- [x] Tirar "Gestão de TI" apenas do título da página inicial (manter o curso no resto do site e no currículo)
 - [x] Trocar Dimensa por Evertec Brasil e aplicar a imagem enviada em todo o portfólio
 - [x] Validar página, robô e compatibilidade de vagas
 - Visitas + recados com painel privado (/painel) — feito
