@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { ArrowLeft, Eye, MessageSquare, LogOut, Trash2 } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { DocumentAccessPanel } from '@/components/document-access-panel';
 
 export const Route = createFileRoute("/painel")({
   head: () => ({
@@ -29,6 +31,7 @@ const PAGES: Record<string, string> = {
   "/profissional": "Trajetória Profissional",
   "/graduacao": "Graduação",
   "/certificacoes": "Certificações",
+  "/documentos": "Diplomas, Certificados e Conquistas",
   "/habilidades": "Habilidades",
   "/ferramentas": "Ferramentas & Sistemas",
   "/offline": "OffLine",
@@ -102,7 +105,7 @@ function Login() {
 function Dashboard({ email }: { email: string }) {
   const [visits, setVisits] = useState<Visit[]>([]);
   const [msgs, setMsgs] = useState<Msg[]>([]);
-  const [tab, setTab] = useState<"v" | "m">("v");
+  const [tab, setTab] = useState<"v" | "m" | "d">("v");
 
   async function load() {
     const [v, m] = await Promise.all([
@@ -147,11 +150,12 @@ function Dashboard({ email }: { email: string }) {
           </div>
         ))}
       </div>
-      <div className="mt-6 flex gap-2">
+      <div className="mt-6 flex flex-wrap gap-2">
         <button onClick={() => setTab("v")} className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm ${tab === "v" ? "border-primary bg-primary/10 text-primary" : "border-border"}`}><Eye className="h-4 w-4" /> Visitas</button>
         <button onClick={() => setTab("m")} className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm ${tab === "m" ? "border-primary bg-primary/10 text-primary" : "border-border"}`}><MessageSquare className="h-4 w-4" /> Recados</button>
+        <Button variant="outline" onClick={() => setTab('d')} aria-pressed={tab === 'd'}>Documentos e acessos</Button>
       </div>
-      {tab === "v" ? (
+      {tab === 'd' ? <DocumentAccessPanel /> : tab === "v" ? (
         <div className="mt-4 overflow-x-auto rounded-xl border border-border">
           <table className="w-full text-left text-sm">
             <thead className="bg-card text-xs text-muted-foreground"><tr><th className="p-3">Quando</th><th className="p-3">Páginas vistas (em ordem)</th><th className="p-3">Origem</th><th className="p-3">Cidade</th><th className="p-3">Aparelho</th></tr></thead>
