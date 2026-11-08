@@ -12,3 +12,4 @@
 - Keep the education career summary in shared portfolio data so the Graduação page and assistant describe the same opportunities.
 - Derive general education lists for the assistant and vacancy requirements from shared portfolio data, and select specific courses by title rather than institution because an institution can have multiple courses.
 - Generate the recruitment PDF with scripts/generate-cv.py using shared portfolio data for identity, roles, education and certifications; this keeps linked records consistent while allowing concise editorial responsibility summaries.
+- Keep document previews permanently redacted and separate from private original storage; per-document access uses authenticated requests and owner-only RLS decisions, with original downloads revalidated on every open rather than shareable signed original URLs.

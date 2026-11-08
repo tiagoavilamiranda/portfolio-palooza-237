@@ -51,6 +51,7 @@ const cards = [
   { to: "/profissional", label: "Profissional", Icon: Briefcase },
   { to: "/graduacao", label: "Graduação", Icon: GraduationCap },
   { to: "/certificacoes", label: "Certificações", Icon: Award },
+  { to: "/documentos", label: "Diplomas, Certificados e Conquistas", Icon: GraduationCap },
   { to: "/habilidades", label: "Habilidades", Icon: Lightbulb },
   { to: "/ferramentas", label: "Ferramentas", Icon: Wrench },
   { to: "/portfolio", label: "Portfólio", Icon: FolderKanban },

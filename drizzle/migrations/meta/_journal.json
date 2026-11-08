@@ -15,6 +15,13 @@
       "when": 1791076146828,
       "tag": "0001_add_session_to_visits",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794147765351,
+      "tag": "0002_document_gallery_approvals",
+      "breakpoints": true
     }
   ]
 }

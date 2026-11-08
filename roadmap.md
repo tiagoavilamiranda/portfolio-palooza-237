@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Criar coleção Diplomas, Certificados e Conquistas com prévias públicas protegidas
+- [ ] Implementar solicitação individual e aprovação/recusa/revogação no painel
+- [ ] Validar acesso privado e navegação da coleção
+
 - [x] Adicionar MBA em Finanças, Auditoria e Controladoria à formação
 - [x] Atualizar o robô com a nova formação
 - [x] Atualizar a compatibilidade de vagas para Finanças, Auditoria e Controladoria
