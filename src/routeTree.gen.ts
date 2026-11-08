@@ -14,6 +14,7 @@ import { Route as CertificacoesRouteImport } from './routes/certificacoes'
 import { Route as CompatibilidadeVagaRouteImport } from './routes/compatibilidade-vaga'
 import { Route as CurriculoRouteImport } from './routes/curriculo'
 import { Route as DedicatoriaRouteImport } from './routes/dedicatoria'
+import { Route as DocumentosRouteImport } from './routes/documentos'
 import { Route as FerramentasRouteImport } from './routes/ferramentas'
 import { Route as GraduacaoRouteImport } from './routes/graduacao'
 import { Route as HabilidadesRouteImport } from './routes/habilidades'
@@ -47,6 +48,11 @@ const CurriculoRoute = CurriculoRouteImport.update({
 const DedicatoriaRoute = DedicatoriaRouteImport.update({
   id: '/dedicatoria',
   path: '/dedicatoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentosRoute = DocumentosRouteImport.update({
+  id: '/documentos',
+  path: '/documentos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FerramentasRoute = FerramentasRouteImport.update({
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/compatibilidade-vaga': typeof CompatibilidadeVagaRoute
   '/curriculo': typeof CurriculoRoute
   '/dedicatoria': typeof DedicatoriaRoute
+  '/documentos': typeof DocumentosRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
@@ -117,6 +124,7 @@ export interface FileRoutesByTo {
   '/compatibilidade-vaga': typeof CompatibilidadeVagaRoute
   '/curriculo': typeof CurriculoRoute
   '/dedicatoria': typeof DedicatoriaRoute
+  '/documentos': typeof DocumentosRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
@@ -134,6 +142,7 @@ export interface FileRoutesById {
   '/compatibilidade-vaga': typeof CompatibilidadeVagaRoute
   '/curriculo': typeof CurriculoRoute
   '/dedicatoria': typeof DedicatoriaRoute
+  '/documentos': typeof DocumentosRoute
   '/ferramentas': typeof FerramentasRoute
   '/graduacao': typeof GraduacaoRoute
   '/habilidades': typeof HabilidadesRoute
@@ -152,6 +161,7 @@ export interface FileRouteTypes {
     | '/compatibilidade-vaga'
     | '/curriculo'
     | '/dedicatoria'
+    | '/documentos'
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
@@ -168,6 +178,7 @@ export interface FileRouteTypes {
     | '/compatibilidade-vaga'
     | '/curriculo'
     | '/dedicatoria'
+    | '/documentos'
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
@@ -184,6 +195,7 @@ export interface FileRouteTypes {
     | '/compatibilidade-vaga'
     | '/curriculo'
     | '/dedicatoria'
+    | '/documentos'
     | '/ferramentas'
     | '/graduacao'
     | '/habilidades'
@@ -201,6 +213,7 @@ export interface RootRouteChildren {
   CompatibilidadeVagaRoute: typeof CompatibilidadeVagaRoute
   CurriculoRoute: typeof CurriculoRoute
   DedicatoriaRoute: typeof DedicatoriaRoute
+  DocumentosRoute: typeof DocumentosRoute
   FerramentasRoute: typeof FerramentasRoute
   GraduacaoRoute: typeof GraduacaoRoute
   HabilidadesRoute: typeof HabilidadesRoute
@@ -247,6 +260,13 @@ declare module '@tanstack/react-router' {
       path: '/dedicatoria'
       fullPath: '/dedicatoria'
       preLoaderRoute: typeof DedicatoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documentos': {
+      id: '/documentos'
+      path: '/documentos'
+      fullPath: '/documentos'
+      preLoaderRoute: typeof DocumentosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ferramentas': {
@@ -321,6 +341,7 @@ const rootRouteChildren: RootRouteChildren = {
   CompatibilidadeVagaRoute: CompatibilidadeVagaRoute,
   CurriculoRoute: CurriculoRoute,
   DedicatoriaRoute: DedicatoriaRoute,
+  DocumentosRoute: DocumentosRoute,
   FerramentasRoute: FerramentasRoute,
   GraduacaoRoute: GraduacaoRoute,
   HabilidadesRoute: HabilidadesRoute,
