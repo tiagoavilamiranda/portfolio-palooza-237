@@ -14,6 +14,103 @@ export type Database = {
   }
   public: {
     Tables: {
+      document_access_requests: {
+        Row: {
+          created_at: string
+          document_id: string
+          id: string
+          reason: string
+          requester_email: string
+          requester_name: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          document_id: string
+          id?: string
+          reason?: string
+          requester_email: string
+          requester_name: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          document_id?: string
+          id?: string
+          reason?: string
+          requester_email?: string
+          requester_name?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "document_access_requests_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "portfolio_documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      document_original_files: {
+        Row: {
+          document_id: string
+          filename: string
+          storage_path: string
+        }
+        Insert: {
+          document_id: string
+          filename: string
+          storage_path: string
+        }
+        Update: {
+          document_id?: string
+          filename?: string
+          storage_path?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "document_original_files_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: true
+            referencedRelation: "portfolio_documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      portfolio_documents: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          id: string
+          institution: string
+          preview_paths: string[]
+          title: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string
+          id?: string
+          institution?: string
+          preview_paths?: string[]
+          title: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          institution?: string
+          preview_paths?: string[]
+          title?: string
+        }
+        Relationships: []
+      }
       site_visits: {
         Row: {
           city: string | null
