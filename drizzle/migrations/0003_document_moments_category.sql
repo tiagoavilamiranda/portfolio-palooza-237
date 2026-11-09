@@ -1,0 +1,2 @@
+ALTER TABLE public.portfolio_documents DROP CONSTRAINT IF EXISTS portfolio_documents_category_check;
+ALTER TABLE public.portfolio_documents ADD CONSTRAINT portfolio_documents_category_check CHECK (category IN ('Diploma','Certificado','Conquista','Momento'));
