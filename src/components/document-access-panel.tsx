@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Check, X, ShieldOff, RefreshCw } from 'lucide-react';
 import { decideDocumentAccess } from '@/lib/documents.functions';
+import { DocumentUploader } from '@/components/document-uploader';
 
 type Request = { id: string; requester_name: string; requester_email: string; reason: string; status: string; document_id: string; created_at: string };
 const labels: Record<string, string> = { pending: 'Aguardando sua decisão', approved: 'Aprovado', denied: 'Recusado', revoked: 'Revogado' };
@@ -27,6 +28,8 @@ export function DocumentAccessPanel() {
     finally { setBusy(false); }
   }
   return <section className="mt-5">
+    <DocumentUploader onDone={load} />
+    <div className="h-8" />
     <div className="flex items-center justify-between gap-3"><h2 className="font-serif text-2xl text-primary">Acesso aos documentos</h2><Button variant="ghost" size="icon" aria-label="Atualizar solicitações" onClick={load}><RefreshCw /></Button></div>
     {error && <p role="alert" className="mt-3 text-destructive">{error}</p>}
     <div className="mt-4 grid gap-4">{requests.map((r) => <article key={r.id} className="rounded-md border border-border p-4">

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import type { Session } from '@supabase/supabase-js';
-import { Award, LockKeyhole, Image, Send, LogOut, FileCheck } from 'lucide-react';
+import { Award, LockKeyhole, Image, Send, LogOut, FileCheck, Download } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -68,7 +68,7 @@ export function DocumentGallery() {
   }
   return <SubPage eyebrow="Minha trajetória em registros" title="Diplomas, Certificados e Conquistas" Icon={Award}>
     <div className="mb-8 flex flex-wrap items-center gap-2">
-      {['Todos', 'Diploma', 'Certificado', 'Conquista'].map((f) => <Button key={f} variant={filter === f ? 'secondary' : 'ghost'} aria-pressed={filter === f} onClick={() => setFilter(f)}>{f === 'Todos' ? f : `${f}s`}</Button>)}
+      {['Todos', 'Diploma', 'Certificado', 'Conquista', 'Momento'].map((f) => <Button key={f} variant={filter === f ? 'secondary' : 'ghost'} aria-pressed={filter === f} onClick={() => setFilter(f)}>{f === 'Todos' ? f : f === 'Momento' ? 'Momentos nas empresas' : `${f}s`}</Button>)}
       {session && <Button className="sm:ml-auto" variant="ghost" onClick={() => { void loadStatuses(); }}><FileCheck /> Atualizar acessos</Button>}
       {session && <Button variant="ghost" size="icon" aria-label="Sair do acesso aos documentos" onClick={() => supabase.auth.signOut()}><LogOut /></Button>}
     </div>
@@ -87,6 +87,6 @@ export function DocumentGallery() {
       {!session ? <label className="grid gap-2 text-sm">E-mail<Input type="email" value={email} required maxLength={254} onChange={(e) => setEmail(e.target.value)} /></label> : <><label className="grid gap-2 text-sm">Seu nome<Input value={name} required minLength={2} maxLength={100} onChange={(e) => setName(e.target.value)} /></label><label className="grid gap-2 text-sm">Motivo da solicitação<Textarea value={reason} maxLength={500} onChange={(e) => setReason(e.target.value)} /></label></>}
       <Button variant="outline" disabled={busy}><Send />{busy ? 'Enviando…' : session ? 'Enviar solicitação' : 'Receber link por e-mail'}</Button>{message && <p role="status" className="text-sm">{message}</p>}
     </form></DialogContent></Dialog>
-    <Dialog open={Boolean(original)} onOpenChange={(value) => { if (!value) setOriginal(null); }}><DialogContent className="max-w-4xl"><DialogTitle>{original?.filename}</DialogTitle><DialogDescription>Documento completo autorizado por Tiago.</DialogDescription>{original && <iframe title="Documento completo" src={original.url} className="h-[65vh] w-full rounded-md border border-border" />}</DialogContent></Dialog>
+    <Dialog open={Boolean(original)} onOpenChange={(value) => { if (!value) setOriginal(null); }}><DialogContent className="max-w-4xl"><DialogTitle>{original?.filename}</DialogTitle><DialogDescription>Documento completo autorizado por Tiago.</DialogDescription>{original && <Button asChild variant="outline" className="justify-self-start"><a href={original.url} download={original.filename}><Download /> Baixar documento</a></Button>}{original && <iframe title="Documento completo" src={original.url} className="h-[65vh] w-full rounded-md border border-border" />}</DialogContent></Dialog>
   </SubPage>;
 }

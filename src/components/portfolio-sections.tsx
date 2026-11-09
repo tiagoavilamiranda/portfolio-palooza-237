@@ -496,6 +496,11 @@ export function OfflinePage() {
           </div>
         </div>
       </div>
+      <div className="mt-10 flex justify-center">
+        <Link to="/documentos" onClick={triggerShake} className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10">
+          <Award className="h-4 w-4" /> Diplomas, Certificados e Conquistas
+        </Link>
+      </div>
       <RecadoForm />
     </SubPage>
   );

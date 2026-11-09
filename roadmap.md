@@ -1,8 +1,10 @@
 # Roadmap
 
-- [ ] Criar coleção Diplomas, Certificados e Conquistas com prévias públicas protegidas
-- [ ] Implementar solicitação individual e aprovação/recusa/revogação no painel
-- [ ] Validar acesso privado e navegação da coleção
+- [x] Criar coleção Diplomas, Certificados e Conquistas com prévias públicas protegidas
+- [x] Implementar solicitação individual e aprovação/recusa/revogação no painel
+- [x] Validar acesso privado e navegação da coleção
+- [x] Envio de documentos e fotos pelo painel, com ocultação de CPF/identidade antes de publicar
+- [x] Categoria Momentos nas empresas, download para aprovados e atalho na OffLine
 
 - [x] Adicionar MBA em Finanças, Auditoria e Controladoria à formação
 - [x] Atualizar o robô com a nova formação
